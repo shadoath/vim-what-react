@@ -6,7 +6,7 @@ export type KeyType = 'motion' | 'operator' | 'command' | 'extra'
 type KeyProps = {
   value: string
   description: string
-  keyType: KeyType
+  keyType: string //KeyType
   disabled?: boolean
   hasDot?: boolean
   hasBorder?: boolean
