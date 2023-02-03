@@ -13,3 +13,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.key {
+  width: 80px;
+  height: 73px;
+  &.motion {
+    background-color: #85c3b3; // Motion
+  }
+
+  &.command {
+    background-color: #f3b948;
+  }
+
+  &.operator {
+    background-color: #d9563b;
+  }
+  &.extra {
+    background-color: #efe6e0;
+  }
+}
