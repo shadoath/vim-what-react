@@ -76,6 +76,7 @@ function App() {
                         value={k}
                         description={keyInfo.text}
                         secondaryText={keyInfo.secondaryText}
+                        hasBorder={keyInfo.hasBorder}
                         keyType={keyInfo.action}
                         vimhelp={help}
                         hasDot={keyInfo.hasDot}

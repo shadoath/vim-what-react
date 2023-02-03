@@ -31,7 +31,15 @@ export const Key = ({
   };
 
   return (
-    <Card onClick={openHelpLink} className={`key ${keyType}`}>
+    <Card
+      key={value}
+      onClick={openHelpLink}
+      sx={{
+        border: 1.5,
+        borderColor: hasBorder ? 'text.primary' : 'transparent',
+      }}
+      className={`key ${keyType}`}
+    >
       <Grid container>
         <Grid item>{value}</Grid>
         <Grid item>

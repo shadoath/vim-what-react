@@ -15,6 +15,7 @@ code {
 }
 
 .key {
+  
   width: 42px;
   height: 38px;
   padding: 4px;
@@ -32,4 +33,8 @@ code {
   &.extra {
     background-color: #efe6e0;
   }
+}
+
+.hasBorder { 
+  border: 3px solid #000000;
 }
