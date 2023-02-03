@@ -8,6 +8,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%7e',
     text: '',
+    secondaryText: 'toggle case',
   },
   '!': {
     title: 'Bang',
@@ -16,6 +17,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%21',
     text: '',
+    secondaryText: 'external filter',
   },
   '@': {
     title: 'At/Register',
@@ -24,6 +26,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'repeat.txt.html#%40',
     text: ":let @q='_ctrl-r_ctrl-r_q (paste @q)<br>*modify*<br>' (closing quote) & _enter_<br><br>:g/pattern/d X (delete pattern and save to x register)",
+    secondaryText: 'play macro',
   },
   '#': {
     title: 'Hash',
@@ -32,6 +35,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'pattern.txt.html#%23',
     text: "Same as '*', but search backward.",
+    secondaryText: 'prev ident',
   },
   $: {
     title: 'Money',
@@ -40,6 +44,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%24',
     text: 'To end of line',
+    secondaryText: 'end of line',
   },
   '%': {
     title: 'Percent',
@@ -48,6 +53,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%25',
     text: 'Find the next item in this line after or under the cursor and jump to its match. |inclusive| motion.',
+    secondaryText: 'goto match',
   },
   '^': {
     title: 'Caret',
@@ -56,6 +62,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%5e',
     text: 'Return to first non-blank character',
+    secondaryText: "'soft' bol",
   },
   '&': {
     title: 'Ampersand',
@@ -64,6 +71,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%26',
     text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
+    secondaryText: 'repeat :s',
   },
   '&amp;': {
     title: 'Ampersand',
@@ -72,6 +80,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%26',
     text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
+    secondaryText: 'repeat :s',
   },
   '*': {
     title: 'Asterisk',
@@ -80,6 +89,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'pattern.txt.html#star',
     text: "Search forward for the [count]'th occurrence of the word nearest to the cursor",
+    secondaryText: 'next ident',
   },
   '(': {
     title: 'Begin parenthesis',
@@ -88,6 +98,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%28',
     text: '[count] sentences backward.  |exclusive| motion.',
+    secondaryText: 'begin sentence',
   },
   ')': {
     title: 'End parenthesis',
@@ -96,6 +107,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%29',
     text: '[count] sentences forward.  |exclusive| motion.',
+    secondaryText: 'end sentence',
   },
   _: {
     title: 'Underscore',
@@ -104,6 +116,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#_',
     text: '[count] - 1 lines downward, on the first non-blank character |linewise|.',
+    secondaryText: "'soft' bol down",
   },
   '+': {
     title: 'Plus',
@@ -112,6 +125,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%2b',
     text: '[count] lines downward, on the first non-blank character |linewise|.',
+    secondaryText: 'next line',
   },
   '-': {
     title: 'Minus/Dash',
@@ -121,6 +135,7 @@ export const symbols: Record<string, KeyInfoType> = {
     vimhelp: 'motion.txt.html#-',
     plugins: 'AndrewRadev/switch.vim | Change true/false, etc',
     text: '[count] lines upward, on the first non-blank character |linewise|.',
+    secondaryText: 'prev line',
   },
   '=': {
     title: 'Equal',
@@ -129,6 +144,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%3d',
     text: "Filter {motion} lines through the external program given with the 'equalprg' option.  When the 'equalprg' option is empty (this is the default), use the internal formatting function",
+    secondaryText: 'auto format',
   },
   '`': {
     title: 'backtick',
@@ -137,6 +153,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#%60',
     text: 'Jump to the mark {a-z} in the current buffer.',
+    secondaryText: 'goto mark',
   },
   '[': {
     title: 'Beginning Bracket',
@@ -145,6 +162,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'index.txt.html#%5b',
     text: 'A lot of Vim power found here! check out :help [',
+    secondaryText: 'misc',
   },
   ']': {
     title: 'Ending Bracket',
@@ -153,6 +171,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'index.txt.html#%5d',
     text: 'A lot of Vim power found here! check out :help ]',
+    secondaryText: 'misc',
   },
   '{': {
     title: 'Begin Brace',
@@ -161,6 +180,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%7b',
     text: '[count] paragraphs backward.  |exclusive| motion.',
+    secondaryText: 'begin paragraph',
   },
   '}': {
     title: 'End Brace',
@@ -169,6 +189,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%7d',
     text: '[count] paragraphs forward.  |exclusive| motion.',
+    secondaryText: 'end paragraph',
   },
   '?': {
     title: 'Question Mark',
@@ -177,6 +198,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'pattern.txt.html#%3f',
     text: "Search backward for the [count]'th occurrence of the latest used pattern |last-pattern| with latest used |{offset}|.",
+    secondaryText: 'find (reverse)',
   },
   '/': {
     title: 'Forward Slash',
@@ -185,6 +207,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'pattern.txt.html#%2f',
     text: "Search forward for the [count]'th occurrence of the latest used pattern |last-pattern| with latest used |{offset}|.",
+    secondaryText: 'find',
   },
   '\\': {
     title: 'Back Slash',
@@ -193,6 +216,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'pattern.txt.html#%2f%5c',
     text: 'A backslash followed by a single character, with no special meaning, is reserved for future expansions',
+    secondaryText: 'not used!',
   },
   '|': {
     title: 'Pipe',
@@ -201,6 +225,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#bar',
     text: '',
+    secondaryText: 'bol/goto col',
   },
   '.': {
     title: 'dot',
@@ -209,6 +234,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'repeat.txt.html#.',
     text: '',
+    secondaryText: 'repeat last command',
   },
   ',': {
     title: 'Comma',
@@ -217,6 +243,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%2c',
     text: '',
+    secondaryText: 'reverse f/F/t/T',
   },
   '"': {
     title: 'Double Quote',
@@ -225,6 +252,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'pattern.txt.html#%2f%5c',
     text: '',
+    secondaryText: 'reg spec',
   },
   "'": {
     title: 'Single Quote',
@@ -233,6 +261,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#%27',
     text: "'< & '> start/end of visual selection<br> '[ & '] - start/end of last change or yank<br> '. - position of where last change was made<br> '^ - position of cursor when last Vim last left insert mode - This is how gi command works<br> '' - position before last jump (Super useful!). See :h ''<br>` (backtick) Go to line AND column",
+    secondaryText: 'goto mark bol',
   },
   ';': {
     title: 'Semicolon',
@@ -241,6 +270,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#%3b',
     text: '',
+    secondaryText: 'repeat f/F/t/T',
   },
   ':': {
     title: 'Colon',
@@ -249,23 +279,26 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'cmdline.txt.html#%3a',
     text: '',
+    secondaryText: 'ex command line',
   },
-  '&gt;': {
-    title: 'Greater than',
-    image: '/images/symbols/greater_than.png',
-    action: 'operator',
-    hasDot: false,
-    vimhelp: '',
-    text: '',
-  },
-  '&lt;': {
-    title: 'Less than',
-    image: '/images/symbols/less_than.png',
-    action: 'operator',
-    hasDot: false,
-    vimhelp: '',
-    text: '',
-  },
+  // '&gt;': {
+  //   title: 'Greater than',
+  //   image: '/images/symbols/greater_than.png',
+  //   action: 'operator',
+  //   hasDot: false,
+  //   vimhelp: '',
+  //   text: '',
+  //   secondaryText: 'indent',
+  // },
+  // '&lt;': {
+  //   title: 'Less than',
+  //   image: '/images/symbols/less_than.png',
+  //   action: 'operator',
+  //   hasDot: false,
+  //   vimhelp: '',
+  //   text: '',
+  //   secondaryText: 'un-indent',
+  // },
   '>': {
     title: 'Greater than',
     image: '/images/symbols/greater_than.png',
@@ -273,6 +306,7 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%3e',
     text: '',
+    secondaryText: 'indent',
   },
   '<': {
     title: 'Less than',
@@ -281,5 +315,6 @@ export const symbols: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#%3c',
     text: '',
+    secondaryText: 'un-indent',
   },
 };

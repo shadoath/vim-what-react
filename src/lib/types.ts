@@ -6,4 +6,5 @@ export type KeyInfoType = {
   vimhelp: string;
   plugins?: string;
   text: string;
+  secondaryText?: string;
 };

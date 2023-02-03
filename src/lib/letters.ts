@@ -10,6 +10,7 @@ export const letters: Record<string, KeyInfoType> = {
     plugins:
       'tpope/vim-speeddating | Use CTRL-a/CTRL-x to increment dates, times, and more.',
     text: 'insert after cursor<br>{command} around {selector}<br>ctrl-a: ++',
+    secondaryText: 'append',
   },
   A: {
     title: 'UPPERCASE',
@@ -18,6 +19,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'insert.txt.html#A',
     text: 'append at end of line',
+    secondaryText: 'append at col',
   },
   b: {
     title: 'lowercase',
@@ -26,6 +28,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#b',
     text: '[count] words backward.  |exclusive| motion.',
+    secondaryText: 'prev word',
   },
   B: {
     title: 'UPPERCASE',
@@ -34,6 +37,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#B',
     text: '[count] WORDS backward.  |exclusive| motion.',
+    secondaryText: 'prev WORD',
   },
   c: {
     title: 'lowercase',
@@ -42,6 +46,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#c',
     text: '["x]c{motion}<br>Delete {motion}text [into register x] and start insert.',
+    secondaryText: 'change',
   },
   C: {
     title: 'UPPERCASE',
@@ -50,6 +55,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#C',
     text: '["x]C<br>Delete from the cursor position to the end of the line and [count]-1 more lines [into register x], and start insert.<br>Synonym for c$ (not |linewise|).',
+    secondaryText: 'change to end of line',
   },
   d: {
     title: 'lowercase',
@@ -58,6 +64,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#d',
     text: '["x]d{motion}<br>Delete text that {motion} moves over [into register x].',
+    secondaryText: 'delete',
   },
   D: {
     title: 'UPPERCASE',
@@ -66,6 +73,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#D',
     text: '["x]D<br>Delete the characters under the cursor until the end of the line and [count]-1 more lines [into register x];<br>Synonym for "d$" .',
+    secondaryText: 'delete to end of line',
   },
   e: {
     title: 'lowercase',
@@ -74,6 +82,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#e',
     text: 'Forward to the end of word [count] |inclusive|.  Does not stop in an empty line.',
+    secondaryText: 'end word',
   },
   E: {
     title: 'UPPERCASE',
@@ -82,6 +91,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#E',
     text: 'Forward to the end of WORD [count] |inclusive|.  Does not stop in an empty line.',
+    secondaryText: 'end WORD',
   },
   f: {
     title: 'lowercase',
@@ -90,6 +100,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#f',
     text: " f{char}<br>  To [count]'th occurrence of {char} to the right.<br>The cursor is placed on {char} |inclusive|.<br> {char} can be entered as a digraph.  When 'encoding' is set to Unicode, composing characters may be used.",
+    secondaryText: 'find char',
   },
   F: {
     title: 'UPPERCASE',
@@ -98,6 +109,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#F',
     text: "F{char}<br>To the [count]'th occurrence of {char} to the left.<br> The cursor is placed on {char} |exclusive|.<br> {char} can be entered like with the |f| command.",
+    secondaryText: '"back" find char',
   },
   g: {
     title: 'lowercase',
@@ -106,6 +118,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'index.txt.html#g',
     text: 'A lot of Vim power found here! check out :help g',
+    secondaryText: 'extra cmds',
   },
   G: {
     title: 'UPPERCASE',
@@ -114,6 +127,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#G',
     text: "Goto line [count], default last line, on the first non-blank character |linewise|.<br> If 'startofline' not set, keep the same column.<br> G is a one of |jump-motions|.",
+    secondaryText: 'eof/goto line',
   },
   h: {
     title: 'lowercase',
@@ -122,6 +136,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#h',
     text: 'Move left',
+    secondaryText: '←',
   },
   H: {
     title: 'UPPERCASE',
@@ -130,6 +145,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#H',
     text: 'Move to top of current visable window.',
+    secondaryText: 'screen top',
   },
   i: {
     title: 'lowercase',
@@ -138,6 +154,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'insert.txt.html#i',
     text: 'Enter into insert mode from normal mode.',
+    secondaryText: 'insert mode',
   },
   I: {
     title: 'UPPERCASE',
@@ -146,6 +163,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'insert.txt.html#I',
     text: 'Enter into insert mode at the beginning of the line.',
+    secondaryText: 'insert mode at beginning of line',
   },
   j: {
     title: 'lowercase',
@@ -154,6 +172,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#j',
     text: 'Move down while in normal mode',
+    secondaryText: '→',
   },
   J: {
     title: 'UPPERCASE',
@@ -162,6 +181,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#J',
     text: 'Join next line to this line. Moves cursor to joined location',
+    secondaryText: 'join lines',
   },
   k: {
     title: 'lowercase',
@@ -170,6 +190,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#k',
     text: 'Move up.',
+    secondaryText: '↑',
   },
   K: {
     title: 'UPPERCASE',
@@ -178,6 +199,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'various.txt.html#K',
     text: 'Pulls up :man or :help on current word.',
+    secondaryText: 'help',
   },
   l: {
     title: 'lowercase',
@@ -186,6 +208,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#l',
     text: 'Move right.',
+    secondaryText: '↓',
   },
   L: {
     title: 'UPPERCASE',
@@ -194,6 +217,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#L',
     text: 'Move to to near bottom of current visable window.',
+    secondaryText: 'screen bottom',
   },
   m: {
     title: 'lowercase',
@@ -202,6 +226,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#m',
     text: "Set a Mark {a-zA-Z}. Use ' or ` to jump back to set mark {a-zA-Z}.",
+    secondaryText: 'set mark',
   },
   M: {
     title: 'UPPERCASE',
@@ -210,6 +235,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#M',
     text: 'Move to the middle of the current visable window.',
+    secondaryText: 'screen middle',
   },
   n: {
     title: 'lowercase',
@@ -218,6 +244,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'pattern.txt.html#n',
     text: 'Move to next search item.',
+    secondaryText: 'next(find)',
   },
   N: {
     title: 'UPPERCASE',
@@ -226,6 +253,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'pattern.txt.html#N',
     text: 'Move to next search item in reverse.',
+    secondaryText: 'prev(find)',
   },
   o: {
     title: 'lowercase',
@@ -234,6 +262,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'insert.txt.html#o',
     text: 'Start a new line <b>below</b> cursor position.',
+    secondaryText: 'open below',
   },
   O: {
     title: 'UPPERCASE',
@@ -242,6 +271,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'insert.txt.html#O',
     text: 'Start a new line <b>above</b> cursor position.',
+    secondaryText: 'open above',
   },
   p: {
     title: 'lowercase',
@@ -250,6 +280,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#p',
     text: 'Paste after cursor.',
+    secondaryText: 'paste after',
   },
   P: {
     title: 'UPPERCASE',
@@ -258,6 +289,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#P',
     text: 'Paste before cursor.',
+    secondaryText: 'paste before',
   },
   q: {
     title: 'lowercase',
@@ -266,6 +298,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'repeat.txt.html#q',
     text: 'Start recording a macro. Use {a-z} for a fresh start or {A-Z} for appending.',
+    secondaryText: 'record',
   },
   Q: {
     title: 'UPPERCASE',
@@ -274,6 +307,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'intro.txt.html#Q',
     text: 'Enter into Ex mode where you can run commands like 21+21 and hit enter to get 42.',
+    secondaryText: 'ex mode',
   },
   r: {
     title: 'lowercase',
@@ -282,6 +316,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'change.txt.html#r',
     text: 'Replace character under cursor with new character',
+    secondaryText: 'replace char',
   },
   R: {
     title: 'UPPERCASE',
@@ -290,6 +325,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#R',
     text: 'Replace each character as you type. Backspace will revert until you exit replace mode',
+    secondaryText: 'replace mode',
   },
   s: {
     title: 'lowercase',
@@ -298,6 +334,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#s',
     text: 'Delete character(s) under cursor and enters insert mode.',
+    secondaryText: 'substitute char',
   },
   S: {
     title: 'UPPERCASE',
@@ -306,6 +343,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#S',
     text: 'Delete line(s) under cursor and enters insert mode.',
+    secondaryText: 'substitute line',
   },
   t: {
     title: 'lowercase',
@@ -314,6 +352,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#t',
     text: "Move cursor to [count]'th occurance of character to the right.",
+    secondaryText: "'till",
   },
   T: {
     title: 'UPPERCASE',
@@ -322,6 +361,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'motion.txt.html#T',
     text: "Move cursor to [count]'th occurance of character to the left.",
+    secondaryText: "back 'till",
   },
   u: {
     title: 'lowercase',
@@ -330,6 +370,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'undo.txt.html#u',
     text: 'Undo!',
+    secondaryText: 'undo',
   },
   U: {
     title: 'UPPERCASE',
@@ -338,6 +379,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'undo.txt.html#U',
     text: 'Undo all changes on the line where the last change was made.',
+    secondaryText: 'undo line',
   },
   v: {
     title: 'lowercase',
@@ -346,6 +388,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'visual.txt.html#v',
     text: 'Enter Visual mode.',
+    secondaryText: 'visual mode',
   },
   V: {
     title: 'UPPERCASE',
@@ -354,6 +397,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'visual.txt.html#V',
     text: 'Enter Visual mode linewise',
+    secondaryText: 'visual lines',
   },
   w: {
     title: 'lowercase',
@@ -364,6 +408,7 @@ export const letters: Record<string, KeyInfoType> = {
     plugins:
       'wesQ3/vim-windowswap | Buffer swapping `&lt;leader&gt;ww` on each buffer to swap positions',
     text: 'Move one word forward',
+    secondaryText: 'next word',
   },
   W: {
     title: 'UPPERCASE',
@@ -372,6 +417,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'motion.txt.html#W',
     text: 'Move one word backward',
+    secondaryText: 'next WORD',
   },
   x: {
     title: 'lowercase',
@@ -382,6 +428,7 @@ export const letters: Record<string, KeyInfoType> = {
     plugins:
       'tpope/vim-speeddating | Use CTRL-a/CTRL-x to increment dates, times, and more.',
     text: 'Delete character(s) under cursor and after.',
+    secondaryText: 'delete char',
   },
   X: {
     title: 'UPPERCASE',
@@ -390,6 +437,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#X',
     text: 'Delete character(s) under cursor and before.',
+    secondaryText: 'backspace',
   },
   y: {
     title: 'lowercase',
@@ -398,6 +446,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#y',
     text: 'Yank selected text',
+    secondaryText: 'yank',
   },
   Y: {
     title: 'UPPERCASE',
@@ -406,6 +455,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: false,
     vimhelp: 'change.txt.html#Y',
     text: 'Yank current line.',
+    secondaryText: 'yank line',
   },
   z: {
     title: 'lowercase',
@@ -414,6 +464,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'index.txt.html#z',
     text: 'Redraw window on cursor. z+ for top of window z- for bottom of window and z. for center.',
+    secondaryText: 'extra cmds',
   },
   Z: {
     title: 'UPPERCASE',
@@ -422,5 +473,6 @@ export const letters: Record<string, KeyInfoType> = {
     hasDot: true,
     vimhelp: 'starting.txt.html#-Z',
     text: 'Amazingly unmapped.',
+    secondaryText: 'quit',
   },
 };
