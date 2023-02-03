@@ -10,6 +10,7 @@ type KeyProps = {
   disabled?: boolean
   hasDot?: boolean
   hasBorder?: boolean
+  vimhelp?: string
   notes?: string[]
 }
 export const Key = ({
@@ -19,7 +20,16 @@ export const Key = ({
   disabled,
   hasDot,
   hasBorder,
+  vimhelp,
   notes,
 }: KeyProps) => {
-  return <Card className={`key ${keyType}`}>{value}</Card>
+  const openHelpLink = () => {
+    window.open(`http://vimhelp.appspot.com/${vimhelp}`, '_blank')
+  }
+
+  return (
+    <Card onClick={openHelpLink} className={`key ${keyType}`}>
+      {value}
+    </Card>
+  )
 }

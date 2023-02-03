@@ -57,20 +57,23 @@ function App() {
           </Grid>
         </Grid>
       </header>
-      <Grid container spacing={2} direction='column'>
+      <Grid container spacing={1} direction='column'>
         {layouts[layout].map((row, i) => {
           return (
             <Grid item>
-              <Grid container spacing={2} justifyContent='center'>
+              <Grid container spacing={1} justifyContent='center'>
                 {row.split('').map((k, j) => {
                   const key = allKeys.find((aKey) => aKey === k) as AllKeyTypes
                   const keyInfo = allLettersNumberSymbols[key]
+                  // @ts-ignore - help is not always defined
+                  const help = keyInfo?.vimhelp || ''
                   return (
                     <Grid item key={`${i}-${j}`}>
                       <Key
                         value={k}
                         description={keyInfo.text}
                         keyType={keyInfo.action}
+                        vimhelp={help}
                       />
                     </Grid>
                   )
