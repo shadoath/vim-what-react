@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import logo from './vim-what.svg'
-import './App.scss'
-import { Key } from './Key'
+import React, { useState } from 'react';
+import logo from './vim-what.svg';
+import './App.scss';
+import { Key } from './Key';
 import {
   FormControl,
   Grid,
@@ -9,25 +9,27 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
-} from '@mui/material'
-import letters from './lib/letters.json'
-import numbers from './lib/numbers.json'
-import symbols from './lib/symbols.json'
-import layouts from './lib/layouts.json'
+} from '@mui/material';
 
-type LayoutTypes = 'qwerty' | 'colemack' | 'colemack-ergo'
+import { numbers } from './lib/numbers';
+import { symbols } from './lib/symbols';
+import { keymaps } from './lib/layouts';
+import { letters } from './lib/letters';
+
+type LayoutTypes = 'qwerty' | 'colemack' | 'colemack-ergo';
+
 function App() {
-  const allLettersNumberSymbols = { ...letters, ...numbers, ...symbols }
-  const allKeys = Object.keys(allLettersNumberSymbols)
-  type AllKeyTypes = keyof typeof allLettersNumberSymbols
+  const allLettersNumberSymbols = { ...letters, ...numbers, ...symbols };
+  const allKeys = Object.keys(allLettersNumberSymbols);
+  type AllKeyTypes = keyof typeof allLettersNumberSymbols;
 
-  const [layout, setLayout] = useState<LayoutTypes>('qwerty')
+  const [layout, setLayout] = useState<LayoutTypes>('qwerty');
 
   const handleLayoutChange = (
     event: SelectChangeEvent<'qwerty' | 'colemack' | 'colemack-ergo'>
   ) => {
-    setLayout(event.target.value as LayoutTypes)
-  }
+    setLayout(event.target.value as LayoutTypes);
+  };
   return (
     <div className='App'>
       <header className='App-header'>
@@ -49,8 +51,8 @@ function App() {
                 label='Keyboard'
                 onChange={handleLayoutChange}
               >
-                {Object.keys(layouts).map((layout) => {
-                  return <MenuItem value={layout}>{layout}</MenuItem>
+                {Object.keys(keymaps).map((layout) => {
+                  return <MenuItem value={layout}>{layout}</MenuItem>;
                 })}
               </Select>
             </FormControl>
@@ -58,15 +60,16 @@ function App() {
         </Grid>
       </header>
       <Grid container spacing={1} direction='column'>
-        {layouts[layout].map((row, i) => {
+        {keymaps[layout].map((row, i) => {
           return (
             <Grid item>
               <Grid container spacing={1} justifyContent='center'>
                 {row.split('').map((k, j) => {
-                  const key = allKeys.find((aKey) => aKey === k) as AllKeyTypes
-                  const keyInfo = allLettersNumberSymbols[key]
+                  const key = allKeys.find((aKey) => aKey === k) as AllKeyTypes;
+                  const keyInfo = allLettersNumberSymbols[key];
                   // @ts-ignore - help is not always defined
-                  const help = keyInfo?.vimhelp || ''
+                  const help = keyInfo?.vimhelp || '';
+
                   return (
                     <Grid item key={`${i}-${j}`}>
                       <Key
@@ -74,17 +77,18 @@ function App() {
                         description={keyInfo.text}
                         keyType={keyInfo.action}
                         vimhelp={help}
+                        hasDot={keyInfo.hasDot}
                       />
                     </Grid>
-                  )
+                  );
                 })}
               </Grid>
             </Grid>
-          )
+          );
         })}
       </Grid>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,18 +1,19 @@
-import React from 'react'
-import { Card } from '@mui/material'
+import React from 'react';
+import { Card } from '@mui/material';
+import { Circle } from '@mui/icons-material';
 
-export type KeyType = 'motion' | 'operator' | 'command' | 'extra'
+export type KeyType = 'motion' | 'operator' | 'command' | 'extra';
 
 type KeyProps = {
-  value: string
-  description: string
-  keyType: string //KeyType
-  disabled?: boolean
-  hasDot?: boolean
-  hasBorder?: boolean
-  vimhelp?: string
-  notes?: string[]
-}
+  value: string;
+  description: string;
+  keyType: string; //KeyType
+  disabled?: boolean;
+  hasDot?: boolean;
+  hasBorder?: boolean;
+  vimhelp?: string;
+  notes?: string[];
+};
 export const Key = ({
   value,
   description,
@@ -24,12 +25,12 @@ export const Key = ({
   notes,
 }: KeyProps) => {
   const openHelpLink = () => {
-    window.open(`http://vimhelp.appspot.com/${vimhelp}`, '_blank')
-  }
+    window.open(`http://vimhelp.appspot.com/${vimhelp}`, '_blank');
+  };
 
   return (
     <Card onClick={openHelpLink} className={`key ${keyType}`}>
-      {value}
+      {value} {hasDot && <b>·</b>}
     </Card>
-  )
-}
+  );
+};
