@@ -5,6 +5,8 @@ import { letters } from './../lib/letters'
 import { SelectChangeEvent } from '@mui/material'
 
 type BaseContextType = {
+  info: string | number
+  setInfo: React.Dispatch<React.SetStateAction<string | number>>
   allKeys: string[]
   layout: LayoutTypes
   handleLayoutChange: (
@@ -25,6 +27,7 @@ export const BaseContextProvider = ({
   const allKeys = Object.keys(allKeysWithInfo)
 
   const [layout, setLayout] = useState<LayoutTypes>('qwerty')
+  const [info, setInfo] = useState<AllKeyTypes>('')
 
   const handleLayoutChange = (
     event: SelectChangeEvent<'qwerty' | 'colemack' | 'colemack-ergo'>
@@ -33,7 +36,9 @@ export const BaseContextProvider = ({
   }
 
   return (
-    <BaseContext.Provider value={{ layout, handleLayoutChange, allKeys }}>
+    <BaseContext.Provider
+      value={{ layout, handleLayoutChange, allKeys, info, setInfo }}
+    >
       {children}
     </BaseContext.Provider>
   )

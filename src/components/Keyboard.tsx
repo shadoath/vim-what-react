@@ -25,7 +25,7 @@ export const Keyboard = () => {
                   <Grid item key={`${i}-${j}`}>
                     <Key
                       value={k}
-                      description={keyInfo.text}
+                      text={keyInfo.text}
                       secondaryText={keyInfo.secondaryText}
                       hasBorder={keyInfo.hasBorder}
                       keyType={keyInfo.action}

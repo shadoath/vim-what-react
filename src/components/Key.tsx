@@ -1,11 +1,12 @@
 import { Card, Grid, Typography } from '@mui/material'
 import { Circle } from '@mui/icons-material'
+import { useBaseContext } from '../contexts/baseContext'
 
 export type KeyType = 'motion' | 'operator' | 'command' | 'extra'
 
 type KeyProps = {
   value: string
-  description: string
+  text: string
   keyType: string //KeyType
   disabled?: boolean
   hasDot?: boolean
@@ -16,7 +17,7 @@ type KeyProps = {
 }
 export const Key = ({
   value,
-  description,
+  text,
   secondaryText,
   keyType = 'motion',
   disabled,
@@ -25,14 +26,18 @@ export const Key = ({
   vimhelp,
   notes,
 }: KeyProps) => {
+  const { setInfo } = useBaseContext()
   const openHelpLink = () => {
     window.open(`http://vimhelp.appspot.com/${vimhelp}`, '_blank')
   }
 
+  const onClick = () => {
+    setInfo(text)
+  }
   return (
     <Card
       key={value}
-      onClick={openHelpLink}
+      onClick={onClick}
       sx={{
         border: 1.5,
         borderColor: hasBorder ? 'text.primary' : 'transparent',
