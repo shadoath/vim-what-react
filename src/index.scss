@@ -15,7 +15,8 @@ code {
 }
 
 .key {
-  
+  cursor: pointer;
+
   width: 42px;
   height: 38px;
   padding: 4px;
@@ -35,6 +36,6 @@ code {
   }
 }
 
-.hasBorder { 
+.hasBorder {
   border: 3px solid #000000;
 }

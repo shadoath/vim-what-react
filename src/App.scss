@@ -1,3 +1,13 @@
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+* {
+  font-family: 'Fira Code', monospace !important ;
+}
+
+@supports (font-variation-settings: normal) {
+  * {
+    font-family: 'Fira Code VF', monospace !important;
+  }
+}
 .App {
   padding: 8px;
   text-align: center;
