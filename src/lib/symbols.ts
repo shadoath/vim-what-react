@@ -1,4 +1,4 @@
-import { KeyInfoType } from './types';
+import { KeyInfoType } from './types'
 
 export const symbols: Record<string, KeyInfoType> = {
   '~': {
@@ -256,7 +256,7 @@ export const symbols: Record<string, KeyInfoType> = {
     image: '/images/symbols/colon.png',
     action: 'command',
     vimhelp: 'cmdline.txt.html#%3a',
-    text: '',
+    text: 'Execute a command',
     secondaryText: 'ex command line',
   },
   // '&gt;': {
@@ -293,4 +293,4 @@ export const symbols: Record<string, KeyInfoType> = {
     text: '',
     secondaryText: 'un-indent',
   },
-};
+}

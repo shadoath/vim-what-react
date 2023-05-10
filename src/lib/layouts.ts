@@ -1,5 +1,5 @@
 export const keymaps = {
-  colemack: [
+  Colemack: [
     '!@#$%^&*()+',
     '1234567890=',
     'QWFPGJLUY:{}|',
@@ -9,17 +9,7 @@ export const keymaps = {
     'zxcvbkm,./',
     'ZXCVBKM<>?',
   ],
-  'colemack-ergo': [
-    '!@#$%^&*()+',
-    '1234567890=',
-    'QWFPG{}JLUY:_',
-    'qwfpg[]jluy;-',
-    'ARSTD?|HNEIO"',
-    "arstd/\\hneio'",
-    '~ZXCVB_+KM<>?',
-    '`zxcvb-=km,./',
-  ],
-  qwerty: [
+  Qwerty: [
     '~!@#$%^&*()_+',
     '`1234567890-=',
     'QWERTYUIOP{}|',
@@ -29,4 +19,4 @@ export const keymaps = {
     'ZXCVBNM<>?',
     'zxcvbnm,./',
   ],
-};
+}
