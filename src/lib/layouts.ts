@@ -1,5 +1,5 @@
 export const keymaps = {
-  Colemack: [
+  Colemak: [
     '!@#$%^&*()+',
     '1234567890=',
     'QWFPGJLUY:{}|',

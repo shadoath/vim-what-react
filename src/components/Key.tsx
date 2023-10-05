@@ -11,7 +11,7 @@ type KeyProps = {
   isActive?: boolean
   hasDot?: boolean
   hasBorder?: boolean
-  vimhelp?: string
+  vimHelp?: string
   notes?: string[]
   secondaryText?: string
   hasFocus?: boolean
@@ -25,16 +25,14 @@ export const Key = ({
   hasFocus = false,
   hasDot,
   hasBorder,
-  vimhelp,
+  vimHelp,
   notes,
 }: KeyProps) => {
-  const { setInfo } = useBaseContext()
-  const openHelpLink = () => {
-    window.open(`http://vimhelp.appspot.com/${vimhelp}`, '_blank')
-  }
+  const { setDocs, setInfo } = useBaseContext()
 
   const onClick = () => {
     setInfo(text)
+    if (vimHelp) setDocs(`http://vimHelp.appspot.com/${vimHelp}`)
   }
   return (
     <Card

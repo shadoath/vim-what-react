@@ -22,7 +22,7 @@ export const Keyboard = () => {
               {row.split('').map((k, j) => {
                 const key = allKeys.find((aKey) => aKey === k) as AllKeyTypes
                 const keyInfo = allKeysWithInfo[key]
-                const help = keyInfo?.vimhelp ?? ''
+                const help = keyInfo?.vimHelp ?? ''
                 // make use of lessonLevel if the keyboard key is not in that level then change display to dark for that key
                 const isActive = activeKeys.includes(k)
                 const hasFocus = focusedKeys.includes(k)
@@ -35,7 +35,7 @@ export const Keyboard = () => {
                       secondaryText={keyInfo.secondaryText}
                       hasBorder={keyInfo.hasBorder}
                       keyType={keyInfo.action}
-                      vimhelp={help}
+                      vimHelp={help}
                       hasDot={keyInfo.hasDot}
                       isActive={isActive}
                       hasFocus={hasFocus}
