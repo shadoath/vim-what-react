@@ -6,11 +6,12 @@ import {
 } from '../contexts/baseContext'
 import { keymaps } from '../lib/layouts'
 import { Key } from './Key'
-import { getActiveKeys } from '../lib/lessons'
+import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
 
 export const Keyboard = () => {
   const { layout, allKeys, lessonLevel } = useBaseContext()
   const activeKeys = getActiveKeys(lessonLevel)
+  const focusedKeys = getFocusedKeys(lessonLevel)
 
   return (
     <Grid container spacing={1} direction='column'>
@@ -24,6 +25,7 @@ export const Keyboard = () => {
                 const help = keyInfo?.vimhelp ?? ''
                 // make use of lessonLevel if the keyboard key is not in that level then change display to dark for that key
                 const isActive = activeKeys.includes(k)
+                const hasFocus = focusedKeys.includes(k)
 
                 return (
                   <Grid item key={`${i}-${j}`}>
@@ -36,6 +38,7 @@ export const Keyboard = () => {
                       vimhelp={help}
                       hasDot={keyInfo.hasDot}
                       isActive={isActive}
+                      hasFocus={hasFocus}
                     />
                   </Grid>
                 )

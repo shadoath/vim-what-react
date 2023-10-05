@@ -34,3 +34,14 @@ export const getActiveKeys = (lessonLevel: number): string[] => {
 
   return activeKeys
 }
+
+export const getFocusedKeys = (lessonLevel: number): string[] => {
+  const focusedKeys: string[] = []
+
+  const lessonKeys = lessons[lessonLevel].split('')
+  lessonKeys.forEach((key) => {
+    focusedKeys.push(key)
+  })
+
+  return focusedKeys
+}

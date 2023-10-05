@@ -9,12 +9,12 @@ type KeyProps = {
   text: string
   keyType: string //KeyType
   isActive?: boolean
-  disabled?: boolean
   hasDot?: boolean
   hasBorder?: boolean
   vimhelp?: string
   notes?: string[]
   secondaryText?: string
+  hasFocus?: boolean
 }
 export const Key = ({
   value,
@@ -22,7 +22,7 @@ export const Key = ({
   secondaryText,
   keyType = 'motion',
   isActive = true,
-  disabled,
+  hasFocus = false,
   hasDot,
   hasBorder,
   vimhelp,
@@ -43,7 +43,7 @@ export const Key = ({
       sx={{
         border: 1.5,
         borderColor: hasBorder ? 'text.primary' : 'transparent',
-        opacity: isActive ? 1 : 0.3,
+        opacity: hasFocus ? 1 : isActive ? 0.8 : 0.3,
       }}
       className={`key ${keyType}`}
     >
