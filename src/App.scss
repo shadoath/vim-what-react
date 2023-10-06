@@ -8,17 +8,16 @@
     font-family: 'Fira Code VF', monospace !important;
   }
 }
-.App {
-  padding: 8px;
+body {
   text-align: center;
-  width: 800px;
-  height: 600px;
+  max-width: 800px;
+  max-height: 600px;
   background-color: #c2c2c2;
   overflow: hidden;
 }
 
 .App-logo {
-  height: 4rem;
+  height: 2rem;
   pointer-events: none;
 }
 
@@ -27,6 +26,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // font-size: calc(10px + 2vmin);
   color: white;
 }
