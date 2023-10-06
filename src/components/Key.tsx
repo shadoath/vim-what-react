@@ -42,17 +42,20 @@ export const Key = ({
         border: 1.5,
         borderColor: hasBorder ? 'text.primary' : 'transparent',
         opacity: hasFocus ? 1 : isActive ? 0.8 : 0.3,
+        padding: '2px 3px 2px 3px',
+        margin: 0,
       }}
       className={`key ${keyType}`}
     >
       <Grid container>
-        <Grid item>{value}</Grid>
-        <Grid item>
-          {hasDot && <Circle style={{ marginLeft: 2, fontSize: 6 }} />}
-        </Grid>
-      </Grid>
-      <Grid container justifyContent='flex-start' alignItems='flex-end'>
-        <Typography textAlign='left' fontSize={8}>
+        {value}
+        {hasDot && <Circle style={{ marginLeft: 2, fontSize: 6 }} />}
+        <Typography
+          textAlign='left'
+          fontSize={8}
+          sx={{ ml: 0 }}
+          component='span'
+        >
           <b>{secondaryText}</b>
         </Typography>
       </Grid>

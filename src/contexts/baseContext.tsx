@@ -7,6 +7,7 @@ import { SelectChangeEvent } from '@mui/material'
 type BaseContextType = {
   docs: string
   info: string | number
+  infoImage: string
   setDocs: React.Dispatch<React.SetStateAction<string>>
   setInfo: React.Dispatch<React.SetStateAction<string | number>>
   allKeys: string[]
@@ -32,28 +33,39 @@ export const BaseContextProvider = ({
   const [layout, setLayout] = useState<LayoutTypes>('Qwerty')
   const [info, setInfo] = useState<AllKeyTypes>('')
   const [docs, setDocs] = useState('')
-  const [lessonLevel, setLessonLevel] = useState<number>(1)
+  const [infoImage, setInfoImage] = useState('/about/all.png')
+  const [lessonLevel, setLessonLevel] = useState<number>(8)
 
   const handleLessonLevelChange = (event: SelectChangeEvent<number>) => {
-    setLessonLevel(Number(event.target.value))
+    const level = Number(event.target.value)
+    setLessonLevel(level)
+    if (level === 8) {
+      setInfoImage('/about/all.png')
+    } else {
+      setInfoImage('/about/lesson_' + level + '.png')
+    }
+    setInfo('')
+    setDocs('')
   }
 
   const handleLayoutChange = (event: SelectChangeEvent<LayoutTypes>) => {
-    setLayout(event.target.value as LayoutTypes)
+    const layout = event.target.value as LayoutTypes
+    setLayout(layout)
   }
 
   return (
     <BaseContext.Provider
       value={{
-        layout,
-        handleLayoutChange,
         allKeys,
-        info,
-        setInfo,
         docs,
-        setDocs,
-        lessonLevel,
+        handleLayoutChange,
         handleLessonLevelChange,
+        info,
+        infoImage,
+        layout,
+        lessonLevel,
+        setDocs,
+        setInfo,
       }}
     >
       {children}

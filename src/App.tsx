@@ -12,14 +12,14 @@ function App() {
     <div className='App'>
       <ThemeProvider theme={theme}>
         <BaseContextProvider>
-          <Grid container spacing={2}>
-            <Grid item>
+          <Grid container spacing={0}>
+            <Grid container item>
               <Header />
             </Grid>
-            <Grid item>
+            <Grid container item>
               <Keyboard />
             </Grid>
-            <Grid item>
+            <Grid container item>
               <InfoArea />
             </Grid>
           </Grid>
