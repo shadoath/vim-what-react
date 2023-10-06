@@ -1,4 +1,4 @@
-import { Card, Grid, Typography } from '@mui/material'
+import { Card, Grid, Tooltip, Typography } from '@mui/material'
 import { Circle } from '@mui/icons-material'
 import { useBaseContext } from '../contexts/baseContext'
 
@@ -35,30 +35,41 @@ export const Key = ({
     if (vimHelp) setDocs(`http://vimHelp.appspot.com/${vimHelp}`)
   }
   return (
-    <Card
-      key={value}
-      onClick={onClick}
-      sx={{
-        border: 1.5,
-        borderColor: hasBorder ? 'text.primary' : 'transparent',
-        opacity: hasFocus ? 1 : isActive ? 0.8 : 0.3,
-        padding: '2px 3px 2px 3px',
-        margin: 0,
-      }}
-      className={`key ${keyType}`}
+    <Tooltip
+      title={
+        <>
+          {secondaryText && (
+            <Typography textAlign='left' fontSize={14} component='span'>
+              {secondaryText}
+            </Typography>
+          )}
+        </>
+      }
+      placement='top'
     >
-      <Grid container>
-        {value}
-        {hasDot && <Circle style={{ marginLeft: 2, fontSize: 6 }} />}
-        <Typography
-          textAlign='left'
-          fontSize={8}
-          sx={{ ml: 0 }}
-          component='span'
-        >
-          <b>{secondaryText}</b>
-        </Typography>
-      </Grid>
-    </Card>
+      <Card
+        key={value}
+        onClick={onClick}
+        sx={{
+          border: 1.5,
+          borderColor: hasBorder ? 'text.primary' : 'transparent',
+          opacity: hasFocus ? 1 : isActive ? 0.8 : 0.3,
+          padding: '2px 3px 2px 3px',
+          margin: 0,
+        }}
+        className={`key ${keyType}`}
+      >
+        <Grid container justifyContent='center'>
+          <Grid item>
+            <Typography textAlign='left' fontSize={18} component='span'>
+              {value}
+            </Typography>
+            {hasDot && (
+              <Circle style={{ marginLeft: 4, marginBottom: 4, fontSize: 5 }} />
+            )}
+          </Grid>
+        </Grid>
+      </Card>
+    </Tooltip>
   )
 }

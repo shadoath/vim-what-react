@@ -27,12 +27,13 @@ export const Header = () => {
             minWidth: '100px',
           }}
         >
-          <InputLabel>Keyboard</InputLabel>
+          {/* <InputLabel>Keyboard</InputLabel> */}
           <Select
             variant='standard'
             value={layout}
             label='Keyboard'
             onChange={handleLayoutChange}
+            size='small'
           >
             {Object.keys(keymaps).map((layout) => {
               return <MenuItem value={layout}>{layout}</MenuItem>
@@ -47,13 +48,14 @@ export const Header = () => {
             minWidth: '150px',
           }}
         >
-          <InputLabel>Lesson Level</InputLabel>
+          {/* <InputLabel>Lesson Level</InputLabel> */}
           <Select
             fullWidth
             variant='standard'
             value={lessonLevel}
             label='Lesson Level'
             onChange={handleLessonLevelChange}
+            size='small'
           >
             <MenuItem value={8}>Full Layout</MenuItem>
             {lessonLevels.map((level) => {
