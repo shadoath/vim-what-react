@@ -3,7 +3,6 @@ import { KeyInfoType } from './types'
 export const letters: Record<string, KeyInfoType> = {
   a: {
     title: 'lowercase',
-    image: '/images/letters/a.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#a',
@@ -14,7 +13,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   A: {
     title: 'UPPERCASE',
-    image: '/images/letters/aa.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#A',
@@ -23,7 +21,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   b: {
     title: 'lowercase',
-    image: '/images/letters/b.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#b',
     text: '[count] words backward.  |exclusive| motion.',
@@ -31,7 +28,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   B: {
     title: 'UPPERCASE',
-    image: '/images/letters/bb.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#B',
     text: '[count] WORDS backward.  |exclusive| motion.',
@@ -39,7 +35,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   c: {
     title: 'lowercase',
-    image: '/images/letters/c.png',
     action: 'operator',
     vimHelp: 'change.txt.html#c',
     text: '["x]c{motion}<br>Delete {motion}text [into register x] and start insert.',
@@ -47,7 +42,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   C: {
     title: 'UPPERCASE',
-    image: '/images/letters/cc.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'change.txt.html#C',
@@ -56,7 +50,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   d: {
     title: 'lowercase',
-    image: '/images/letters/d.png',
     action: 'operator',
     vimHelp: 'change.txt.html#d',
     text: '["x]d{motion}<br>Delete text that {motion} moves over [into register x].',
@@ -64,7 +57,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   D: {
     title: 'UPPERCASE',
-    image: '/images/letters/dd.png',
     action: 'command',
     vimHelp: 'change.txt.html#D',
     text: '["x]D<br>Delete the characters under the cursor until the end of the line and [count]-1 more lines [into register x];<br>Synonym for "d$" .',
@@ -72,7 +64,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   e: {
     title: 'lowercase',
-    image: '/images/letters/e.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#e',
     text: 'Forward to the end of word [count] |inclusive|.  Does not stop in an empty line.',
@@ -80,7 +71,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   E: {
     title: 'UPPERCASE',
-    image: '/images/letters/ee.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#E',
     text: 'Forward to the end of WORD [count] |inclusive|.  Does not stop in an empty line.',
@@ -88,7 +78,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   f: {
     title: 'lowercase',
-    image: '/images/letters/f.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#f',
@@ -97,7 +86,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   F: {
     title: 'UPPERCASE',
-    image: '/images/letters/ff.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#F',
@@ -106,7 +94,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   g: {
     title: 'lowercase',
-    image: '/images/letters/g.png',
     action: 'extra',
     hasDot: true,
     vimHelp: 'index.txt.html#g',
@@ -115,7 +102,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   G: {
     title: 'UPPERCASE',
-    image: '/images/letters/gg.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#G',
@@ -124,7 +110,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   h: {
     title: 'lowercase',
-    image: '/images/letters/h.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#h',
     text: 'Move left',
@@ -132,7 +117,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   H: {
     title: 'UPPERCASE',
-    image: '/images/letters/hh.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#H',
     text: 'Move to top of current visable window.',
@@ -140,7 +124,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   i: {
     title: 'lowercase',
-    image: '/images/letters/i.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#i',
@@ -149,7 +132,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   I: {
     title: 'UPPERCASE',
-    image: '/images/letters/ii.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#I',
@@ -158,7 +140,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   j: {
     title: 'lowercase',
-    image: '/images/letters/j.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#j',
     text: 'Move down while in normal mode',
@@ -166,7 +147,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   J: {
     title: 'UPPERCASE',
-    image: '/images/letters/jj.png',
     action: 'command',
     vimHelp: 'change.txt.html#J',
     text: 'Join next line to this line. Moves cursor to joined location',
@@ -174,7 +154,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   k: {
     title: 'lowercase',
-    image: '/images/letters/k.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#k',
     text: 'Move up.',
@@ -182,7 +161,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   K: {
     title: 'UPPERCASE',
-    image: '/images/letters/kk.png',
     action: 'command',
     vimHelp: 'various.txt.html#K',
     text: 'Pulls up :man or :help on current word.',
@@ -190,7 +168,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   l: {
     title: 'lowercase',
-    image: '/images/letters/l.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#l',
     text: 'Move right.',
@@ -198,7 +175,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   L: {
     title: 'UPPERCASE',
-    image: '/images/letters/ll.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#L',
     text: 'Move to to near bottom of current visable window.',
@@ -206,7 +182,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   m: {
     title: 'lowercase',
-    image: '/images/letters/m.png',
     action: 'command',
     hasDot: true,
     vimHelp: 'motion.txt.html#m',
@@ -215,7 +190,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   M: {
     title: 'UPPERCASE',
-    image: '/images/letters/mm.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#M',
     text: 'Move to the middle of the current visable window.',
@@ -223,7 +197,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   n: {
     title: 'lowercase',
-    image: '/images/letters/n.png',
     action: 'motion',
     vimHelp: 'pattern.txt.html#n',
     text: 'Move to next search item.',
@@ -231,7 +204,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   N: {
     title: 'UPPERCASE',
-    image: '/images/letters/nn.png',
     action: 'motion',
     vimHelp: 'pattern.txt.html#N',
     text: 'Move to next search item in reverse.',
@@ -239,7 +211,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   o: {
     title: 'lowercase',
-    image: '/images/letters/o.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#o',
@@ -248,7 +219,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   O: {
     title: 'UPPERCASE',
-    image: '/images/letters/oo.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'insert.txt.html#O',
@@ -257,7 +227,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   p: {
     title: 'lowercase',
-    image: '/images/letters/p.png',
     action: 'command',
     vimHelp: 'change.txt.html#p',
     text: 'Paste after cursor.',
@@ -265,7 +234,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   P: {
     title: 'UPPERCASE',
-    image: '/images/letters/pp.png',
     action: 'command',
     vimHelp: 'change.txt.html#P',
     text: 'Paste before cursor.',
@@ -273,7 +241,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   q: {
     title: 'lowercase',
-    image: '/images/letters/q.png',
     action: 'command',
     hasDot: true,
     vimHelp: 'repeat.txt.html#q',
@@ -282,7 +249,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   Q: {
     title: 'UPPERCASE',
-    image: '/images/letters/qq.png',
     action: 'command',
     vimHelp: 'intro.txt.html#Q',
     text: 'Enter into Ex mode where you can run commands like 21+21 and hit enter to get 42.',
@@ -290,7 +256,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   r: {
     title: 'lowercase',
-    image: '/images/letters/r.png',
     action: 'command',
     hasDot: true,
     vimHelp: 'change.txt.html#r',
@@ -299,7 +264,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   R: {
     title: 'UPPERCASE',
-    image: '/images/letters/rr.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'change.txt.html#R',
@@ -308,7 +272,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   s: {
     title: 'lowercase',
-    image: '/images/letters/s.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'change.txt.html#s',
@@ -317,7 +280,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   S: {
     title: 'UPPERCASE',
-    image: '/images/letters/ss.png',
     action: 'command',
     hasBorder: true,
     vimHelp: 'change.txt.html#S',
@@ -326,7 +288,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   t: {
     title: 'lowercase',
-    image: '/images/letters/t.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#t',
     text: "Move cursor to [count]'th occurance of character to the right.",
@@ -334,7 +295,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   T: {
     title: 'UPPERCASE',
-    image: '/images/letters/tt.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#T',
@@ -343,7 +303,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   u: {
     title: 'lowercase',
-    image: '/images/letters/u.png',
     action: 'command',
     vimHelp: 'undo.txt.html#u',
     text: 'Undo!',
@@ -351,7 +310,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   U: {
     title: 'UPPERCASE',
-    image: '/images/letters/uu.png',
     action: 'command',
     vimHelp: 'undo.txt.html#U',
     text: 'Undo all changes on the line where the last change was made.',
@@ -359,7 +317,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   v: {
     title: 'lowercase',
-    image: '/images/letters/v.png',
     action: 'command',
     vimHelp: 'visual.txt.html#v',
     text: 'Enter Visual mode.',
@@ -367,7 +324,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   V: {
     title: 'UPPERCASE',
-    image: '/images/letters/vv.png',
     action: 'command',
     vimHelp: 'visual.txt.html#V',
     text: 'Enter Visual mode linewise',
@@ -375,7 +331,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   w: {
     title: 'lowercase',
-    image: '/images/letters/w.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#w',
     plugins:
@@ -385,7 +340,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   W: {
     title: 'UPPERCASE',
-    image: '/images/letters/ww.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#W',
     text: 'Move one word backward',
@@ -393,7 +347,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   x: {
     title: 'lowercase',
-    image: '/images/letters/x.png',
     action: 'command',
     vimHelp: 'change.txt.html#x',
     plugins:
@@ -403,7 +356,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   X: {
     title: 'UPPERCASE',
-    image: '/images/letters/xx.png',
     action: 'command',
     vimHelp: 'change.txt.html#X',
     text: 'Delete character(s) under cursor and before.',
@@ -411,7 +363,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   y: {
     title: 'lowercase',
-    image: '/images/letters/y.png',
     action: 'operator',
     vimHelp: 'change.txt.html#y',
     text: 'Yank selected text',
@@ -419,7 +370,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   Y: {
     title: 'UPPERCASE',
-    image: '/images/letters/yy.png',
     action: 'command',
     vimHelp: 'change.txt.html#Y',
     text: 'Yank current line.',
@@ -427,7 +377,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   z: {
     title: 'lowercase',
-    image: '/images/letters/z.png',
     action: 'extra',
     hasDot: true,
     vimHelp: 'index.txt.html#z',
@@ -436,7 +385,6 @@ export const letters: Record<string, KeyInfoType> = {
   },
   Z: {
     title: 'UPPERCASE',
-    image: '/images/letters/zz.png',
     action: 'extra',
     hasDot: true,
     vimHelp: 'starting.txt.html#-Z',

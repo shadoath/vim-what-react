@@ -3,7 +3,6 @@ import { KeyInfoType } from './types'
 export const symbols: Record<string, KeyInfoType> = {
   '~': {
     title: 'Tilde',
-    image: '/images/symbols/tilde.png',
     action: 'command',
     vimHelp: 'change.txt.html#%7e',
     text: '',
@@ -11,7 +10,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '!': {
     title: 'Bang',
-    image: '/images/symbols/bang.png',
     action: 'operator',
     vimHelp: 'change.txt.html#%21',
     text: '',
@@ -19,7 +17,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '@': {
     title: 'At/Register',
-    image: '/images/symbols/at.png',
     action: 'command',
     hasDot: true,
     vimHelp: 'repeat.txt.html#%40',
@@ -28,7 +25,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '#': {
     title: 'Hash',
-    image: '/images/symbols/hash.png',
     action: 'motion',
     vimHelp: 'pattern.txt.html#%23',
     text: "Same as '*', but search backward.",
@@ -36,7 +32,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   $: {
     title: 'Money',
-    image: '/images/symbols/money.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%24',
     text: 'To end of line',
@@ -44,7 +39,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '%': {
     title: 'Percent',
-    image: '/images/symbols/percent.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%25',
     text: 'Find the next item in this line after or under the cursor and jump to its match. |inclusive| motion.',
@@ -52,7 +46,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '^': {
     title: 'Caret',
-    image: '/images/symbols/caret.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%5e',
     text: 'Return to first non-blank character',
@@ -60,7 +53,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '&': {
     title: 'Ampersand',
-    image: '/images/symbols/ampersand.png',
     action: 'command',
     vimHelp: 'change.txt.html#%26',
     text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
@@ -68,7 +60,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '&amp;': {
     title: 'Ampersand',
-    image: '/images/symbols/ampersand.png',
     action: 'motion',
     vimHelp: 'change.txt.html#%26',
     text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
@@ -76,7 +67,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '*': {
     title: 'Asterisk',
-    image: '/images/symbols/42.png',
     action: 'motion',
     vimHelp: 'pattern.txt.html#star',
     text: "Search forward for the [count]'th occurrence of the word nearest to the cursor",
@@ -84,7 +74,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '(': {
     title: 'Begin parenthesis',
-    image: '/images/symbols/begin_parenthesis.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%28',
     text: '[count] sentences backward.  |exclusive| motion.',
@@ -92,7 +81,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   ')': {
     title: 'End parenthesis',
-    image: '/images/symbols/end_parenthesis.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%29',
     text: '[count] sentences forward.  |exclusive| motion.',
@@ -100,7 +88,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   _: {
     title: 'Underscore',
-    image: '/images/symbols/underscore.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#_',
     text: '[count] - 1 lines downward, on the first non-blank character |linewise|.',
@@ -108,7 +95,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '+': {
     title: 'Plus',
-    image: '/images/symbols/plus.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%2b',
     text: '[count] lines downward, on the first non-blank character |linewise|.',
@@ -116,7 +102,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '-': {
     title: 'Minus/Dash',
-    image: '/images/symbols/dash.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#-',
     plugins: 'AndrewRadev/switch.vim | Change true/false, etc',
@@ -125,7 +110,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '=': {
     title: 'Equal',
-    image: '/images/symbols/equal.png',
     action: 'operator',
     vimHelp: 'change.txt.html#%3d',
     text: "Filter {motion} lines through the external program given with the 'equalprg' option.  When the 'equalprg' option is empty (this is the default), use the internal formatting function",
@@ -133,7 +117,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '`': {
     title: 'backtick',
-    image: '/images/symbols/backtick.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#%60',
@@ -142,7 +125,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '[': {
     title: 'Beginning Bracket',
-    image: '/images/symbols/begin_bracket.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'index.txt.html#%5b',
@@ -151,7 +133,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   ']': {
     title: 'Ending Bracket',
-    image: '/images/symbols/end_bracket.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'index.txt.html#%5d',
@@ -160,7 +141,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '{': {
     title: 'Begin Brace',
-    image: '/images/symbols/begin_brace.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%7b',
     text: '[count] paragraphs backward.  |exclusive| motion.',
@@ -168,7 +148,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '}': {
     title: 'End Brace',
-    image: '/images/symbols/end_brace.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%7d',
     text: '[count] paragraphs forward.  |exclusive| motion.',
@@ -176,7 +155,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '?': {
     title: 'Question Mark',
-    image: '/images/symbols/question_mark.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'pattern.txt.html#%3f',
@@ -185,7 +163,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '/': {
     title: 'Forward Slash',
-    image: '/images/symbols/forward_slash.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'pattern.txt.html#%2f',
@@ -194,7 +171,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '\\': {
     title: 'Back Slash',
-    image: '/images/symbols/back_slash.png',
     action: 'extra',
     hasDot: true,
     vimHelp: 'pattern.txt.html#%2f%5c',
@@ -203,7 +179,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '|': {
     title: 'Pipe',
-    image: '/images/symbols/pipe.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#bar',
     text: '',
@@ -211,7 +186,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '.': {
     title: 'dot',
-    image: '/images/symbols/dot.png',
     action: 'command',
     vimHelp: 'repeat.txt.html#.',
     text: '',
@@ -219,7 +193,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   ',': {
     title: 'Comma',
-    image: '/images/symbols/comma.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%2c',
     text: '',
@@ -227,7 +200,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '"': {
     title: 'Double Quote',
-    image: '/images/symbols/double_quote.png',
     action: 'extra',
     hasDot: true,
     vimHelp: 'pattern.txt.html#%2f%5c',
@@ -236,7 +208,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   "'": {
     title: 'Single Quote',
-    image: '/images/symbols/single_quote.png',
     action: 'motion',
     hasDot: true,
     vimHelp: 'motion.txt.html#%27',
@@ -245,7 +216,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   ';': {
     title: 'Semicolon',
-    image: '/images/symbols/semicolon.png',
     action: 'motion',
     vimHelp: 'motion.txt.html#%3b',
     text: '',
@@ -253,7 +223,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   ':': {
     title: 'Colon',
-    image: '/images/symbols/colon.png',
     action: 'command',
     vimHelp: 'cmdline.txt.html#%3a',
     text: 'Execute a command',
@@ -261,7 +230,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   // '&gt;': {
   //   title: 'Greater than',
-  //   image: '/images/symbols/greater_than.png',
   //   action: 'operator',
   //   ,
   //   vimHelp: '',
@@ -270,7 +238,6 @@ export const symbols: Record<string, KeyInfoType> = {
   // },
   // '&lt;': {
   //   title: 'Less than',
-  //   image: '/images/symbols/less_than.png',
   //   action: 'operator',
   //   ,
   //   vimHelp: '',
@@ -279,7 +246,6 @@ export const symbols: Record<string, KeyInfoType> = {
   // },
   '>': {
     title: 'Greater than',
-    image: '/images/symbols/greater_than.png',
     action: 'operator',
     vimHelp: 'change.txt.html#%3e',
     text: '',
@@ -287,7 +253,6 @@ export const symbols: Record<string, KeyInfoType> = {
   },
   '<': {
     title: 'Less than',
-    image: '/images/symbols/less_than.png',
     action: 'operator',
     vimHelp: 'change.txt.html#%3c',
     text: '',
