@@ -1,4 +1,4 @@
-import { KeyInfoType } from './types'
+import type { KeyInfoType } from './types'
 
 export const letters: Record<string, KeyInfoType> = {
   a: {
@@ -17,7 +17,7 @@ export const letters: Record<string, KeyInfoType> = {
     hasBorder: true,
     vimHelp: 'insert.txt.html#A',
     text: 'append at end of line',
-    secondaryText: 'append at col',
+    secondaryText: 'append eol',
   },
   b: {
     title: 'lowercase',
@@ -47,6 +47,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#C',
     text: '["x]C<br>Delete from the cursor position to the end of the line and [count]-1 more lines [into register x], and start insert.<br>Synonym for c$ (not |linewise|).',
     secondaryText: 'change to end of line',
+    shortText: 'chg eol',
   },
   d: {
     title: 'lowercase',
@@ -61,6 +62,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#D',
     text: '["x]D<br>Delete the characters under the cursor until the end of the line and [count]-1 more lines [into register x];<br>Synonym for "d$" .',
     secondaryText: 'delete to end of line',
+    shortText: 'del eol',
   },
   e: {
     title: 'lowercase',
@@ -91,6 +93,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'motion.txt.html#F',
     text: "F{char}<br>To the [count]'th occurrence of {char} to the left.<br> The cursor is placed on {char} |exclusive|.<br> {char} can be entered like with the |f| command.",
     secondaryText: '"back" find char',
+    shortText: 'back find',
   },
   g: {
     title: 'lowercase',
@@ -107,6 +110,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'motion.txt.html#G',
     text: "Goto line [count], default last line, on the first non-blank character |linewise|.<br> If 'startofline' not set, keep the same column.<br> G is a one of |jump-motions|.",
     secondaryText: 'eof/goto line',
+    shortText: 'goto ln',
   },
   h: {
     title: 'lowercase',
@@ -137,13 +141,14 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'insert.txt.html#I',
     text: 'Enter into insert mode at the beginning of the line.',
     secondaryText: 'insert mode at beginning of line',
+    shortText: 'insert bol',
   },
   j: {
     title: 'lowercase',
     action: 'motion',
     vimHelp: 'motion.txt.html#j',
     text: 'Move down while in normal mode',
-    secondaryText: '→',
+    secondaryText: '↓',
   },
   J: {
     title: 'UPPERCASE',
@@ -171,7 +176,7 @@ export const letters: Record<string, KeyInfoType> = {
     action: 'motion',
     vimHelp: 'motion.txt.html#l',
     text: 'Move right.',
-    secondaryText: '↓',
+    secondaryText: '→',
   },
   L: {
     title: 'UPPERCASE',
@@ -179,6 +184,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'motion.txt.html#L',
     text: 'Move to to near bottom of current visable window.',
     secondaryText: 'screen bottom',
+    shortText: 'screen bot',
   },
   m: {
     title: 'lowercase',
@@ -194,6 +200,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'motion.txt.html#M',
     text: 'Move to the middle of the current visable window.',
     secondaryText: 'screen middle',
+    shortText: 'screen mid',
   },
   n: {
     title: 'lowercase',
@@ -238,6 +245,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#P',
     text: 'Paste before cursor.',
     secondaryText: 'paste before',
+    shortText: 'paste ←',
   },
   q: {
     title: 'lowercase',
@@ -261,6 +269,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#r',
     text: 'Replace character under cursor with new character',
     secondaryText: 'replace char',
+    shortText: 'repl chr',
   },
   R: {
     title: 'UPPERCASE',
@@ -269,6 +278,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#R',
     text: 'Replace each character as you type. Backspace will revert until you exit replace mode',
     secondaryText: 'replace mode',
+    shortText: 'repl mode',
   },
   s: {
     title: 'lowercase',
@@ -277,6 +287,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#s',
     text: 'Delete character(s) under cursor and enters insert mode.',
     secondaryText: 'substitute char',
+    shortText: 'subst',
   },
   S: {
     title: 'UPPERCASE',
@@ -285,6 +296,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#S',
     text: 'Delete line(s) under cursor and enters insert mode.',
     secondaryText: 'substitute line',
+    shortText: 'subst ln',
   },
   t: {
     title: 'lowercase',
@@ -328,6 +340,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'visual.txt.html#V',
     text: 'Enter Visual mode linewise',
     secondaryText: 'visual lines',
+    shortText: 'vis lns',
   },
   w: {
     title: 'lowercase',

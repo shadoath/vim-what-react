@@ -1,4 +1,4 @@
-import { KeyInfoType } from './types'
+import type { KeyInfoType } from './types'
 
 export const symbols: Record<string, KeyInfoType> = {
   '~': {

@@ -1,5 +1,5 @@
 import { Box, Grid } from '@mui/material'
-import { useBaseContext } from '../contexts/baseContext'
+import { useBaseContext } from '../contexts/BaseContext'
 
 export const InfoArea = () => {
   const { docs, info, infoImage } = useBaseContext()

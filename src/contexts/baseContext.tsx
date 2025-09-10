@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { numbers } from './../lib/numbers'
-import { symbols } from './../lib/symbols'
-import { letters } from './../lib/letters'
-import { SelectChangeEvent } from '@mui/material'
+import { numbers } from '../lib/numbers'
+import { symbols } from '../lib/symbols'
+import { letters } from '../lib/letters'
+import type { SelectChangeEvent } from '@mui/material'
 
 type BaseContextType = {
   docs: string

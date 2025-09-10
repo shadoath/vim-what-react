@@ -1,4 +1,4 @@
-import { KeyInfoType } from './types'
+import type { KeyInfoType } from './types'
 
 export const numbers: Record<string, KeyInfoType> = {
   '0': {

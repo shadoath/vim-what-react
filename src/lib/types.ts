@@ -7,4 +7,5 @@ export type KeyInfoType = {
   plugins?: string
   text: string
   secondaryText?: string
+  shortText?: string
 }

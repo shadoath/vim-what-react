@@ -1,5 +1,5 @@
 import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material'
-import { useBaseContext } from '../contexts/baseContext'
+import { useBaseContext } from '../contexts/BaseContext'
 import { keymaps } from '../lib/layouts'
 import logo from './../vim-what.svg'
 import { lessonLevels } from '../lib/lessons'
