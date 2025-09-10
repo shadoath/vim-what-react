@@ -32,39 +32,39 @@ body {
 // Key type styles matching the original color scheme
 .key {
   transition: all 0.2s ease;
-  
+
   &.motion {
     background-color: #7dd3c0 !important; // teal/cyan
     color: #0f172a !important;
   }
-  
+
   &.operator {
-    background-color: #fbbf24 !important; // yellow/amber
+    background-color: #fb923c !important; // yellow/amber
     color: #0f172a !important;
   }
-  
+
   &.command {
-    background-color: #fb923c !important; // orange
+    background-color: #fbbf24 !important; // orange
     color: #0f172a !important;
   }
-  
+
   &.extra {
     background-color: #e5e7eb !important; // gray
     color: #0f172a !important;
   }
-  
+
   // Special highlighted keys
   &.motion.highlighted {
     background-color: #86efac !important; // bright green
   }
-  
+
   &.operator.highlighted {
     background-color: #fde047 !important; // bright yellow
   }
-  
+
   // Hover effects
   &:hover {
     filter: brightness(1.1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
 }
