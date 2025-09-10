@@ -1,15 +1,24 @@
 {
-  "name": "Vim... What?",
-  "description": "The power of React and TypeScript for building interactive Chrome extensions",
-  "version": "1.0",
+  "name": "Vim What? - React",
+  "description": "Learn Vim commands interactively with visual keyboard layouts and progressive lessons",
+  "version": "1.0.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
-    "default_title": "Open the popup"
+    "default_title": "Vim What? - Learn Vim Commands",
+    "default_icon": {
+      "16": "vim-what-16.png",
+      "48": "vim-what-48.png",
+      "128": "vim-what-128.png"
+    }
   },
   "icons": {
     "16": "vim-what-16.png",
     "48": "vim-what-48.png",
     "128": "vim-what-128.png"
+  },
+  "permissions": ["storage"],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
   }
 }
