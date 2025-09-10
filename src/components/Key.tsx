@@ -21,6 +21,7 @@ type KeyProps = {
   notes?: string[]
   secondaryText?: string
   shortText?: string
+  numberIndicator?: string | string[]
   hasFocus?: boolean
 }
 
@@ -46,6 +47,7 @@ export const Key = ({
   text,
   secondaryText,
   shortText,
+  numberIndicator,
   keyType = 'motion',
   isActive = true,
   hasFocus = false,
@@ -67,6 +69,9 @@ export const Key = ({
   // Check if displayText is an arrow
   const isArrow = displayText && ['←', '→', '↑', '↓'].includes(displayText)
   const arrowIcon = isArrow ? renderArrowIcon(displayText) : null
+  
+  // Check if this key enters insert mode
+  const insertsMode = ['R', 'I', 'O', 'i', 'o', 'A', 'a', 'S', 's', 'C', 'c'].includes(value)
 
   return (
     <Tooltip
@@ -91,11 +96,12 @@ export const Key = ({
           padding: '2px',
           margin: 0,
           width: '50px',
-          minHeight: '28px',
+          minHeight: '34px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
+          position: 'relative',
           '&:hover': {
             opacity: 1,
             transform: 'scale(1.05)',
@@ -104,6 +110,23 @@ export const Key = ({
         }}
         className={`key ${keyType}`}
       >
+        {/* Number indicator - absolute positioned */}
+        {numberIndicator && (
+          <Typography
+            sx={{
+              position: 'absolute',
+              top: '1px',
+              right: '2px',
+              fontSize: '10px',
+              color: 'red',
+              fontWeight: 'bold',
+              lineHeight: 1,
+            }}
+          >
+            {Array.isArray(numberIndicator) ? numberIndicator.join(',') : numberIndicator}
+          </Typography>
+        )}
+        
         <Box
           sx={{
             display: 'flex',
@@ -126,7 +149,10 @@ export const Key = ({
               fontSize={14}
               fontWeight='bold'
               component='span'
-              sx={{ lineHeight: 1 }}
+              sx={{ 
+                lineHeight: 1,
+                color: insertsMode ? 'red' : 'inherit'
+              }}
             >
               {value}
             </Typography>

@@ -8,4 +8,5 @@ export type KeyInfoType = {
   text: string
   secondaryText?: string
   shortText?: string
+  numberIndicator?: string | string[]
 }

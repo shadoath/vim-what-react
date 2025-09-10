@@ -37,6 +37,7 @@ export const Keyboard = () => {
                       text={keyInfo.text}
                       secondaryText={keyInfo.secondaryText}
                       shortText={keyInfo.shortText}
+                      numberIndicator={keyInfo.numberIndicator}
                       hasBorder={keyInfo.hasBorder}
                       keyType={keyInfo.action}
                       vimHelp={help}

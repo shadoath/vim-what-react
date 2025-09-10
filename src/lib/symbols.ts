@@ -250,6 +250,7 @@ export const symbols: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#%3e',
     text: '',
     secondaryText: 'indent',
+    numberIndicator: '3',
   },
   '<': {
     title: 'Less than',
@@ -257,5 +258,6 @@ export const symbols: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#%3c',
     text: '',
     secondaryText: 'un-indent',
+    numberIndicator: '3',
   },
 }

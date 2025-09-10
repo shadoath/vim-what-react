@@ -10,6 +10,7 @@ export const letters: Record<string, KeyInfoType> = {
       'tpope/vim-speeddating | Use CTRL-a/CTRL-x to increment dates, times, and more.',
     text: 'insert after cursor<br>{command} around {selector}<br>ctrl-a: ++',
     secondaryText: 'append',
+    numberIndicator: ['1', '4'],
   },
   A: {
     title: 'UPPERCASE',
@@ -39,6 +40,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#c',
     text: '["x]c{motion}<br>Delete {motion}text [into register x] and start insert.',
     secondaryText: 'change',
+    numberIndicator: ['1', '3'],
   },
   C: {
     title: 'UPPERCASE',
@@ -55,6 +57,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#d',
     text: '["x]d{motion}<br>Delete text that {motion} moves over [into register x].',
     secondaryText: 'delete',
+    numberIndicator: ['1', '3'],
   },
   D: {
     title: 'UPPERCASE',
@@ -102,6 +105,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'index.txt.html#g',
     text: 'A lot of Vim power found here! check out :help g',
     secondaryText: 'extra cmds',
+    numberIndicator: '6',
   },
   G: {
     title: 'UPPERCASE',
@@ -238,6 +242,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#p',
     text: 'Paste after cursor.',
     secondaryText: 'paste after',
+    numberIndicator: '1',
   },
   P: {
     title: 'UPPERCASE',
@@ -254,6 +259,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'repeat.txt.html#q',
     text: 'Start recording a macro. Use {a-z} for a fresh start or {A-Z} for appending.',
     secondaryText: 'record',
+    numberIndicator: '1',
   },
   Q: {
     title: 'UPPERCASE',
@@ -270,6 +276,7 @@ export const letters: Record<string, KeyInfoType> = {
     text: 'Replace character under cursor with new character',
     secondaryText: 'replace char',
     shortText: 'repl chr',
+    numberIndicator: '3',
   },
   R: {
     title: 'UPPERCASE',
@@ -366,13 +373,14 @@ export const letters: Record<string, KeyInfoType> = {
       'tpope/vim-speeddating | Use CTRL-a/CTRL-x to increment dates, times, and more.',
     text: 'Delete character(s) under cursor and after.',
     secondaryText: 'delete char',
+    numberIndicator: '2',
   },
   X: {
     title: 'UPPERCASE',
     action: 'command',
     vimHelp: 'change.txt.html#X',
     text: 'Delete character(s) under cursor and before.',
-    secondaryText: 'backspace',
+    secondaryText: 'back-space',
   },
   y: {
     title: 'lowercase',
@@ -380,6 +388,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'change.txt.html#y',
     text: 'Yank selected text',
     secondaryText: 'yank',
+    numberIndicator: ['1', '3'],
   },
   Y: {
     title: 'UPPERCASE',
@@ -395,6 +404,7 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'index.txt.html#z',
     text: 'Redraw window on cursor. z+ for top of window z- for bottom of window and z. for center.',
     secondaryText: 'extra cmds',
+    numberIndicator: '5',
   },
   Z: {
     title: 'UPPERCASE',
@@ -403,5 +413,6 @@ export const letters: Record<string, KeyInfoType> = {
     vimHelp: 'starting.txt.html#-Z',
     text: 'Amazingly unmapped.',
     secondaryText: 'quit',
+    numberIndicator: '4',
   },
 }
