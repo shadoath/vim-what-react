@@ -22,6 +22,7 @@ type KeyProps = {
   shortText?: string
   numberIndicator?: string | string[]
   hasFocus?: boolean
+  isSearchMatch?: boolean
 }
 
 // Helper function to render arrow icons
@@ -53,6 +54,7 @@ export const Key = ({
   hasDot,
   hasBorder,
   vimHelp,
+  isSearchMatch = false,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -89,7 +91,9 @@ export const Key = ({
         sx={{
           border: 1,
           borderColor: hasBorder ? 'text.primary' : 'transparent',
-          opacity: hasFocus ? 1 : isActive ? 0.8 : 0.3,
+          opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 0.8 : 0.3,
+          outline: isSearchMatch ? '2px solid #3b82f6' : 'none',
+          zIndex: isSearchMatch ? 1 : 'auto',
           padding: '2px',
           margin: 0,
           width: '50px',

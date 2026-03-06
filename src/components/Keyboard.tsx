@@ -10,7 +10,7 @@ import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel, setSelectedKey } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey, searchQuery } = useBaseContext()
   useKeyboardNav(setSelectedKey)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
@@ -31,6 +31,11 @@ export const Keyboard = () => {
                 // make use of lessonLevel if the keyboard key is not in that level then change display to dark for that key
                 const isActive = activeKeys.includes(k)
                 const hasFocus = focusedKeys.includes(k)
+                const isSearchMatch =
+                  searchQuery.length > 0 &&
+                  (k.toLowerCase() === searchQuery.toLowerCase() ||
+                    keyInfo.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    (keyInfo.secondaryText?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false))
 
                 return (
                   <Grid item key={`${i}-${j}`}>
@@ -46,6 +51,7 @@ export const Keyboard = () => {
                       hasDot={keyInfo.hasDot}
                       isActive={isActive}
                       hasFocus={hasFocus}
+                      isSearchMatch={isSearchMatch}
                     />
                   </Grid>
                 )

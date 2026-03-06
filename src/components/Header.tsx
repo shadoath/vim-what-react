@@ -1,11 +1,12 @@
-import { Grid, FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+import { Grid, FormControl, Select, MenuItem, InputBase, Box } from '@mui/material'
+import { Search } from '@mui/icons-material'
 import { useBaseContext } from '../contexts/BaseContext'
 import { keymaps } from '../lib/layouts'
 import logo from './../vim-what.svg'
 import { lessonLevels } from '../lib/lessons'
 
 export const Header = () => {
-  const { layout, handleLayoutChange, lessonLevel, handleLessonLevelChange } =
+  const { layout, handleLayoutChange, lessonLevel, handleLessonLevelChange, searchQuery, setSearchQuery } =
     useBaseContext()
   return (
     <Grid container spacing={2} justifyContent='space-between'>
@@ -39,6 +40,18 @@ export const Header = () => {
             })}
           </Select>
         </FormControl>
+      </Grid>
+      <Grid item>
+        <Box sx={{ display: 'flex', alignItems: 'center', border: '1px solid rgba(0,0,0,0.2)', borderRadius: 1, px: 1, py: 0.25 }}>
+          <Search sx={{ fontSize: 14, opacity: 0.5, mr: 0.5 }} />
+          <InputBase
+            placeholder='search keys…'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            sx={{ fontSize: 12, width: 90 }}
+            inputProps={{ 'aria-label': 'search keys' }}
+          />
+        </Box>
       </Grid>
       <Grid item>
         <FormControl
