@@ -13,12 +13,11 @@ export type KeyType = 'motion' | 'operator' | 'command' | 'extra'
 type KeyProps = {
   value: string
   text: string
-  keyType: string //KeyType
+  keyType: KeyType
   isActive?: boolean
   hasDot?: boolean
   hasBorder?: boolean
   vimHelp?: string
-  notes?: string[]
   secondaryText?: string
   shortText?: string
   numberIndicator?: string | string[]
@@ -54,13 +53,12 @@ export const Key = ({
   hasDot,
   hasBorder,
   vimHelp,
-  notes,
 }: KeyProps) => {
   const { setDocs, setInfo } = useBaseContext()
 
   const onClick = () => {
     setInfo(text)
-    if (vimHelp) setDocs(`http://vimHelp.appspot.com/${vimHelp}`)
+    if (vimHelp) setDocs(`http://vimhelp.appspot.com/${vimHelp}`)
   }
 
   // Use shortText if available, otherwise fallback to secondaryText

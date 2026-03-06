@@ -58,13 +58,6 @@ export const symbols: Record<string, KeyInfoType> = {
     text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
     secondaryText: 'repeat :s',
   },
-  '&amp;': {
-    title: 'Ampersand',
-    action: 'motion',
-    vimHelp: 'change.txt.html#%26',
-    text: 'Synonym for `:s` (repeat last substitute)<br>Note that the flags are not remembered, thus it might actually work differently.<br>You can use `:&&` to keep the flags.',
-    secondaryText: 'repeat :s',
-  },
   '*': {
     title: 'Asterisk',
     action: 'motion',
@@ -228,22 +221,6 @@ export const symbols: Record<string, KeyInfoType> = {
     text: 'Execute a command',
     secondaryText: 'ex command line',
   },
-  // '&gt;': {
-  //   title: 'Greater than',
-  //   action: 'operator',
-  //   ,
-  //   vimHelp: '',
-  //   text: '',
-  //   secondaryText: 'indent',
-  // },
-  // '&lt;': {
-  //   title: 'Less than',
-  //   action: 'operator',
-  //   ,
-  //   vimHelp: '',
-  //   text: '',
-  //   secondaryText: 'un-indent',
-  // },
   '>': {
     title: 'Greater than',
     action: 'operator',

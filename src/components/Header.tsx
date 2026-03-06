@@ -27,7 +27,6 @@ export const Header = () => {
             minWidth: '100px',
           }}
         >
-          {/* <InputLabel>Keyboard</InputLabel> */}
           <Select
             variant='standard'
             value={layout}
@@ -36,7 +35,7 @@ export const Header = () => {
             size='small'
           >
             {Object.keys(keymaps).map((layout) => {
-              return <MenuItem value={layout}>{layout}</MenuItem>
+              return <MenuItem key={layout} value={layout}>{layout}</MenuItem>
             })}
           </Select>
         </FormControl>
@@ -48,7 +47,6 @@ export const Header = () => {
             minWidth: '150px',
           }}
         >
-          {/* <InputLabel>Lesson Level</InputLabel> */}
           <Select
             fullWidth
             variant='standard'
@@ -59,7 +57,7 @@ export const Header = () => {
           >
             <MenuItem value={8}>Full Layout</MenuItem>
             {lessonLevels.map((level) => {
-              return <MenuItem value={level}>{`Level ${level}`}</MenuItem>
+              return <MenuItem key={level} value={level}>{`Level ${level}`}</MenuItem>
             })}
           </Select>
         </FormControl>

@@ -9,7 +9,7 @@ import { Key } from './Key'
 import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
 
 export const Keyboard = () => {
-  const { layout, allKeys, lessonLevel } = useBaseContext()
+  const { layout, lessonLevel } = useBaseContext()
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
 
@@ -20,11 +20,11 @@ export const Keyboard = () => {
         const extraSpacing = i % 2 === 1 ? { marginBottom: '8px' } : {}
 
         return (
-          <Grid item style={extraSpacing}>
+          <Grid item key={i} style={extraSpacing}>
             <Grid container spacing={0.3} justifyContent='center'>
               {row.split('').map((k, j) => {
-                const key = allKeys.find((aKey) => aKey === k) as AllKeyTypes
-                const keyInfo = allKeysWithInfo[key]
+                const keyInfo = allKeysWithInfo[k as AllKeyTypes]
+                if (!keyInfo) return null
                 const help = keyInfo?.vimHelp ?? ''
                 // make use of lessonLevel if the keyboard key is not in that level then change display to dark for that key
                 const isActive = activeKeys.includes(k)

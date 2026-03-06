@@ -15,7 +15,7 @@ export const InfoArea = () => {
             />
           </Grid>
         )}
-        {info && <Grid item>{info}</Grid>}
+        {info && <Grid item><span dangerouslySetInnerHTML={{ __html: String(info) }} /></Grid>}
         {docs && (
           <Grid item>
             Read the{' '}
