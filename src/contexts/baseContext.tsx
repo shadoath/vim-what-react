@@ -27,7 +27,7 @@ type BaseContextType = {
   toggleLearned: (key: string) => void
   keyOfDay: string
 }
-type LayoutTypes = 'Qwerty' | 'Colemak'
+type LayoutTypes = 'Qwerty' | 'Colemak' | 'Colemak-DH' | 'Dvorak' | 'Workman'
 
 const BaseContext = React.createContext<BaseContextType | undefined>(undefined)
 export const allKeysWithInfo = { ...letters, ...numbers, ...symbols }
