@@ -54,11 +54,10 @@ export const Key = ({
   hasBorder,
   vimHelp,
 }: KeyProps) => {
-  const { setDocs, setInfo } = useBaseContext()
+  const { setSelectedKey } = useBaseContext()
 
   const onClick = () => {
-    setInfo(text)
-    if (vimHelp) setDocs(`http://vimhelp.appspot.com/${vimHelp}`)
+    setSelectedKey(value)
   }
 
   // Use shortText if available, otherwise fallback to secondaryText
