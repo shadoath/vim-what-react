@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { InfoArea } from './components/InfoArea'
 import { Keyboard } from './components/Keyboard'
 import { CustomMappings } from './components/CustomMappings'
+import { TextObjects } from './components/TextObjects'
 import { BaseContextProvider } from './contexts/BaseContext'
 import theme from './lib/theme'
 import { Grid } from '@mui/material'
@@ -25,6 +26,9 @@ function App() {
             </Grid>
             <Grid container item>
               <CustomMappings />
+            </Grid>
+            <Grid container item>
+              <TextObjects />
             </Grid>
           </Grid>
         </BaseContextProvider>
