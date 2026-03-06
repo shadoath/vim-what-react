@@ -203,10 +203,13 @@ export const Key = ({
                 component='span'
                 sx={{
                   opacity: 0.7,
-                  lineHeight: 0.9,
+                  lineHeight: 1,
                   textAlign: 'center',
                   wordBreak: 'break-word',
-                  display: 'block',
+                  overflow: 'hidden',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
                   color: prefixOverride ? '#1d4ed8' : 'inherit',
                 }}
               >

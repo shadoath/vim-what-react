@@ -17,7 +17,7 @@ export const InfoArea = () => {
     return (
       <Box sx={{ p: 1 }}>
         {infoImage && (
-          <img src={infoImage} alt='lesson overview' style={{ width: '100%' }} />
+          <img src={infoImage} alt='lesson overview' style={{ width: '100%', maxHeight: 220, objectFit: 'contain' }} />
         )}
       </Box>
     )
