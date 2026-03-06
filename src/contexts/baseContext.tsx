@@ -30,15 +30,16 @@ export const BaseContextProvider = ({
 }) => {
   const allKeys = Object.keys(allKeysWithInfo)
 
-  const [layout, setLayout] = useState<LayoutTypes>('Qwerty')
+  const [layout, setLayout] = useState<LayoutTypes>(() => (localStorage.getItem('vim-what-layout') as LayoutTypes) ?? 'Qwerty')
   const [info, setInfo] = useState<AllKeyTypes>('')
   const [docs, setDocs] = useState('')
   const [infoImage, setInfoImage] = useState('/about/all.png')
-  const [lessonLevel, setLessonLevel] = useState<number>(8)
+  const [lessonLevel, setLessonLevel] = useState<number>(() => { const saved = localStorage.getItem('vim-what-lesson'); return saved !== null ? Number(saved) : 8 })
 
   const handleLessonLevelChange = (event: SelectChangeEvent<number>) => {
     const level = Number(event.target.value)
     setLessonLevel(level)
+    localStorage.setItem('vim-what-lesson', String(level))
     if (level === 8) {
       setInfoImage('/about/all.png')
     } else {
@@ -51,6 +52,7 @@ export const BaseContextProvider = ({
   const handleLayoutChange = (event: SelectChangeEvent<LayoutTypes>) => {
     const layout = event.target.value as LayoutTypes
     setLayout(layout)
+    localStorage.setItem('vim-what-layout', layout)
   }
 
   return (
