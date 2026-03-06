@@ -5,17 +5,16 @@ import { letters } from '../lib/letters'
 import type { SelectChangeEvent } from '@mui/material'
 
 type BaseContextType = {
-  docs: string
-  info: string | number
+  selectedKey: string
+  setSelectedKey: React.Dispatch<React.SetStateAction<string>>
   infoImage: string
-  setDocs: React.Dispatch<React.SetStateAction<string>>
-  setInfo: React.Dispatch<React.SetStateAction<string | number>>
   allKeys: string[]
   layout: LayoutTypes
   handleLayoutChange: (event: SelectChangeEvent<LayoutTypes>) => void
-
   lessonLevel: number
   handleLessonLevelChange: (event: SelectChangeEvent<number>) => void
+  searchQuery: string
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>
 }
 type LayoutTypes = 'Qwerty' | 'Colemak'
 
@@ -31,10 +30,10 @@ export const BaseContextProvider = ({
   const allKeys = Object.keys(allKeysWithInfo)
 
   const [layout, setLayout] = useState<LayoutTypes>(() => (localStorage.getItem('vim-what-layout') as LayoutTypes) ?? 'Qwerty')
-  const [info, setInfo] = useState<AllKeyTypes>('')
-  const [docs, setDocs] = useState('')
+  const [selectedKey, setSelectedKey] = useState('')
   const [infoImage, setInfoImage] = useState('/about/all.png')
   const [lessonLevel, setLessonLevel] = useState<number>(() => { const saved = localStorage.getItem('vim-what-lesson'); return saved !== null ? Number(saved) : 8 })
+  const [searchQuery, setSearchQuery] = useState('')
 
   const handleLessonLevelChange = (event: SelectChangeEvent<number>) => {
     const level = Number(event.target.value)
@@ -45,8 +44,7 @@ export const BaseContextProvider = ({
     } else {
       setInfoImage('/about/lesson_' + level + '.png')
     }
-    setInfo('')
-    setDocs('')
+    setSelectedKey('')
   }
 
   const handleLayoutChange = (event: SelectChangeEvent<LayoutTypes>) => {
@@ -59,15 +57,15 @@ export const BaseContextProvider = ({
     <BaseContext.Provider
       value={{
         allKeys,
-        docs,
         handleLayoutChange,
         handleLessonLevelChange,
-        info,
         infoImage,
         layout,
         lessonLevel,
-        setDocs,
-        setInfo,
+        selectedKey,
+        setSelectedKey,
+        searchQuery,
+        setSearchQuery,
       }}
     >
       {children}
