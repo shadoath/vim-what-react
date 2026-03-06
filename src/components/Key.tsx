@@ -1,4 +1,4 @@
-import { Card, Grid, Tooltip, Typography, Box } from '@mui/material'
+import { Card, Tooltip, Typography, Box } from '@mui/material'
 import {
   Circle,
   ArrowBack,
