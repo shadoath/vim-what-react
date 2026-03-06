@@ -1,11 +1,11 @@
 {
-  "name": "Vim What? - React",
-  "description": "Learn Vim commands interactively with visual keyboard layouts and progressive lessons",
-  "version": "1.0.0",
+  "name": "Vim What?",
+  "description": "Learn Vim commands interactively with a visual keyboard, progressive lessons, and prefix mode overlays.",
+  "version": "0.2.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
-    "default_title": "Vim What? - Learn Vim Commands",
+    "default_title": "Vim What?",
     "default_icon": {
       "16": "vim-what-16.png",
       "48": "vim-what-48.png",
