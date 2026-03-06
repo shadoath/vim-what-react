@@ -26,6 +26,7 @@ type KeyProps = {
   prefixOverride?: string
   hasCustomMapping?: boolean
   isAnimating?: boolean
+  isLearned?: boolean
 }
 
 // Helper function to render arrow icons
@@ -61,6 +62,7 @@ export const Key = ({
   prefixOverride = undefined,
   hasCustomMapping = false,
   isAnimating = false,
+  isLearned = false,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -174,6 +176,22 @@ export const Key = ({
             {hasDot && <Circle sx={{ fontSize: 3 }} />}
             {hasCustomMapping && (
               <Circle sx={{ fontSize: 4, color: '#7c3aed', position: 'absolute', bottom: 2, left: 2 }} />
+            )}
+            {isLearned && (
+              <Box
+                sx={{
+                  position: 'absolute',
+                  bottom: 1,
+                  right: 1,
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  backgroundColor: '#16a34a',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              />
             )}
           </Box>
 

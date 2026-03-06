@@ -1,4 +1,4 @@
-import { Box, Chip, Grid, Link, Typography } from '@mui/material'
+import { Box, Button, Chip, Grid, Link, Typography } from '@mui/material'
 import { allKeysWithInfo, useBaseContext } from '../contexts/BaseContext'
 import type { AllKeyTypes } from '../contexts/BaseContext'
 
@@ -10,7 +10,7 @@ const actionColors: Record<string, string> = {
 }
 
 export const InfoArea = () => {
-  const { selectedKey, infoImage, customMappings } = useBaseContext()
+  const { selectedKey, infoImage, customMappings, learnedKeys, toggleLearned } = useBaseContext()
   const keyInfo = allKeysWithInfo[selectedKey as AllKeyTypes]
 
   if (!selectedKey || !keyInfo) {
@@ -103,6 +103,24 @@ export const InfoArea = () => {
               </Typography>
             </Box>
           )}
+          <Box sx={{ mt: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Button
+              size='small'
+              variant={learnedKeys.includes(selectedKey) ? 'contained' : 'outlined'}
+              onClick={() => toggleLearned(selectedKey)}
+              sx={{
+                fontSize: 10,
+                py: 0.25,
+                px: 1,
+                minWidth: 0,
+                ...(learnedKeys.includes(selectedKey)
+                  ? { backgroundColor: '#16a34a', '&:hover': { backgroundColor: '#15803d' } }
+                  : { borderColor: '#16a34a', color: '#16a34a', '&:hover': { borderColor: '#15803d', backgroundColor: '#f0fdf4' } }),
+              }}
+            >
+              {learnedKeys.includes(selectedKey) ? '✓ Learned' : 'Mark as learned'}
+            </Button>
+          </Box>
         </Grid>
       </Grid>
     </Box>
