@@ -1,6 +1,8 @@
+import type { KeyType } from '../components/Key'
+
 export type KeyInfoType = {
   title: string
-  action: string
+  action: KeyType
   hasDot?: boolean
   hasBorder?: boolean
   vimHelp: string
