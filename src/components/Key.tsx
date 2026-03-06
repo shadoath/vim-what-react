@@ -24,6 +24,7 @@ type KeyProps = {
   hasFocus?: boolean
   isSearchMatch?: boolean
   prefixOverride?: string
+  hasCustomMapping?: boolean
 }
 
 // Helper function to render arrow icons
@@ -57,6 +58,7 @@ export const Key = ({
   vimHelp,
   isSearchMatch = false,
   prefixOverride = undefined,
+  hasCustomMapping = false,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -161,6 +163,9 @@ export const Key = ({
               {value}
             </Typography>
             {hasDot && <Circle sx={{ fontSize: 3 }} />}
+            {hasCustomMapping && (
+              <Circle sx={{ fontSize: 4, color: '#7c3aed', position: 'absolute', bottom: 2, left: 2 }} />
+            )}
           </Box>
 
           {/* Secondary text or arrow */}

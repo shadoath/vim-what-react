@@ -10,7 +10,7 @@ const actionColors: Record<string, string> = {
 }
 
 export const InfoArea = () => {
-  const { selectedKey, infoImage } = useBaseContext()
+  const { selectedKey, infoImage, customMappings } = useBaseContext()
   const keyInfo = allKeysWithInfo[selectedKey as AllKeyTypes]
 
   if (!selectedKey || !keyInfo) {
@@ -92,6 +92,16 @@ export const InfoArea = () => {
             >
               :help {keyInfo.vimHelp?.replace('.html', '').replace(/#.*/, '')}
             </Link>
+          )}
+          {customMappings[selectedKey] && (
+            <Box sx={{ mt: 0.5, p: 0.75, borderRadius: 1, backgroundColor: '#f5f3ff', border: '1px solid #7c3aed' }}>
+              <Typography sx={{ fontSize: 11, color: '#7c3aed', fontWeight: 'bold' }}>
+                Custom mapping
+              </Typography>
+              <Typography sx={{ fontSize: 12 }}>
+                {customMappings[selectedKey]}
+              </Typography>
+            </Box>
           )}
         </Grid>
       </Grid>

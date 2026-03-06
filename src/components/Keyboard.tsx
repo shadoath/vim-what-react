@@ -11,7 +11,7 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings } = useBaseContext()
   useKeyboardNav(setSelectedKey)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
@@ -38,6 +38,7 @@ export const Keyboard = () => {
                     keyInfo.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
                     (keyInfo.secondaryText?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false))
                 const prefixKeyInfo = prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[k] : undefined
+                const hasCustomMapping = k in customMappings
 
                 return (
                   <Grid item key={`${i}-${j}`}>
@@ -55,6 +56,7 @@ export const Keyboard = () => {
                       hasFocus={hasFocus}
                       isSearchMatch={isSearchMatch}
                       prefixOverride={prefixKeyInfo}
+                      hasCustomMapping={hasCustomMapping}
                     />
                   </Grid>
                 )
