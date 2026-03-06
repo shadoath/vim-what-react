@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import { Grid } from '@mui/material'
 import {
   allKeysWithInfo,
@@ -12,7 +13,15 @@ import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
   const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings } = useBaseContext()
-  useKeyboardNav(setSelectedKey)
+  const [animatingKey, setAnimatingKey] = useState('')
+
+  const handleKeyboardSelect = useCallback((key: string) => {
+    setSelectedKey(key)
+    setAnimatingKey(key)
+    setTimeout(() => setAnimatingKey(''), 400)
+  }, [setSelectedKey])
+
+  useKeyboardNav(handleKeyboardSelect)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
 
@@ -57,6 +66,7 @@ export const Keyboard = () => {
                       isSearchMatch={isSearchMatch}
                       prefixOverride={prefixKeyInfo}
                       hasCustomMapping={hasCustomMapping}
+                      isAnimating={k === animatingKey}
                     />
                   </Grid>
                 )

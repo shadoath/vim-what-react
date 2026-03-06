@@ -25,6 +25,7 @@ type KeyProps = {
   isSearchMatch?: boolean
   prefixOverride?: string
   hasCustomMapping?: boolean
+  isAnimating?: boolean
 }
 
 // Helper function to render arrow icons
@@ -59,6 +60,7 @@ export const Key = ({
   isSearchMatch = false,
   prefixOverride = undefined,
   hasCustomMapping = false,
+  isAnimating = false,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -113,6 +115,13 @@ export const Key = ({
             transform: 'scale(1.05)',
             transition: 'all 0.2s ease',
           },
+          ...(isAnimating ? {
+            animation: 'keyPulse 0.4s ease-out',
+            '@keyframes keyPulse': {
+              '0%': { transform: 'scale(1.2)', boxShadow: '0 0 10px rgba(59,130,246,0.7)' },
+              '100%': { transform: 'scale(1)', boxShadow: 'none' },
+            },
+          } : {}),
         }}
         className={`key ${keyType}`}
       >
