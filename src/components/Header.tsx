@@ -1,4 +1,4 @@
-import { Box, FormControl, InputBase, MenuItem, Select, ToggleButton, ToggleButtonGroup, Typography } from '@mui/material'
+import { Box, FormControl, InputBase, MenuItem, Select, ToggleButton, ToggleButtonGroup, Tooltip, Typography } from '@mui/material'
 import { Search } from '@mui/icons-material'
 import { allKeysWithInfo, useBaseContext } from '../contexts/BaseContext'
 import type { AllKeyTypes } from '../contexts/BaseContext'
@@ -80,22 +80,30 @@ export const Header = () => {
         size='small'
         sx={{ height: 26 }}
       >
-        <ToggleButton value='g' sx={{ fontSize: 11, px: 0.75, py: 0 }}>g</ToggleButton>
-        <ToggleButton value='z' sx={{ fontSize: 11, px: 0.75, py: 0 }}>z</ToggleButton>
-        <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 0.75, py: 0 }}>^</ToggleButton>
+        <Tooltip title='g prefix — overlay g+key commands' placement='bottom' arrow>
+          <ToggleButton value='g' sx={{ fontSize: 11, px: 0.75, py: 0 }}>g</ToggleButton>
+        </Tooltip>
+        <Tooltip title='z prefix — overlay z+key commands (folds, scroll)' placement='bottom' arrow>
+          <ToggleButton value='z' sx={{ fontSize: 11, px: 0.75, py: 0 }}>z</ToggleButton>
+        </Tooltip>
+        <Tooltip title='Ctrl prefix — overlay Ctrl+key commands' placement='bottom' arrow>
+          <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 0.75, py: 0 }}>^</ToggleButton>
+        </Tooltip>
       </ToggleButtonGroup>
-      <ToggleButton
-        value='shift'
-        selected={shiftLocked}
-        onChange={() => setShiftLocked(!shiftLocked)}
-        size='small'
-        sx={{
-          height: 26, fontSize: 11, px: 0.75, py: 0,
-          '&.Mui-selected': { backgroundColor: '#6366f1', color: '#fff', '&:hover': { backgroundColor: '#4f46e5' } },
-        }}
-      >
-        ⇧
-      </ToggleButton>
+      <Tooltip title='Shift lock — show uppercase / symbol layer' placement='bottom' arrow>
+        <ToggleButton
+          value='shift'
+          selected={shiftLocked}
+          onChange={() => setShiftLocked(!shiftLocked)}
+          size='small'
+          sx={{
+            height: 26, fontSize: 11, px: 0.75, py: 0,
+            '&.Mui-selected': { backgroundColor: '#6366f1', color: '#fff', '&:hover': { backgroundColor: '#4f46e5' } },
+          }}
+        >
+          ⇧
+        </ToggleButton>
+      </Tooltip>
 
       {/* Lesson selector */}
       <FormControl size='small' sx={{ minWidth: 100 }}>
