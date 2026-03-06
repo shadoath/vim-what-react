@@ -8,9 +8,10 @@ import { keymaps } from '../lib/layouts'
 import { Key } from './Key'
 import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
+import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel, setSelectedKey, searchQuery } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode } = useBaseContext()
   useKeyboardNav(setSelectedKey)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
@@ -36,6 +37,7 @@ export const Keyboard = () => {
                   (k.toLowerCase() === searchQuery.toLowerCase() ||
                     keyInfo.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
                     (keyInfo.secondaryText?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false))
+                const prefixKeyInfo = prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[k] : undefined
 
                 return (
                   <Grid item key={`${i}-${j}`}>
@@ -52,6 +54,7 @@ export const Keyboard = () => {
                       isActive={isActive}
                       hasFocus={hasFocus}
                       isSearchMatch={isSearchMatch}
+                      prefixOverride={prefixKeyInfo}
                     />
                   </Grid>
                 )

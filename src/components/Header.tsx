@@ -1,4 +1,4 @@
-import { Grid, FormControl, Select, MenuItem, InputBase, Box } from '@mui/material'
+import { Grid, FormControl, Select, MenuItem, InputBase, Box, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { Search } from '@mui/icons-material'
 import { useBaseContext } from '../contexts/BaseContext'
 import { keymaps } from '../lib/layouts'
@@ -6,7 +6,7 @@ import logo from './../vim-what.svg'
 import { lessonLevels } from '../lib/lessons'
 
 export const Header = () => {
-  const { layout, handleLayoutChange, lessonLevel, handleLessonLevelChange, searchQuery, setSearchQuery } =
+  const { layout, handleLayoutChange, lessonLevel, handleLessonLevelChange, searchQuery, setSearchQuery, prefixMode, setPrefixMode } =
     useBaseContext()
   return (
     <Grid container spacing={2} justifyContent='space-between'>
@@ -52,6 +52,19 @@ export const Header = () => {
             inputProps={{ 'aria-label': 'search keys' }}
           />
         </Box>
+      </Grid>
+      <Grid item>
+        <ToggleButtonGroup
+          value={prefixMode}
+          exclusive
+          onChange={(_e, val) => setPrefixMode(val ?? 'none')}
+          size='small'
+          sx={{ height: 28 }}
+        >
+          <ToggleButton value='g' sx={{ fontSize: 11, px: 1, py: 0 }}>g</ToggleButton>
+          <ToggleButton value='z' sx={{ fontSize: 11, px: 1, py: 0 }}>z</ToggleButton>
+          <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 1, py: 0 }}>^</ToggleButton>
+        </ToggleButtonGroup>
       </Grid>
       <Grid item>
         <FormControl

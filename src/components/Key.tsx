@@ -23,6 +23,7 @@ type KeyProps = {
   numberIndicator?: string | string[]
   hasFocus?: boolean
   isSearchMatch?: boolean
+  prefixOverride?: string
 }
 
 // Helper function to render arrow icons
@@ -55,6 +56,7 @@ export const Key = ({
   hasBorder,
   vimHelp,
   isSearchMatch = false,
+  prefixOverride = undefined,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -91,6 +93,7 @@ export const Key = ({
         sx={{
           border: 1,
           borderColor: hasBorder ? 'text.primary' : 'transparent',
+          ...(prefixOverride ? { backgroundColor: '#dbeafe !important' } : {}),
           opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 0.8 : 0.3,
           outline: isSearchMatch ? '2px solid #3b82f6' : 'none',
           zIndex: isSearchMatch ? 1 : 'auto',
@@ -161,8 +164,8 @@ export const Key = ({
           </Box>
 
           {/* Secondary text or arrow */}
-          {displayText &&
-            (arrowIcon || (
+          {(prefixOverride ?? displayText) &&
+            ((!prefixOverride && arrowIcon) || (
               <Typography
                 fontSize={9}
                 component='span'
@@ -172,9 +175,10 @@ export const Key = ({
                   textAlign: 'center',
                   wordBreak: 'break-word',
                   display: 'block',
+                  color: prefixOverride ? '#1d4ed8' : 'inherit',
                 }}
               >
-                {displayText}
+                {prefixOverride ?? displayText}
               </Typography>
             ))}
         </Box>
