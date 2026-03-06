@@ -12,6 +12,10 @@ export const useKeyboardNav = (setSelectedKey: (key: string) => void) => {
         e.preventDefault()
         setSelectedKey(key)
       }
+      if (key === 'Escape') {
+        e.preventDefault()
+        setSelectedKey('')
+      }
     }
 
     window.addEventListener('keydown', handleKeyDown)
