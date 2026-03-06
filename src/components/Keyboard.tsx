@@ -7,9 +7,11 @@ import {
 import { keymaps } from '../lib/layouts'
 import { Key } from './Key'
 import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
+import { useKeyboardNav } from '../hooks/useKeyboardNav'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey } = useBaseContext()
+  useKeyboardNav(setSelectedKey)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
 
