@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { Box, Chip, Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import {
   allKeysWithInfo,
   type AllKeyTypes,
@@ -13,9 +13,8 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings, learnedKeys } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings, learnedKeys, shiftLocked } = useBaseContext()
   const [animatingKey, setAnimatingKey] = useState('')
-  const [shiftLocked, setShiftLocked] = useState(false)
   const [shiftHeld, setShiftHeld] = useState(false)
   const shiftMode = shiftLocked || shiftHeld
 
@@ -36,25 +35,6 @@ export const Keyboard = () => {
 
   return (
     <Box>
-      {/* Shift toggle bar */}
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 1, py: 0.5 }}>
-        <Chip
-          label={shiftLocked ? '⇧ Locked' : shiftHeld ? '⇧ Shift' : '⇧'}
-          size='small'
-          onClick={() => setShiftLocked(!shiftLocked)}
-          variant={shiftLocked ? 'filled' : 'outlined'}
-          sx={{
-            cursor: 'pointer',
-            fontSize: 11,
-            height: 22,
-            backgroundColor: shiftLocked ? '#6366f1' : shiftHeld ? '#e0e7ff' : 'transparent',
-            color: shiftLocked ? '#fff' : shiftHeld ? '#4338ca' : 'rgba(0,0,0,0.4)',
-            borderColor: shiftMode ? '#6366f1' : 'rgba(0,0,0,0.2)',
-            '&:hover': { opacity: 0.8 },
-          }}
-        />
-      </Box>
-
       {/* Keyboard rows — only showing shift or normal layer */}
       <Grid container spacing={0.8} direction='column'>
         {visibleRows.map((row, i) => {

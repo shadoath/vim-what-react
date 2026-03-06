@@ -12,6 +12,7 @@ export const Header = () => {
     lessonLevel, handleLessonLevelChange,
     searchQuery, setSearchQuery,
     prefixMode, setPrefixMode,
+    shiftLocked, setShiftLocked,
     keyOfDay, setSelectedKey, learnedKeys,
   } = useBaseContext()
 
@@ -71,7 +72,7 @@ export const Header = () => {
         />
       </Box>
 
-      {/* Prefix mode toggles */}
+      {/* Modifier toggles: prefix modes + shift lock */}
       <ToggleButtonGroup
         value={prefixMode}
         exclusive
@@ -83,6 +84,18 @@ export const Header = () => {
         <ToggleButton value='z' sx={{ fontSize: 11, px: 0.75, py: 0 }}>z</ToggleButton>
         <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 0.75, py: 0 }}>^</ToggleButton>
       </ToggleButtonGroup>
+      <ToggleButton
+        value='shift'
+        selected={shiftLocked}
+        onChange={() => setShiftLocked(!shiftLocked)}
+        size='small'
+        sx={{
+          height: 26, fontSize: 11, px: 0.75, py: 0,
+          '&.Mui-selected': { backgroundColor: '#6366f1', color: '#fff', '&:hover': { backgroundColor: '#4f46e5' } },
+        }}
+      >
+        ⇧
+      </ToggleButton>
 
       {/* Lesson selector */}
       <FormControl size='small' sx={{ minWidth: 100 }}>

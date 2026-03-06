@@ -18,6 +18,8 @@ type BaseContextType = {
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>
   prefixMode: PrefixMode
   setPrefixMode: React.Dispatch<React.SetStateAction<PrefixMode>>
+  shiftLocked: boolean
+  setShiftLocked: React.Dispatch<React.SetStateAction<boolean>>
   customMappings: Record<string, string>
   setCustomMapping: (key: string, description: string) => void
   deleteCustomMapping: (key: string) => void
@@ -74,6 +76,7 @@ export const BaseContextProvider = ({
   const [lessonLevel, setLessonLevel] = useState<number>(() => { const saved = localStorage.getItem('vim-what-lesson'); return saved !== null ? Number(saved) : 8 })
   const [searchQuery, setSearchQuery] = useState('')
   const [prefixMode, setPrefixMode] = useState<PrefixMode>('none')
+  const [shiftLocked, setShiftLocked] = useState(false)
   const [customMappings, setCustomMappings] = useState<Record<string, string>>(loadCustomMappings)
   const [learnedKeys, setLearnedKeys] = useState<string[]>(loadLearnedKeys)
   const keyOfDay = getKeyOfDay()
@@ -132,6 +135,8 @@ export const BaseContextProvider = ({
         setSearchQuery,
         prefixMode,
         setPrefixMode,
+        shiftLocked,
+        setShiftLocked,
         customMappings,
         setCustomMapping,
         deleteCustomMapping,
