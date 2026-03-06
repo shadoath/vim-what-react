@@ -20,3 +20,9 @@ export const keymaps = {
     'zxcvbnm,./',
   ],
 }
+
+// Which row indices are the "shift" (uppercase/symbol) layer for each layout
+export const shiftRowIndices: Record<string, number[]> = {
+  Qwerty: [0, 2, 4, 6],
+  Colemak: [0, 2, 4, 7],
+}
