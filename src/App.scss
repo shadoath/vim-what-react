@@ -15,16 +15,23 @@ body {
 }
 
 body {
-  width: 800px;
   text-align: center;
   background-color: #c2c2c2;
 }
 
+/* Hide scrollbars everywhere — popup auto-sizes to content */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .App {
-  height: 600px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .App-logo {

@@ -20,7 +20,7 @@ export const Header = () => {
   const isKotdLearned = learnedKeys.includes(keyOfDay)
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', px: 2, py: 0.5, width: '100%', boxSizing: 'border-box' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', px: 0.75, py: 0.25, width: '100%', boxSizing: 'border-box' }}>
       {/* Left: Logo + KOTD */}
       <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', gap: 0.5 }}>
         <a
