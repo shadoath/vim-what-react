@@ -45,7 +45,7 @@ export const Header = () => {
         boxSizing: 'border-box',
       }}
     >
-      {/* Left: Logo + KOTD */}
+      {/* Left: Logo + KOTD + Layout select */}
       <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', gap: 0.5 }}>
         <a
           href='https://chrome.google.com/webstore/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge?hl=en'
@@ -94,6 +94,20 @@ export const Header = () => {
             </Typography>
           </Box>
         </Tooltip>
+        <FormControl size='small' sx={{ minWidth: 78 }}>
+          <Select
+            variant='standard'
+            value={layout}
+            onChange={handleLayoutChange}
+            size='small'
+          >
+            {Object.keys(keymaps).map((l) => (
+              <MenuItem key={l} value={l}>
+                {l}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </Box>
 
       {/* Center: Search + modifier toggles */}
@@ -178,21 +192,6 @@ export const Header = () => {
           gap: 1,
         }}
       >
-        <FormControl size='small' sx={{ minWidth: 78 }}>
-          <Select
-            variant='standard'
-            value={layout}
-            onChange={handleLayoutChange}
-            size='small'
-          >
-            {Object.keys(keymaps).map((l) => (
-              <MenuItem key={l} value={l}>
-                {l}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-
         <FormControl size='small' sx={{ minWidth: 72 }}>
           <Select
             variant='standard'
@@ -203,7 +202,7 @@ export const Header = () => {
           >
             <MenuItem value={10}>All</MenuItem>
             {lessonLevels.map((level) => (
-              <MenuItem key={level} value={level}>{`Lvl ${level} — ${lessonNames[level]}`}</MenuItem>
+              <MenuItem key={level} value={level}>{`${level} — ${lessonNames[level]}`}</MenuItem>
             ))}
           </Select>
         </FormControl>
