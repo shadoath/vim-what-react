@@ -10,11 +10,13 @@ import { Lesson4 } from './lessons/Lesson4'
 import { Lesson5 } from './lessons/Lesson5'
 import { Lesson6 } from './lessons/Lesson6'
 import { Lesson7 } from './lessons/Lesson7'
+import { Lesson8 } from './lessons/Lesson8'
+import { Lesson9 } from './lessons/Lesson9'
 
 const lessonComponents: Record<number, React.ComponentType> = {
-  8: LessonAll,
+  10: LessonAll,
   1: Lesson1, 2: Lesson2, 3: Lesson3, 4: Lesson4,
-  5: Lesson5, 6: Lesson6, 7: Lesson7,
+  5: Lesson5, 6: Lesson6, 7: Lesson7, 8: Lesson8, 9: Lesson9,
 }
 
 const actionColors: Record<string, string> = {

@@ -72,7 +72,7 @@ export const BaseContextProvider = ({
   const [selectedKey, setSelectedKey] = useState('')
   const [lessonLevel, setLessonLevel] = useState<number>(() => {
     const saved = localStorage.getItem('vim-what-lesson')
-    return saved !== null ? Number(saved) : 8
+    return saved !== null ? Number(saved) : 10
   })
   const [searchQuery, setSearchQuery] = useState('')
   const [prefixMode, setPrefixMode] = useState<PrefixMode>('none')

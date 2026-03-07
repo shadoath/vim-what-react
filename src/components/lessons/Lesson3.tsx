@@ -4,53 +4,58 @@ export const Lesson3 = () => (
   <TwoCol
     left={
       <>
-        <H>Basics:</H>
+        <H>Word motions:</H>
         <T>
-          Use <VimKey k='y' v='operator' /> followed by any motion to 'yank'
-          (copy).
+          <VimKey k='w' v='motion' /> moves to the start of the next word.{' '}
+          <VimKey k='b' v='motion' /> moves back.{' '}
+          <VimKey k='e' v='motion' /> moves to the end of the current word.
         </T>
         <T>
-          Use <VimKey k='p' v='command' /> to paste after the cursor (if
-          charwise: right, if linewise: below).
+          <VimKey k='W' v='motion' />
+          <VimKey k='B' v='motion' />
+          <VimKey k='E' v='motion' /> are the same but treat any non-blank sequence
+          as a WORD (ignoring punctuation).
         </T>
         <T>
-          Use <VimKey k='P' v='command' /> to paste before.
+          <VimKey k='d' v='operator' /> is the delete operator — follow it with
+          any motion: <VimKey k='d' v='operator' />
+          <VimKey k='w' v='motion' /> deletes a word,{' '}
+          <VimKey k='d' v='operator' />
+          <VimKey k='d' v='operator' /> deletes the whole line.
         </T>
         <T>
-          <VimKey k='y' v='operator' />
-          <VimKey k='y' v='operator' /> copies the current line.
-        </T>
-        <T>
-          <VimKey k='y' v='operator' /> also works in visual mode.
-        </T>
-        <T>
-          Text deleted with <VimKey k='d' v='operator' />,{' '}
-          <VimKey k='c' v='operator' />, <VimKey k='x' v='command' />… is also
-          copied!
+          <VimKey k='c' v='operator' /> (change) works like{' '}
+          <VimKey k='d' v='operator' /> but leaves you in insert mode:{' '}
+          <VimKey k='c' v='operator' />
+          <VimKey k='w' v='motion' /> replaces a word.
         </T>
       </>
     }
     right={
       <>
-        <H>Extras:</H>
+        <H>Shorthand operators:</H>
         <T>
-          <VimKey k='"' v='extra' /> and an <VimKey k='a' />–<VimKey k='z' />{' '}
-          character before any yank/delete/paste command chooses a register.
+          <VimKey k='D' v='command' /> is shorthand for{' '}
+          <VimKey k='d' v='operator' />
+          <VimKey k='$' v='motion' /> — deletes from cursor to end of line.
         </T>
         <T>
-          An <VimKey k='A' />–<VimKey k='Z' /> register before yank/delete means
-          "append-copy".
+          <VimKey k='C' v='insert' /> is shorthand for{' '}
+          <VimKey k='c' v='operator' />
+          <VimKey k='$' v='motion' /> — changes to end of line, entering insert
+          mode.
         </T>
         <T>
-          <VimKey k='"*' v='extra' /> or <VimKey k='"+' v='extra' /> select the
-          system clipboard.
+          <VimKey k='r' v='command' /> followed by any character replaces just the
+          character under the cursor — no insert mode needed.
         </T>
         <T>
-          <VimKey k='o' v='insert' /> enters insert mode in a new empty line
-          below the current one.
-        </T>
-        <T>
-          <VimKey k='O' v='insert' /> does the same above the current line.
+          Counts work everywhere: <VimKey k='3' />
+          <VimKey k='d' v='operator' />
+          <VimKey k='w' v='motion' /> deletes 3 words,{' '}
+          <VimKey k='2' />
+          <VimKey k='c' v='operator' />
+          <VimKey k='w' v='motion' /> changes 2 words.
         </T>
       </>
     }

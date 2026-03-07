@@ -14,7 +14,7 @@ import { allKeysWithInfo, useBaseContext } from '../contexts/BaseContext'
 import type { AllKeyTypes } from '../contexts/BaseContext'
 import { keymaps } from '../lib/layouts'
 import logo from './../vim-what.svg'
-import { lessonLevels } from '../lib/lessons'
+import { lessonLevels, lessonNames } from '../lib/lessons'
 
 export const Header = () => {
   const {
@@ -201,9 +201,9 @@ export const Header = () => {
             size='small'
             fullWidth
           >
-            <MenuItem value={8}>All</MenuItem>
+            <MenuItem value={10}>All</MenuItem>
             {lessonLevels.map((level) => (
-              <MenuItem key={level} value={level}>{`Lvl ${level}`}</MenuItem>
+              <MenuItem key={level} value={level}>{`Lvl ${level} — ${lessonNames[level]}`}</MenuItem>
             ))}
           </Select>
         </FormControl>

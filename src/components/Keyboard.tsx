@@ -26,7 +26,7 @@ export const Keyboard = () => {
 
   useKeyboardNav(handleKeyboardSelect)
   const activeKeys = getActiveKeys(lessonLevel)
-  const focusedKeys = lessonLevel === 8 ? [] : getFocusedKeys(lessonLevel)
+  const focusedKeys = lessonLevel >= 10 ? [] : getFocusedKeys(lessonLevel)
 
   const shiftIndices = shiftRowIndices[layout] ?? []
   const allRows = keymaps[layout]

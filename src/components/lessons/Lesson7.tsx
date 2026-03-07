@@ -1,82 +1,54 @@
-import { Box } from '@mui/material'
 import { VimKey, T, H, TwoCol } from './VimKey'
 
 export const Lesson7 = () => (
   <TwoCol
     left={
       <>
-        <H>Basics:</H>
+        <H>Visual mode:</H>
         <T>
-          <VimKey k='J' v='command' /> joins the current line with the next, or
-          all lines in the current visual selection.
+          <VimKey k='v' v='extra' /> enters character-wise visual mode. Use any
+          motion to extend the selection, then press an operator to act on it.
         </T>
         <T>
-          <VimKey k='r' v='command' /> followed by any character replaces the
-          current character with that one.
+          <VimKey k='V' v='extra' /> enters line-wise visual mode — always selects
+          whole lines.
         </T>
         <T>
-          <VimKey k='C' v='insert' /> is shorthand for{' '}
-          <VimKey k='c' v='operator' />
-          <VimKey k='$' v='motion' />, changes to end of line.
+          <VimKey k='CTRL-v' v='extra' /> selects a rectangular block. Type a
+          number and then <VimKey k='I' v='insert' /> to insert text at the start
+          of each selected line.
         </T>
         <T>
-          <VimKey k='D' v='command' /> is shorthand for{' '}
-          <VimKey k='d' v='operator' />
-          <VimKey k='$' v='motion' />, deletes to end of line.
-        </T>
-        <T>
-          <VimKey k='Y' v='command' /> is shorthand for{' '}
-          <VimKey k='y' v='operator' />
-          <VimKey k='y' v='operator' />, yanks the whole line.
-        </T>
-        <T>
-          <VimKey k='s' v='insert' /> deletes the character under the cursor and
-          enters insert mode.
-        </T>
-        <T>
-          <VimKey k='S' v='insert' /> clears the current line and enters insert
-          mode.
+          In visual mode, <VimKey k='o' v='insert' /> moves the cursor to the
+          other end of the selection.
         </T>
       </>
     }
     right={
       <>
-        <H>Extras:</H>
+        <H>Indentation & format:</H>
         <T>
-          <VimKey k='>' v='operator' /> and a motion to indent one or more
-          lines.
+          <VimKey k='>' v='operator' /> + motion indents lines.{' '}
+          <VimKey k='>>' v='operator' /> indents the current line.{' '}
+          In visual mode, <VimKey k='>' v='operator' /> indents the selection.
         </T>
         <T>
-          <VimKey k='<' v='operator' /> and a motion to unindent.
+          <VimKey k='<' v='operator' /> unindents.{' '}
+          <VimKey k='<<' v='operator' /> unindents the current line.
         </T>
         <T>
-          <VimKey k='=' v='operator' /> and a motion to reformat a range of
-          text.
+          <VimKey k='=' v='operator' /> auto-indents a range.{' '}
+          <VimKey k='==' v='operator' /> auto-indents the current line.{' '}
+          <VimKey k='gg' />
+          <VimKey k='=' v='operator' />
+          <VimKey k='G' v='motion' /> reformats the whole file.
         </T>
         <T>
-          All work in visual mode, or can be repeated (
-          <VimKey k='>>' v='operator' />, etc.) to operate on the current line.
+          <VimKey k='!' v='operator' /> filters a range through an external
+          command: <VimKey k='!' v='operator' />
+          <VimKey k='G' v='motion' />
+          <VimKey k='sort' /> sorts lines to end of file.
         </T>
-        <T>
-          <VimKey k='~' v='command' /> toggles the case of the character under
-          the cursor.
-        </T>
-        <Box
-          sx={{
-            mt: 0.75,
-            p: 0.75,
-            borderRadius: 1,
-            backgroundColor: '#f0fdf4',
-            border: '1px solid #86efac',
-          }}
-        >
-          <T>
-            Now go grab the full cheat sheet and learn the rest. Start with{' '}
-            <VimKey k='i' v='insert' />
-            <VimKey k='a' v='insert' />
-            <VimKey k=';' v='extra' /> and <VimKey k=',' />. Piece of cake!
-          </T>
-        </Box>
       </>
     }
   />

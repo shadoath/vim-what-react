@@ -4,73 +4,42 @@ export const Lesson2 = () => (
   <TwoCol
     left={
       <>
-        <H>Basics:</H>
+        <H>Insert & line basics:</H>
         <T>
-          <VimKey k='f' v='motion' /> followed by a key moves the cursor to the
-          next instance of that character on the current line.{' '}
-          <VimKey k='F' v='motion' /> does the same backwards.
+          <VimKey k='A' v='insert' /> inserts at the <em>end</em> of the line.{' '}
+          <VimKey k='I' v='insert' /> inserts at the <em>beginning</em>.
         </T>
         <T>
-          <VimKey k='t' v='motion' /> and <VimKey k='T' v='motion' /> do the
-          same, but stop right before the character.
+          <VimKey k='o' v='insert' /> opens a new line <em>below</em> and enters
+          insert mode. <VimKey k='O' v='insert' /> does the same <em>above</em>.
         </T>
         <T>
-          <VimKey k='d' v='operator' />
-          (delete) followed by any motion deletes the text between the cursor
-          and that motion's destination: <VimKey k='d' v='operator' />
-          <VimKey k='w' v='motion' />, <VimKey k='d' v='operator' />
-          <VimKey k='f' v='motion' />
-          <VimKey k='-' />
+          <VimKey k='X' v='command' /> deletes the character to the <em>left</em>{' '}
+          of the cursor (like backspace in normal mode).
         </T>
         <T>
-          <VimKey k='c' v='operator' />
-          (change) does the same, but leaves you in insert mode.
-        </T>
-        <T>
-          Some motions like <VimKey k='j' v='motion' /> and{' '}
-          <VimKey k='k' v='motion' /> are linewise – deletion includes the full
-          start/end lines.
-        </T>
-        <T>
-          <VimKey k='.' v='command' /> repeats the last editing action. Motion
-          is recalculated at the new place.
+          <VimKey k='.' v='command' /> repeats the last editing action at the
+          current position. One of the most powerful keys in Vim!
         </T>
       </>
     }
     right={
       <>
-        <H>Extras:</H>
+        <H>Line motions:</H>
         <T>
-          <VimKey k='d' v='operator' />
-          <VimKey k='2' />
-          <VimKey k='w' v='motion' /> to delete up to the second word.
+          <VimKey k='^' v='motion' /> jumps to the first non-blank character on
+          the line. <VimKey k='0' v='motion' /> jumps to column 0.
         </T>
         <T>
-          <VimKey k='d' v='operator' />
-          <VimKey k='2' />
-          <VimKey k='t' v='motion' />
-          <VimKey k='.' /> to delete up to but not including the second comma.
+          <VimKey k='-' v='motion' /> moves to the first non-blank of the{' '}
+          <em>previous</em> line.{' '}
+          <VimKey k='+' v='motion' /> to the <em>next</em> line.
         </T>
         <T>
-          <VimKey k='2' />
-          <VimKey k='i' v='insert' /> repeats the text after you press{' '}
-          <VimKey k='Esc' /> to finish the input session.
-        </T>
-        <T>
-          Repeat operator (<VimKey k='c' v='operator' />
-          <VimKey k='c' v='operator' /> or <VimKey k='d' v='operator' />
-          <VimKey k='d' v='operator' />) to operate on the current line.
-        </T>
-        <T>
-          In vim, <VimKey k='v' v='extra' /> enters visual mode. Move with
-          motions, then press an operator to act on the selection.
-        </T>
-        <T>
-          <VimKey k='V' v='extra' /> enters visual-lines mode – like{' '}
-          <VimKey k='v' v='extra' />, but selects whole lines.
-        </T>
-        <T>
-          <VimKey k='CTRL-v' v='extra' /> selects rectangular blocks.
+          Combine with <VimKey k='.' v='command' />: press{' '}
+          <VimKey k='A' v='insert' />, type a semicolon, press <VimKey k='Esc' />,
+          then <VimKey k='-' v='motion' />
+          <VimKey k='.' v='command' /> to add one to the previous line too.
         </T>
       </>
     }

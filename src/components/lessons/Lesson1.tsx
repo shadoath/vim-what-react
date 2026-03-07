@@ -4,31 +4,24 @@ export const Lesson1 = () => (
   <TwoCol
     left={
       <>
-        <H>Basics:</H>
+        <H>Move & survive:</H>
         <T>
           <VimKey k='h' v='motion' />
           <VimKey k='j' v='motion' />
           <VimKey k='k' v='motion' />
-          <VimKey k='l' v='motion' /> are vi/vim cursor keys – much closer than
-          regular cursor keys!
+          <VimKey k='l' v='motion' /> are the cursor keys — left, down, up, right.
+          Much closer to home row than arrow keys!
         </T>
         <T>
-          Use <VimKey k='i' v='insert' /> to enter insert mode, cursor becomes a
-          vertical line. Use <VimKey k='Esc' /> to return to normal mode.
+          <VimKey k='i' v='insert' /> enters insert mode (cursor becomes a line).
+          Use <VimKey k='Esc' /> to return to normal mode.
         </T>
         <T>
-          Use <VimKey k='x' v='command' /> to delete the current character, or{' '}
-          <VimKey k='X' v='command' /> to delete the one to the left.
+          <VimKey k='a' v='insert' /> enters insert mode <em>after</em> the cursor
+          (append). Useful for adding to the end of a word.
         </T>
         <T>
-          Use <VimKey k='A' v='insert' /> to insert text at the end of the line
-          (wherever you are!).
-        </T>
-        <T>
-          <em>
-            (Note: insert mode is very similar to a regular editor — cursor
-            keys, backspace, delete all work.)
-          </em>
+          <VimKey k='x' v='command' /> deletes the character under the cursor.
         </T>
       </>
     }
@@ -36,52 +29,26 @@ export const Lesson1 = () => (
       <>
         <H>Extras:</H>
         <T>
-          <VimKey k='u' v='command' /> undoes the last action – vi has a single
-          level, vim supports unlimited undo (<VimKey k='CTRL-R' /> to redo).
-        </T>
-        <T>
-          <VimKey k='0' v='motion' /> jumps to the beginning of the line,{' '}
-          <VimKey k='$' v='motion' /> to the end, <VimKey k='^' v='motion' /> to
-          the first non-blank.
-        </T>
-        <T>
-          Use <VimKey k='w' v='motion' />
-          <VimKey k='b' v='motion' />
-          <VimKey k='e' v='motion' /> to move along 'words' (alphanumeric or
-          punctuation runs):
-          <br />
-          <VimKey k='quux' />
-          <VimKey k='(' />
-          <VimKey k='foo' />
-          <VimKey k=',' />
-          &thinsp;
-          <VimKey k='bar' />
-          <VimKey k=',' />
-          &thinsp;
-          <VimKey k='baz' />
-          <VimKey k=')' />
-          <VimKey k=';' />
-        </T>
-        <T>
-          Use <VimKey k='W' v='motion' />
-          <VimKey k='B' v='motion' />
-          <VimKey k='E' v='motion' /> for WORDs (any non-blank sequence):
-          <br />
-          <VimKey k='quux(foo,' />
-          &thinsp;
-          <VimKey k='bar,' />
-          &thinsp;
-          <VimKey k='baz);' />
-        </T>
-        <T>
-          Use <VimKey k='R' v='insert' /> to enter insert mode with an
-          overstrike cursor, typing over existing characters.
+          <VimKey k='u' v='command' /> undoes the last action.{' '}
+          <VimKey k='CTRL-R' /> redoes it.
         </T>
         <T>
           <VimKey k=':' v='extra' />
-          <VimKey k='w' v='command' /> + Enter to save,&ensp;
+          <VimKey k='w' v='command' /> + Enter saves.{' '}
           <VimKey k=':' v='extra' />
-          <VimKey k='q' v='command' /> + Enter to quit.
+          <VimKey k='q' v='command' /> + Enter quits.
+        </T>
+        <T>
+          Add a count before any motion: <VimKey k='4' />
+          <VimKey k='j' v='motion' /> moves down 4 lines,{' '}
+          <VimKey k='3' />
+          <VimKey k='x' v='command' /> deletes 3 characters.
+        </T>
+        <T>
+          <em>
+            Insert mode works like a regular editor — arrow keys, backspace, and
+            delete all work normally.
+          </em>
         </T>
       </>
     }

@@ -4,44 +4,48 @@ export const Lesson5 = () => (
   <TwoCol
     left={
       <>
-        <H>Marks:</H>
+        <H>Yank & paste:</H>
         <T>
-          Use <VimKey k='m' v='extra' /> followed by an <VimKey k='a' />–
-          <VimKey k='z' /> character to set a mark.
+          <VimKey k='y' v='operator' /> is the yank (copy) operator — follow it
+          with any motion: <VimKey k='y' v='operator' />
+          <VimKey k='w' v='motion' /> yanks a word,{' '}
+          <VimKey k='y' v='operator' />
+          <VimKey k='y' v='operator' /> yanks the whole line.
         </T>
         <T>
-          Use <VimKey k='`' v='motion' /> followed by a character to go to that
-          mark.
+          <VimKey k='Y' v='command' /> is shorthand for{' '}
+          <VimKey k='y' v='operator' />
+          <VimKey k='y' v='operator' /> — yanks the current line.
         </T>
         <T>
-          Use <VimKey k="'" v='motion' /> and a character to go to the first
-          non-blank in that line.
+          <VimKey k='p' v='command' /> pastes after the cursor (or below the
+          current line for linewise yanks).{' '}
+          <VimKey k='P' v='command' /> pastes before.
         </T>
         <T>
-          <VimKey k='A' />–<VimKey k='Z' /> marks are global (across files),{' '}
-          <VimKey k='a' />–<VimKey k='z' /> are per-buffer.
-        </T>
-        <T>
-          <VimKey k='`.' v='motion' /> refers to the position of the last
-          modification.
+          Text deleted with <VimKey k='d' v='operator' />,{' '}
+          <VimKey k='c' v='operator' />, <VimKey k='x' v='command' /> is also
+          yanked — so you can paste it with <VimKey k='p' v='command' />.
         </T>
       </>
     }
     right={
       <>
-        <H>Macros:</H>
+        <H>Transforms:</H>
         <T>
-          Use <VimKey k='q' v='extra' /> followed by an <VimKey k='a' />–
-          <VimKey k='z' /> character to start recording.
+          <VimKey k='"' v='extra' /> + a letter before any yank/delete/paste selects
+          a named register: <VimKey k='"' v='extra' />
+          <VimKey k='a' />
+          <VimKey k='y' v='operator' />
+          <VimKey k='w' v='motion' /> yanks a word into register <VimKey k='a' />.
         </T>
         <T>
-          Use <VimKey k='q' v='extra' /> again to stop recording.
+          <VimKey k='J' v='command' /> joins the current line with the next,
+          removing the line break and adding a space.
         </T>
         <T>
-          <VimKey k='@' v='extra' /> followed by a character replays that macro.
-        </T>
-        <T>
-          <VimKey k='@@' v='extra' /> repeats the last macro played.
+          <VimKey k='~' v='command' /> toggles the case of the character under
+          the cursor and advances. In visual mode, toggles all selected characters.
         </T>
       </>
     }
