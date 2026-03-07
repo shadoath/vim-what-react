@@ -83,17 +83,29 @@ export const Header = () => {
           <Tooltip title='Ctrl prefix — overlay Ctrl+key commands' placement='bottom' arrow>
             <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 0.75, py: 0 }}>^</ToggleButton>
           </Tooltip>
-          <Tooltip title='Shift lock — show uppercase / symbol layer' placement='bottom' arrow>
-            <ToggleButton
-              value='shift'
-              selected={shiftLocked}
-              onChange={() => setShiftLocked(!shiftLocked)}
-              sx={{ fontSize: 11, px: 0.75, py: 0 }}
-            >
-              ⇧
-            </ToggleButton>
-          </Tooltip>
         </ToggleButtonGroup>
+        <Tooltip title='Shift lock — show uppercase / symbol layer' placement='bottom' arrow>
+          <ToggleButton
+            value='shift'
+            selected={shiftLocked}
+            onChange={() => setShiftLocked(!shiftLocked)}
+            size='small'
+            sx={{
+              height: 26,
+              fontSize: 11,
+              px: 0.75,
+              py: 0,
+              border: '1px solid rgba(0,0,0,0.12)',
+              '&.Mui-selected': {
+                backgroundColor: '#6366f1',
+                color: '#fff',
+                '&:hover': { backgroundColor: '#4f46e5' },
+              },
+            }}
+          >
+            ⇧
+          </ToggleButton>
+        </Tooltip>
       </Box>
 
       {/* Right: Layout + Lesson selectors */}

@@ -34,7 +34,7 @@ export const Keyboard = () => {
   )
 
   return (
-    <Box>
+    <Box sx={{ px: 1 }}>
       {/* Keyboard rows — only showing shift or normal layer */}
       <Grid container spacing={0.4} direction='column'>
         {visibleRows.map((row, i) => {
