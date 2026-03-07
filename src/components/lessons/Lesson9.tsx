@@ -25,6 +25,11 @@ export const Lesson9 = () => (
           line (like <VimKey k='^' v='motion' /> but also works as a motion with
           operators).
         </T>
+        <T>
+          <VimKey k='\\' v='extra' /> is the default <code>mapleader</code> and
+          an escape character in regex (<VimKey k='\\n' />, <VimKey k='\\t' />,{' '}
+          <VimKey k='\\v' /> very magic).
+        </T>
       </>
     }
     right={

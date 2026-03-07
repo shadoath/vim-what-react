@@ -28,7 +28,8 @@ export const Lesson2 = () => (
         <H>Line motions:</H>
         <T>
           <VimKey k='^' v='motion' /> jumps to the first non-blank character on
-          the line. <VimKey k='0' v='motion' /> jumps to column 0.
+          the line. <VimKey k='$' v='motion' /> jumps to the end of the line.{' '}
+          <VimKey k='0' v='motion' /> jumps to column 0.
         </T>
         <T>
           <VimKey k='-' v='motion' /> moves to the first non-blank of the{' '}

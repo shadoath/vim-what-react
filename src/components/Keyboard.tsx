@@ -166,7 +166,7 @@ export const Keyboard = () => {
               height: 10,
               borderRadius: 0.5,
               backgroundColor: '#fbbf24',
-              outline: '2px solid rgba(0,0,0,0.72)',
+              outline: '1px solid rgba(0,0,0,0.55)',
               outlineOffset: '-1px',
               flexShrink: 0,
             }}
