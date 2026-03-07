@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react'
-import { Box, Grid } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import {
   allKeysWithInfo,
   type AllKeyTypes,
@@ -85,6 +85,33 @@ export const Keyboard = () => {
           )
         })}
       </Grid>
+
+      {/* Legend */}
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1, mt: 0.75, px: 1 }}>
+        {[
+          { color: '#7dd3c0', label: 'motion' },
+          { color: '#fb923c', label: 'operator' },
+          { color: '#fbbf24', label: 'command' },
+          { color: '#e5e7eb', label: 'extra' },
+        ].map(({ color, label }) => (
+          <Box key={label} sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+            <Box sx={{ width: 10, height: 10, borderRadius: 0.5, backgroundColor: color, border: '1px solid rgba(0,0,0,0.15)', flexShrink: 0 }} />
+            <Typography sx={{ fontSize: 9, opacity: 0.6 }}>{label}</Typography>
+          </Box>
+        ))}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+          <Box sx={{ width: 10, height: 10, borderRadius: 0.5, backgroundColor: '#fbbf24', border: '2px solid #000', flexShrink: 0 }} />
+          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>enters insert mode</Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+          <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#16a34a', flexShrink: 0 }} />
+          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>learned</Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+          <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: '#7c3aed', flexShrink: 0 }} />
+          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>custom map</Typography>
+        </Box>
+      </Box>
     </Box>
   )
 }

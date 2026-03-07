@@ -65,24 +65,26 @@ export const Header = () => {
           exclusive
           onChange={(_e, val) => setPrefixMode(val ?? 'none')}
           size='small'
-          sx={{
-            height: 26,
-            '& .MuiToggleButton-root.Mui-selected': {
-              backgroundColor: '#6366f1',
-              color: '#fff',
-              '&:hover': { backgroundColor: '#4f46e5' },
-            },
-          }}
+          sx={{ height: 26 }}
         >
-          <Tooltip title='g prefix — overlay g+key commands' placement='bottom' arrow>
-            <ToggleButton value='g' sx={{ fontSize: 11, px: 0.75, py: 0 }}>g</ToggleButton>
-          </Tooltip>
-          <Tooltip title='z prefix — overlay z+key commands (folds, scroll)' placement='bottom' arrow>
-            <ToggleButton value='z' sx={{ fontSize: 11, px: 0.75, py: 0 }}>z</ToggleButton>
-          </Tooltip>
-          <Tooltip title='Ctrl prefix — overlay Ctrl+key commands' placement='bottom' arrow>
-            <ToggleButton value='ctrl' sx={{ fontSize: 11, px: 0.75, py: 0 }}>^</ToggleButton>
-          </Tooltip>
+          {([
+            { val: 'g', label: 'g', tip: 'g prefix — overlay g+key commands' },
+            { val: 'z', label: 'z', tip: 'z prefix — overlay z+key commands (folds, scroll)' },
+            { val: 'ctrl', label: '^', tip: 'Ctrl prefix — overlay Ctrl+key commands' },
+          ] as const).map(({ val, label, tip }) => (
+            <Tooltip key={val} title={tip} placement='bottom' arrow>
+              <ToggleButton
+                value={val}
+                sx={{
+                  fontSize: 11, px: 0.75, py: 0,
+                  '&.Mui-selected': { backgroundColor: '#6366f1 !important', color: '#fff !important' },
+                  '&.Mui-selected:hover': { backgroundColor: '#4f46e5 !important' },
+                }}
+              >
+                {label}
+              </ToggleButton>
+            </Tooltip>
+          ))}
         </ToggleButtonGroup>
         <Tooltip title='Shift lock — show uppercase / symbol layer' placement='bottom' arrow>
           <ToggleButton
@@ -91,16 +93,10 @@ export const Header = () => {
             onChange={() => setShiftLocked(!shiftLocked)}
             size='small'
             sx={{
-              height: 26,
-              fontSize: 11,
-              px: 0.75,
-              py: 0,
+              height: 26, fontSize: 11, px: 0.75, py: 0,
               border: '1px solid rgba(0,0,0,0.12)',
-              '&.Mui-selected': {
-                backgroundColor: '#6366f1',
-                color: '#fff',
-                '&:hover': { backgroundColor: '#4f46e5' },
-              },
+              '&.Mui-selected': { backgroundColor: '#6366f1 !important', color: '#fff !important' },
+              '&.Mui-selected:hover': { backgroundColor: '#4f46e5 !important' },
             }}
           >
             ⇧
