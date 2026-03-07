@@ -8,7 +8,6 @@ import type { PrefixMode } from '../lib/prefixKeys'
 type BaseContextType = {
   selectedKey: string
   setSelectedKey: React.Dispatch<React.SetStateAction<string>>
-  infoImage: string
   allKeys: string[]
   layout: LayoutTypes
   handleLayoutChange: (event: SelectChangeEvent<LayoutTypes>) => void
@@ -73,7 +72,6 @@ export const BaseContextProvider = ({
     () => (localStorage.getItem('vim-what-layout') as LayoutTypes) ?? 'Qwerty',
   )
   const [selectedKey, setSelectedKey] = useState('')
-  const [infoImage, setInfoImage] = useState('/about/all.png')
   const [lessonLevel, setLessonLevel] = useState<number>(() => {
     const saved = localStorage.getItem('vim-what-lesson')
     return saved !== null ? Number(saved) : 8
@@ -98,11 +96,6 @@ export const BaseContextProvider = ({
     const level = Number(event.target.value)
     setLessonLevel(level)
     localStorage.setItem('vim-what-lesson', String(level))
-    if (level === 8) {
-      setInfoImage('/about/all.png')
-    } else {
-      setInfoImage(`/about/lesson_${level}.png`)
-    }
     setSelectedKey('')
   }
 
@@ -131,7 +124,6 @@ export const BaseContextProvider = ({
         allKeys,
         handleLayoutChange,
         handleLessonLevelChange,
-        infoImage,
         layout,
         lessonLevel,
         selectedKey,
