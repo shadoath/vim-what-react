@@ -62,6 +62,14 @@ export const Keyboard = () => {
 
                   const shiftKey = shiftRowStr?.[j]
                   const shiftKeyInfo = shiftKey ? allKeysWithInfo[shiftKey as AllKeyTypes] : undefined
+                  const shiftKeyIsActive = shiftKey ? activeKeys.includes(shiftKey) : false
+                  const shiftKeyHasFocus = shiftKey ? focusedKeys.includes(shiftKey) : false
+                  // Shift key only appears active-muted when its base key is also active,
+                  // or when it's the current level's focused key. In All mode (dimActive=false)
+                  // every lesson key shows active regardless.
+                  const shiftActiveForDisplay = !dimActive
+                    ? shiftKeyIsActive
+                    : shiftKeyHasFocus || (shiftKeyIsActive && isActive)
 
                   return (
                     <Grid item key={`${originalIdx}-${j}`}>
@@ -76,8 +84,8 @@ export const Keyboard = () => {
                             keyType={shiftKeyInfo.action}
                             vimHelp={shiftKeyInfo.vimHelp}
                             hasDot={shiftKeyInfo.hasDot}
-                            isActive={activeKeys.includes(shiftKey)}
-                            hasFocus={focusedKeys.includes(shiftKey)}
+                            isActive={shiftActiveForDisplay}
+                            hasFocus={shiftKeyHasFocus}
                             isSearchMatch={isSearchMatch}
                             prefixOverride={prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[shiftKey] : undefined}
                             prefixModeActive={prefixMode !== 'none'}
