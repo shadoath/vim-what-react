@@ -82,15 +82,7 @@ export const Key = ({
 
   return (
     <Tooltip
-      title={
-        <>
-          {text && (
-            <Typography textAlign='left' fontSize={14} component='span'>
-              {text}
-            </Typography>
-          )}
-        </>
-      }
+      title={text ? <Typography textAlign='left' fontSize={14} component='span'>{text}</Typography> : ''}
       placement='top'
     >
       <Card
