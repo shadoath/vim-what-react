@@ -38,9 +38,7 @@ const groups: Group[] = [
   },
   {
     label: 'Tags',
-    pairs: [
-      { i: 'it', iDesc: 'tag content', a: 'at', aDesc: 'inc. tags' },
-    ],
+    pairs: [{ i: 'it', iDesc: 'tag content', a: 'at', aDesc: 'inc. tags' }],
   },
 ]
 
@@ -53,23 +51,62 @@ const Sel = ({ sel, desc }: { sel: string; desc: string }) => {
   const style = sel.startsWith('i') ? iStyle : aStyle
   return (
     <Tooltip
-      title={obj ? <Box><Typography sx={{ fontSize: 12, fontWeight: 'bold' }}>{obj.name}</Typography><Typography sx={{ fontSize: 11 }}>{obj.description}</Typography><Typography sx={{ fontSize: 11, opacity: 0.8, fontStyle: 'italic' }}>e.g. {obj.example}</Typography></Box> : ''}
+      title={
+        obj ? (
+          <Box>
+            <Typography sx={{ fontSize: 12, fontWeight: 'bold' }}>
+              {obj.name}
+            </Typography>
+            <Typography sx={{ fontSize: 11 }}>{obj.description}</Typography>
+            <Typography
+              sx={{ fontSize: 11, opacity: 0.8, fontStyle: 'italic' }}
+            >
+              e.g. {obj.example}
+            </Typography>
+          </Box>
+        ) : (
+          ''
+        )
+      }
       placement='top'
       arrow
     >
-      <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 0.5, cursor: 'default', '&:hover .sel-chip': { backgroundColor: style.hover } }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: 0.5,
+          cursor: 'default',
+          '&:hover .sel-chip': { backgroundColor: style.hover },
+        }}
+      >
         <Box
           className='sel-chip'
           sx={{
-            fontFamily: 'monospace', fontWeight: 'bold', fontSize: 12,
-            px: 0.6, py: 0.1, borderRadius: 1,
-            backgroundColor: style.bg, color: style.fg,
-            lineHeight: 1.4, flexShrink: 0,
+            fontFamily: 'monospace',
+            fontWeight: 'bold',
+            fontSize: 12,
+            px: 0.6,
+            py: 0.1,
+            borderRadius: 1,
+            backgroundColor: style.bg,
+            color: style.fg,
+            lineHeight: 1.4,
+            flexShrink: 0,
           }}
         >
           {sel}
         </Box>
-        <Typography sx={{ fontSize: 11, opacity: 0.65, lineHeight: 1.4, whiteSpace: 'nowrap' }}>{desc}</Typography>
+        <Typography
+          sx={{
+            fontSize: 11,
+            opacity: 0.65,
+            lineHeight: 1.4,
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {desc}
+        </Typography>
       </Box>
     </Tooltip>
   )
@@ -79,19 +116,56 @@ export const TextObjects = () => (
   <Box sx={{ px: 1.5, pb: 1, pt: 0.5 }}>
     {/* Header */}
     <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1, mb: 0.75 }}>
-      <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: '#0f766e' }}>Text Objects</Typography>
-      <Typography sx={{ fontSize: 11, opacity: 0.5, fontFamily: 'monospace' }}>{'{op}{sel}'}</Typography>
+      <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: '#0f766e' }}>
+        Text Objects
+      </Typography>
+      <Typography sx={{ fontSize: 11, opacity: 0.5, fontFamily: 'monospace' }}>
+        {'{op}{sel}'}
+      </Typography>
       <Typography sx={{ fontSize: 11, opacity: 0.55 }}>
-        — combine with <strong>d</strong>, <strong>c</strong>, <strong>y</strong>, <strong>v</strong>
+        — combine with <strong>d</strong>, <strong>c</strong>,{' '}
+        <strong>y</strong>, <strong>v</strong>
       </Typography>
       <Box sx={{ ml: 'auto', display: 'flex', gap: 1.5 }}>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
-          <Box sx={{ px: 0.5, py: 0.1, borderRadius: 0.5, backgroundColor: '#ccfbf1', color: '#0f766e', fontFamily: 'monospace', fontWeight: 'bold', fontSize: 10, lineHeight: 1.4 }}>i</Box>
-          <Typography sx={{ fontSize: 10, opacity: 0.6 }}>= inner (excludes delimiters)</Typography>
+          <Box
+            sx={{
+              px: 0.5,
+              py: 0.1,
+              borderRadius: 0.5,
+              backgroundColor: '#ccfbf1',
+              color: '#0f766e',
+              fontFamily: 'monospace',
+              fontWeight: 'bold',
+              fontSize: 10,
+              lineHeight: 1.4,
+            }}
+          >
+            i
+          </Box>
+          <Typography sx={{ fontSize: 10, opacity: 0.6 }}>
+            = inner (excludes delimiters)
+          </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
-          <Box sx={{ px: 0.5, py: 0.1, borderRadius: 0.5, backgroundColor: '#dbeafe', color: '#1d4ed8', fontFamily: 'monospace', fontWeight: 'bold', fontSize: 10, lineHeight: 1.4 }}>a</Box>
-          <Typography sx={{ fontSize: 10, opacity: 0.6 }}>= around (includes delimiters)</Typography>
+          <Box
+            sx={{
+              px: 0.5,
+              py: 0.1,
+              borderRadius: 0.5,
+              backgroundColor: '#dbeafe',
+              color: '#1d4ed8',
+              fontFamily: 'monospace',
+              fontWeight: 'bold',
+              fontSize: 10,
+              lineHeight: 1.4,
+            }}
+          >
+            a
+          </Box>
+          <Typography sx={{ fontSize: 10, opacity: 0.6 }}>
+            = around (includes delimiters)
+          </Typography>
         </Box>
       </Box>
     </Box>
@@ -102,21 +176,37 @@ export const TextObjects = () => (
         <Box
           key={g.label}
           sx={{
-            minWidth: 200, flex: '1 1 200px',
+            minWidth: 200,
+            flex: '1 1 200px',
             border: '1px solid rgba(0,0,0,0.1)',
             borderRadius: 1.5,
-            px: 1.25, pt: 0.75, pb: 1,
+            px: 1.25,
+            pt: 0.75,
+            pb: 1,
             backgroundColor: 'rgba(255,255,255,0.35)',
           }}
         >
-          <Typography sx={{ fontSize: 11, fontWeight: 'bold', opacity: 0.55, textTransform: 'uppercase', letterSpacing: 0.5, mb: 0.75 }}>
+          <Typography
+            sx={{
+              fontSize: 11,
+              fontWeight: 'bold',
+              opacity: 0.55,
+              textTransform: 'uppercase',
+              letterSpacing: 0.5,
+              mb: 0.75,
+            }}
+          >
             {g.label}
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
             {g.pairs.map((p) => (
               <Box key={p.i} sx={{ display: 'flex', gap: 1 }}>
-                <Box sx={{ flex: 1 }}><Sel sel={p.i} desc={p.iDesc} /></Box>
-                <Box sx={{ flex: 1 }}><Sel sel={p.a} desc={p.aDesc} /></Box>
+                <Box sx={{ flex: 1 }}>
+                  <Sel sel={p.i} desc={p.iDesc} />
+                </Box>
+                <Box sx={{ flex: 1 }}>
+                  <Sel sel={p.a} desc={p.aDesc} />
+                </Box>
               </Box>
             ))}
           </Box>

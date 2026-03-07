@@ -15,7 +15,7 @@ export const gKeys: Record<string, string> = {
   '~': 'toggle case {motion}',
   '0': 'to start of display line',
   '^': 'to first non-blank of display line',
-  '$': 'to end of display line',
+  $: 'to end of display line',
   e: 'to end of previous word',
   E: 'to end of previous WORD',
   n: 'select next search match',

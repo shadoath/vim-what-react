@@ -23,7 +23,12 @@ export const BottomTabs = () => {
         variant='fullWidth'
         sx={{
           minHeight: 30,
-          '& .MuiTab-root': { minHeight: 30, fontSize: 11, py: 0, textTransform: 'none' },
+          '& .MuiTab-root': {
+            minHeight: 30,
+            fontSize: 11,
+            py: 0,
+            textTransform: 'none',
+          },
           '& .MuiTabs-indicator': { height: 2 },
         }}
       >
@@ -32,10 +37,18 @@ export const BottomTabs = () => {
         <Tab label='Progress' />
         <Tab label='My Maps' />
       </Tabs>
-      <Box sx={{ display: tab === 0 ? 'block' : 'none' }}><InfoArea /></Box>
-      <Box sx={{ display: tab === 1 ? 'block' : 'none' }}><TextObjects /></Box>
-      <Box sx={{ display: tab === 2 ? 'block' : 'none' }}><ProgressPanel /></Box>
-      <Box sx={{ display: tab === 3 ? 'block' : 'none' }}><CustomMappings /></Box>
+      <Box sx={{ display: tab === 0 ? 'block' : 'none' }}>
+        <InfoArea />
+      </Box>
+      <Box sx={{ display: tab === 1 ? 'block' : 'none' }}>
+        <TextObjects />
+      </Box>
+      <Box sx={{ display: tab === 2 ? 'block' : 'none' }}>
+        <ProgressPanel />
+      </Box>
+      <Box sx={{ display: tab === 3 ? 'block' : 'none' }}>
+        <CustomMappings />
+      </Box>
     </Box>
   )
 }

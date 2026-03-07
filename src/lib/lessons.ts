@@ -27,9 +27,9 @@ export const getActiveKeys = (lessonLevel: number): string[] => {
 
   for (let i = 0; i <= lessonLevel; i++) {
     const lessonKeys = lessons[i].split('')
-    lessonKeys.forEach((key) => {
+    for (const key of lessonKeys) {
       activeKeys.push(key)
-    })
+    }
   }
 
   return activeKeys
@@ -39,9 +39,9 @@ export const getFocusedKeys = (lessonLevel: number): string[] => {
   const focusedKeys: string[] = []
 
   const lessonKeys = lessons[lessonLevel].split('')
-  lessonKeys.forEach((key) => {
+  for (const key of lessonKeys) {
     focusedKeys.push(key)
-  })
+  }
 
   return focusedKeys
 }

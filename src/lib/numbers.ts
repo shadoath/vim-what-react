@@ -6,7 +6,11 @@ export const numbers: Record<string, KeyInfoType> = {
     action: 'motion',
     vimHelp: 'motion.txt.html#0',
     text: 'Move to column 1 (absolute beginning of line), regardless of indentation. Unlike <code>^</code> which stops at the first non-blank character. Often remapped: <code>nnoremap 0 ^</code>.',
-    examples: ['0 (go to col 1)', '0dw (delete from start)', 'd0 (delete back to col 1)'],
+    examples: [
+      '0 (go to col 1)',
+      '0dw (delete from start)',
+      'd0 (delete back to col 1)',
+    ],
     secondaryText: 'col 1 / bol',
   },
   '1': {
