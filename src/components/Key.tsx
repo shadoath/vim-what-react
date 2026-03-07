@@ -98,7 +98,7 @@ export const Key = ({
           padding: '2px',
           margin: 0,
           width: '50px',
-          minHeight: '34px',
+          height: '44px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -155,10 +155,10 @@ export const Key = ({
             }}
           >
             <Typography
-              fontSize={14}
+              fontSize={13}
               fontWeight='bold'
               component='span'
-              sx={{ 
+              sx={{
                 lineHeight: 1,
                 color: insertsMode ? 'red' : 'inherit'
               }}
@@ -191,11 +191,11 @@ export const Key = ({
           {(prefixOverride ?? displayText) &&
             ((!prefixOverride && arrowIcon) || (
               <Typography
-                fontSize={9}
+                fontSize={8}
                 component='span'
                 sx={{
                   opacity: 0.7,
-                  lineHeight: 1,
+                  lineHeight: 1.1,
                   textAlign: 'center',
                   wordBreak: 'break-word',
                   overflow: 'hidden',

@@ -36,9 +36,9 @@ export const Keyboard = () => {
   return (
     <Box>
       {/* Keyboard rows — only showing shift or normal layer */}
-      <Grid container spacing={0.8} direction='column'>
+      <Grid container spacing={0.4} direction='column'>
         {visibleRows.map((row, i) => {
-          const extraSpacing = i === 0 ? { marginBottom: '8px' } : {}
+          const extraSpacing = i === 0 ? { marginBottom: '4px' } : {}
           return (
             <Grid item key={i} style={extraSpacing}>
               <Grid container spacing={0.3} justifyContent='center'>
