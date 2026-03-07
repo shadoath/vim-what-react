@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Vim What? — Interactive Vim Cheat Sheet for Chrome</title>
+  <meta name="description" content="Vim What? is a free Chrome extension that gives you an interactive visual keyboard for every Vim command — with 9 guided lessons, 5 keyboard layouts, prefix mode overlays, and progress tracking." />
+  <meta name="keywords" content="vim cheat sheet, vim commands, vim keyboard shortcut, learn vim, vim chrome extension, vim reference, neovim, vim tutorial" />
+  <link rel="canonical" href="https://shadoath.github.io/vim-what-react/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shadoath.github.io/vim-what-react/" />
+  <meta property="og:title" content="Vim What? — Interactive Vim Cheat Sheet for Chrome" />
+  <meta property="og:description" content="Stop alt-tabbing to cheat sheets. Vim What? puts an interactive visual keyboard in your browser — with 9 guided lessons and 5 keyboard layout options." />
+  <meta property="og:image" content="https://shadoath.github.io/vim-what-react/images/vim-what-128.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Vim What? — Interactive Vim Cheat Sheet for Chrome" />
+  <meta name="twitter:description" content="Free Chrome extension: interactive visual keyboard for Vim commands, 9 guided lessons, prefix modes, progress tracking." />
+  <meta name="twitter:image" content="https://shadoath.github.io/vim-what-react/images/vim-what-128.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="images/vim-what-16.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="images/vim-what-48.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vim What?",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Chrome",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Interactive visual keyboard for learning Vim commands. Includes 9 guided lessons, 5 keyboard layouts, prefix mode overlays, and progress tracking.",
+    "url": "https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge"
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ── Nav ── -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#">
+      <img src="images/vim-what-48.png" alt="Vim What? logo" />
+      Vim What?
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#lessons">Lessons</a></li>
+      <li><a href="#layouts">Layouts</a></li>
+      <li>
+        <a class="btn-install-sm" href="https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge" target="_blank" rel="noopener">
+          Add to Chrome
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <span>✦</span> Free Chrome Extension &nbsp;·&nbsp; No account needed
+    </div>
+
+    <h1>Stop guessing.<br /><em>Start remembering.</em></h1>
+
+    <p class="hero-sub">
+      Vim What? is an interactive visual keyboard that shows every Vim command at a glance —
+      right in your browser toolbar. Learn progressively with 9 guided lessons.
+    </p>
+
+    <div class="hero-cta">
+      <a class="btn-install"
+         href="https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge"
+         target="_blank" rel="noopener">
+        <!-- Chrome logo -->
+        <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="10" fill="white"/>
+          <path d="M14 24a10 10 0 0 1 10-10h12.12A22 22 0 1 0 24 46l6.06-10.5A10 10 0 0 1 14 24z" fill="#34A853"/>
+          <path d="M24 14h12.12a22 22 0 0 0-36.06 7.56L8.18 31A10 10 0 0 1 24 14z" fill="#FBBC05"/>
+          <path d="M36.12 14H24a10 10 0 0 1 8.67 5l6.06-10.5A21.9 21.9 0 0 0 36.12 14z" fill="#4285F4"/>
+          <path d="M24 34a10 10 0 0 1-8.67-5L8 40.44A22 22 0 0 0 30.06 45.5L24 35z" fill="#EA4335"/>
+        </svg>
+        Add to Chrome — It's Free
+      </a>
+      <a class="btn-ghost" href="#features">
+        See features ↓
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Keyboard Preview ── -->
+<section class="preview">
+  <div class="container">
+    <div class="preview-window">
+      <div class="window-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="window-title">Vim What? — Normal Mode</span>
+      </div>
+      <div class="keyboard-preview">
+        <!-- Row 1: number row -->
+        <div class="kb-row">
+          <div class="key wider"><span class="key-label">Esc</span></div>
+          <div class="key"><span class="key-label">1</span></div>
+          <div class="key"><span class="key-label">2</span></div>
+          <div class="key"><span class="key-label">3</span></div>
+          <div class="key"><span class="key-label">4</span></div>
+          <div class="key"><span class="key-label">5</span></div>
+          <div class="key"><span class="key-label">6</span></div>
+          <div class="key"><span class="key-label">7</span></div>
+          <div class="key"><span class="key-label">8</span></div>
+          <div class="key"><span class="key-label">9</span></div>
+          <div class="key"><span class="key-label">0</span></div>
+        </div>
+        <!-- Row 2: QWERTY top -->
+        <div class="kb-row">
+          <div class="key wide"><span class="key-label">Tab</span></div>
+          <div class="key motion"><span class="key-top">^</span><span class="key-label">q</span></div>
+          <div class="key operator"><span class="key-top">W</span><span class="key-label">w</span></div>
+          <div class="key operator"><span class="key-top">E</span><span class="key-label">e</span></div>
+          <div class="key command"><span class="key-top">R</span><span class="key-label">r</span></div>
+          <div class="key command"><span class="key-top">T</span><span class="key-label">t</span></div>
+          <div class="key motion"><span class="key-top">Y</span><span class="key-label">y</span></div>
+          <div class="key command"><span class="key-top">U</span><span class="key-label">u</span></div>
+          <div class="key insert"><span class="key-top">I</span><span class="key-label">i</span></div>
+          <div class="key motion"><span class="key-top">O</span><span class="key-label">o</span></div>
+          <div class="key command"><span class="key-top">P</span><span class="key-label">p</span></div>
+        </div>
+        <!-- Row 3: home row -->
+        <div class="kb-row">
+          <div class="key wider"><span class="key-label">Ctrl</span></div>
+          <div class="key insert"><span class="key-top">A</span><span class="key-label">a</span></div>
+          <div class="key operator"><span class="key-top">S</span><span class="key-label">s</span></div>
+          <div class="key operator"><span class="key-top">D</span><span class="key-label">d</span></div>
+          <div class="key motion"><span class="key-top">F</span><span class="key-label">f</span></div>
+          <div class="key command"><span class="key-top">G</span><span class="key-label">g</span></div>
+          <div class="key motion"><span class="key-top">H</span><span class="key-label">h</span></div>
+          <div class="key motion"><span class="key-top">J</span><span class="key-label">j</span></div>
+          <div class="key motion"><span class="key-top">K</span><span class="key-label">k</span></div>
+          <div class="key motion"><span class="key-top">L</span><span class="key-label">l</span></div>
+          <div class="key active"><span class="key-label">✓</span></div>
+        </div>
+        <!-- Row 4: bottom row -->
+        <div class="kb-row">
+          <div class="key wider"><span class="key-label">Shift</span></div>
+          <div class="key command"><span class="key-top">Z</span><span class="key-label">z</span></div>
+          <div class="key command"><span class="key-top">X</span><span class="key-label">x</span></div>
+          <div class="key operator"><span class="key-top">C</span><span class="key-label">c</span></div>
+          <div class="key operator"><span class="key-top">V</span><span class="key-label">v</span></div>
+          <div class="key operator"><span class="key-top">B</span><span class="key-label">b</span></div>
+          <div class="key motion"><span class="key-top">N</span><span class="key-label">n</span></div>
+          <div class="key operator"><span class="key-top">M</span><span class="key-label">m</span></div>
+          <div class="key command"><span class="key-top">:</span><span class="key-label">.</span></div>
+          <div class="key motion"><span class="key-top">?</span><span class="key-label">/</span></div>
+          <div class="key wider"><span class="key-label">Shift</span></div>
+        </div>
+      </div>
+      <div class="preview-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#7dcfff"></div> Motion</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#9d7cd8"></div> Operator</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#e0af68"></div> Command</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#f7768e"></div> Insert</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#7ec86e"></div> Learned</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ── -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-label">// features</div>
+    <h2>Everything you need to master Vim</h2>
+    <p class="section-sub">A reference tool that grows with you — from your first <code>hjkl</code> to advanced text objects.</p>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">⌨️</span>
+        <h3>Visual Keyboard</h3>
+        <p>Color-coded keys show motions, operators, commands, and insert-mode triggers at a glance. Shift layer is always visible — no toggling.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📚</span>
+        <h3>9 Guided Lessons</h3>
+        <p>Progressively unlock commands from basic movement to macros and text objects. Each lesson explains the <em>why</em>, not just the key.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔄</span>
+        <h3>Prefix Mode Overlays</h3>
+        <p>Explore <code>g</code>, <code>z</code>, and <code>Ctrl</code> prefix commands with a single click. See every combination without leaving the popup.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔍</span>
+        <h3>Instant Search</h3>
+        <p>Type any command or description to filter the keyboard in real time. Find what you half-remember in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">✅</span>
+        <h3>Progress Tracking</h3>
+        <p>Mark keys as learned and watch your green dots multiply. A progress panel shows completion per category.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗒️</span>
+        <h3>Custom Mappings</h3>
+        <p>Added a remap in your vimrc? Note it directly on the key. Purple dots mark your personal customizations.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">💡</span>
+        <h3>Key of the Day</h3>
+        <p>A daily highlighted command to build muscle memory one key at a time.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">📐</span>
+        <h3>Text Object Reference</h3>
+        <p>Built-in <code>i</code>/<code>a</code> text object reference panel — always one click away when you can't remember <code>ci"</code> vs <code>ca"</code>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ── -->
+<section class="how">
+  <div class="container">
+    <div class="section-label">// how it works</div>
+    <h2>Open it. Click a key. Learn.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Install the extension</h3>
+        <p>One click from the Chrome Web Store. No account, no permissions needed beyond the browser toolbar.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Click the toolbar icon</h3>
+        <p>The popup opens instantly, showing the full Vim keyboard in your current layout.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Press or click a key</h3>
+        <p>A detail panel shows the command's action, description, and relevant plugin tips.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Follow the lessons</h3>
+        <p>Use the lesson selector to focus on just the keys you're learning right now. Graduate through 9 levels at your own pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Lessons ── -->
+<section class="lessons" id="lessons">
+  <div class="container">
+    <div class="section-label">// lesson progression</div>
+    <h2>Learn Vim at your own pace</h2>
+    <p class="section-sub">Each level introduces a focused set of commands so you're never overwhelmed.</p>
+
+    <div class="lessons-list">
+      <div class="lesson-row">
+        <span class="lesson-level">L1</span>
+        <div>
+          <h3>Move &amp; Survive</h3>
+          <p><code>hjkl</code> movement, insert mode, undo/redo, save &amp; quit</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L2</span>
+        <div>
+          <h3>Word &amp; Line Navigation</h3>
+          <p>Word jumps, line start/end, paragraph movement</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L3</span>
+        <div>
+          <h3>Operators &amp; Motions</h3>
+          <p>Delete, change, yank — combined with motions for powerful edits</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L4</span>
+        <div>
+          <h3>Search &amp; Replace</h3>
+          <p>Find, repeat search, substitution, <code>f</code>/<code>t</code> inline search</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L5</span>
+        <div>
+          <h3>Visual Mode</h3>
+          <p>Character, line, and block visual selection</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L6</span>
+        <div>
+          <h3>Text Objects</h3>
+          <p><code>iw</code>, <code>i"</code>, <code>i(</code> and their <code>a</code> variants — the superpower of Vim</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L7</span>
+        <div>
+          <h3>Marks &amp; Jumps</h3>
+          <p>Setting marks, jumping between positions, the jump list</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L8</span>
+        <div>
+          <h3>Registers &amp; Macros</h3>
+          <p>Named registers, recording and replaying macros, the expression register</p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">ALL</span>
+        <div>
+          <h3>Everything</h3>
+          <p>Full keyboard unlocked — every key, every prefix, every combination</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Layouts ── -->
+<section class="layouts" id="layouts">
+  <div class="container">
+    <div class="section-label">// keyboard layouts</div>
+    <h2>Your layout. Your reference.</h2>
+    <p class="section-sub">Vim commands are remapped correctly for your physical keyboard — so the visual always matches what your fingers do.</p>
+    <div class="layout-chips">
+      <div class="layout-chip featured">QWERTY</div>
+      <div class="layout-chip">Colemak</div>
+      <div class="layout-chip">Colemak-DH</div>
+      <div class="layout-chip">Dvorak</div>
+      <div class="layout-chip">Workman</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Banner ── -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="section-label">// get started</div>
+    <h2>Add it to Chrome in one click</h2>
+    <p>Free. No account. No data collection. Just Vim — whenever you need it.</p>
+    <a class="btn-install"
+       href="https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge"
+       target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="10" fill="white"/>
+        <path d="M14 24a10 10 0 0 1 10-10h12.12A22 22 0 1 0 24 46l6.06-10.5A10 10 0 0 1 14 24z" fill="#34A853"/>
+        <path d="M24 14h12.12a22 22 0 0 0-36.06 7.56L8.18 31A10 10 0 0 1 24 14z" fill="#FBBC05"/>
+        <path d="M36.12 14H24a10 10 0 0 1 8.67 5l6.06-10.5A21.9 21.9 0 0 0 36.12 14z" fill="#4285F4"/>
+        <path d="M24 34a10 10 0 0 1-8.67-5L8 40.44A22 22 0 0 0 30.06 45.5L24 35z" fill="#EA4335"/>
+      </svg>
+      Add to Chrome — It's Free
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="images/vim-what-16.png" alt="" />
+      © 2025 Vim What? · A free tool for Vim learners
+    </div>
+    <ul class="footer-links">
+      <li><a href="https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge" target="_blank" rel="noopener">Chrome Web Store</a></li>
+      <li><a href="https://github.com/shadoath/vim-what-react" target="_blank" rel="noopener">GitHub</a></li>
+      <!-- TODO: add your main website link here -->
+      <!-- <li><a href="https://yourwebsite.com">More Extensions</a></li> -->
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
