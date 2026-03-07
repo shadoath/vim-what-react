@@ -18,8 +18,7 @@
     "128": "vim-what-128.png"
   },
   "homepage_url": "https://github.com/shadoath/vim-what-react",
-  "permissions": ["storage"],
-  "content_security_policy": {
+"content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   }
 }

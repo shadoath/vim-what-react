@@ -78,7 +78,7 @@ export const ProgressPanel = () => {
         <Typography
           sx={{ fontSize: 11, opacity: 0.5, textAlign: 'center', pt: 0.5 }}
         >
-          Click a key and press "Mark as learned" to track your progress
+          Click a key and press "Mark learned" to track your progress
         </Typography>
       )}
     </Box>

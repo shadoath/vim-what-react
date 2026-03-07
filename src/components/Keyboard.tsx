@@ -26,7 +26,7 @@ export const Keyboard = () => {
 
   useKeyboardNav(handleKeyboardSelect)
   const activeKeys = getActiveKeys(lessonLevel)
-  const focusedKeys = getFocusedKeys(lessonLevel)
+  const focusedKeys = lessonLevel === 8 ? [] : getFocusedKeys(lessonLevel)
 
   const shiftIndices = shiftRowIndices[layout] ?? []
   const allRows = keymaps[layout]
@@ -51,10 +51,11 @@ export const Keyboard = () => {
                   if (!keyInfo) return null
                   const isActive = activeKeys.includes(k)
                   const hasFocus = focusedKeys.includes(k)
+                  const plainText = keyInfo.text.replace(/<[^>]+>/g, '')
                   const isSearchMatch =
                     searchQuery.length > 0 &&
                     (k.toLowerCase() === searchQuery.toLowerCase() ||
-                      keyInfo.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                      plainText.toLowerCase().includes(searchQuery.toLowerCase()) ||
                       (keyInfo.secondaryText?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false))
                   const prefixKeyInfo = prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[k] : undefined
 
@@ -152,13 +153,16 @@ export const Keyboard = () => {
               height: 10,
               borderRadius: 0.5,
               backgroundColor: '#fbbf24',
-              border: '2px solid #000',
+              border: '1px solid rgba(0,0,0,0.15)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               flexShrink: 0,
             }}
-          />
-          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>
-            enters insert mode
-          </Typography>
+          >
+            <Box sx={{ width: 4, height: 4, borderRadius: '50%', backgroundColor: '#ef4444' }} />
+          </Box>
+          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>insert mode</Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
           <Box
