@@ -97,7 +97,7 @@ English
 - No data is collected or transmitted.
 - All user data (learned keys, custom mappings, layout preference, lesson level) is stored locally in the browser via `localStorage`.
 - No analytics, no tracking, no external requests.
-- Required privacy policy URL: https://github.com/shadoath/vim-what-react/blob/main/PRIVACY.md *(see pre-release checklist — needs to be created)*
+- Privacy policy URL: https://github.com/shadoath/vim-what-react/blob/main/PRIVACY.md
 
 ---
 
@@ -109,8 +109,8 @@ https://github.com/shadoath/vim-what-react
 
 ## Pre-Release Checklist
 
+- [x] Create `PRIVACY.md` in repo
 - [ ] Take screenshots (1280x800) for all 7 suggested captures above
-- [ ] Create `PRIVACY.md` in repo (Chrome Store requires a hosted privacy policy for extensions using `storage` permission)
 - [ ] Verify icon quality at all 3 sizes (16px, 48px, 128px) — current icons are from 2023
 - [ ] Run `npm run build` and load the `build/` folder as an unpacked extension — smoke test all panels
 - [ ] Verify Key of the Day cycles correctly

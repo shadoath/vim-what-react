@@ -12,10 +12,10 @@ function App() {
     <div className='App'>
       <ThemeProvider theme={theme}>
         <BaseContextProvider>
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0 }}>
             <Header />
             <Keyboard />
-            <BottomTabs />
+            <BottomTabs sx={{ flex: 1, minHeight: 0 }} />
           </Box>
         </BaseContextProvider>
       </ThemeProvider>
