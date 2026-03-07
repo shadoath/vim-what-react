@@ -34,7 +34,7 @@ Visual Vim reference: color-coded keyboard, prefix overlays, progressive lessons
 
 - **Prefix overlays** — toggle `g`, `z`, or `Ctrl` mode to instantly see what every key does with that prefix, overlaid directly on the keyboard. No more guessing what `gz` or `Ctrl-d` do.
 
-- **Shift mode** — toggle or hold Shift to view the uppercase and symbol command layer. The keyboard shows only the relevant half at a time so it stays readable.
+- **Dual-layer keyboard** — every key shows both the normal and shifted command simultaneously, stacked. No toggle needed — the full picture is always visible.
 
 - **Progressive lessons** — 7 lesson levels introduce commands gradually. Start with the essentials (`h`/`j`/`k`/`l`, `i`, `o`, `d`, `y`) and unlock more as you go. Keys outside your current lesson are dimmed so you can focus.
 
@@ -71,7 +71,7 @@ English
 1. **Main keyboard view** — full Qwerty layout, normal mode, no key selected. Shows all color-coded keys at a glance.
 2. **Key selected (rich info)** — click `d` or `y` with the Info panel showing: description with code formatting, examples, plugin tip, vim help link, and "Mark as Learned" button.
 3. **Prefix overlay** — `g` mode active, keyboard showing g+key commands overlaid in blue (gg, gd, gf, g~, gv...).
-4. **Shift mode** — shift layer visible showing uppercase/symbol commands.
+4. **Dual-layer keyboard** — close-up showing stacked shift+normal key pairs across a row.
 5. **Text Objects panel** — color-coded teal/blue `i`/`a` chips, grouped by category with inline descriptions.
 6. **Progress panel** — progress bars and per-category breakdown showing learned key counts.
 7. **Custom Mappings panel** — example remaps like `<leader>w`, `gd`, `<C-p>` shown with purple highlight.

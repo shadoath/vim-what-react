@@ -38,19 +38,24 @@ Both versions share similar data structures but implement them differently:
 - Global state managed through variables
 
 **React (vim-what-react)**:
-- TypeScript modules: `letters.ts`, `numbers.ts`, `symbols.ts`, `layouts.ts`, `lessons.ts`
+- TypeScript modules: `letters.ts`, `numbers.ts`, `symbols.ts`, `layouts.ts`, `lessons.ts`, `prefixKeys.ts`
 - Context API (`BaseContext`) for state management
-- No persistence layer implemented yet
+- Persistence via `localStorage`: layout, lesson level, learned keys, custom mappings
 
 ### Key Components Architecture
 
 **React Component Hierarchy**:
 ```
 App
-├── Header (layout/lesson selection)
-├── Keyboard (visual keyboard display)
-│   └── Key (individual key component)
-└── InfoArea (displays key information)
+├── Header (layout/lesson/prefix selectors, KOTD, search)
+├── Keyboard (visual keyboard — dual-layer stacked keys)
+│   └── Key (individual key; isSecondary for shift layer)
+└── BottomTabs
+    ├── InfoArea (key detail panel + lesson content when no key selected)
+    │   └── lessons/Lesson1–7, LessonAll (lesson prose/visuals)
+    ├── TextObjects (i/a text object reference)
+    ├── ProgressPanel (per-category learned key progress)
+    └── CustomMappings (user remap notes, stored in localStorage)
 ```
 
 **Context Pattern**:
@@ -74,9 +79,8 @@ App
 - Insert mode keys highlighted in red
 
 **Missing / Remaining**:
-- Custom vim mappings (save/edit/delete via Chrome storage)
-- Persistence of user preferences (layout, lesson level) via Chrome storage
-- Chrome extension packaging / store submission prep
+- Chrome extension store submission (screenshots, icons, promotional tile)
+- README update with store link once published
 
 ### Key Data Structures
 
