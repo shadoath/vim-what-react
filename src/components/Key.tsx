@@ -97,8 +97,8 @@ export const Key = ({
   const isActiveButNotFocused = isActive && !hasFocus
   const filterParts: string[] = []
   if (isSecondary) filterParts.push('brightness(0.88)')
-  if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.4) brightness(0.88)')
-  if (!isActive) filterParts.push('grayscale(80%)')
+  if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.55) brightness(0.9)')
+  if (!isActive) filterParts.push('grayscale(60%)')
   const filterStr = filterParts.join(' ') || 'none'
 
   return (
@@ -106,13 +106,18 @@ export const Key = ({
       onClick={() => setSelectedKey(value)}
       sx={{
         border: 1,
-        borderColor: hasBorder ? 'text.primary' : 'transparent',
+        borderColor: 'transparent',
         ...(prefixOverride ? { backgroundColor: '#dbeafe !important' } : {}),
         filter: filterStr,
-        opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 1 : 0.2,
-        outline: isSearchMatch ? '2px solid #3b82f6' : 'none',
+        opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 1 : 0.28,
+        outline: isSearchMatch
+          ? '2px solid #3b82f6'
+          : hasFocus
+            ? '2px solid rgba(0,0,0,0.72)'
+            : 'none',
+        outlineOffset: '-1px',
         boxShadow: 'none',
-        zIndex: isSearchMatch ? 1 : hasFocus ? 1 : 'auto',
+        zIndex: isSearchMatch ? 1 : 'auto',
         padding: '2px',
         margin: 0,
         width: '50px',
