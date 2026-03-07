@@ -80,6 +80,7 @@ export const Keyboard = () => {
                             hasFocus={focusedKeys.includes(shiftKey)}
                             isSearchMatch={isSearchMatch}
                             prefixOverride={prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[shiftKey] : undefined}
+                            prefixModeActive={prefixMode !== 'none'}
                             hasCustomMapping={shiftKey in customMappings}
                             isLearned={learnedKeys.includes(shiftKey)}
                             dimActive={dimActive}
@@ -100,6 +101,7 @@ export const Keyboard = () => {
                           hasFocus={hasFocus}
                           isSearchMatch={isSearchMatch}
                           prefixOverride={prefixKeyInfo}
+                          prefixModeActive={prefixMode !== 'none'}
                           hasCustomMapping={k in customMappings}
                           isAnimating={k === animatingKey}
                           isLearned={learnedKeys.includes(k)}

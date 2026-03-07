@@ -24,6 +24,7 @@ type KeyProps = {
   hasFocus?: boolean
   isSearchMatch?: boolean
   prefixOverride?: string
+  prefixModeActive?: boolean
   hasCustomMapping?: boolean
   isAnimating?: boolean
   isLearned?: boolean
@@ -75,6 +76,7 @@ export const Key = ({
   hasBorder,
   isSearchMatch = false,
   prefixOverride = undefined,
+  prefixModeActive = false,
   hasCustomMapping = false,
   isAnimating = false,
   isLearned = false,
@@ -184,7 +186,7 @@ export const Key = ({
           </Typography>
           {hasDot && <Circle sx={{ fontSize: 3 }} />}
         </Box>
-        {(prefixOverride ?? displayText) &&
+        {(prefixOverride ?? (!prefixModeActive && displayText)) &&
           ((!prefixOverride && arrowIcon) || (
             <Typography
               fontSize={labelSize}
