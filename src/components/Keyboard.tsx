@@ -5,27 +5,15 @@ import {
   type AllKeyTypes,
   useBaseContext,
 } from '../contexts/BaseContext'
-import { keymaps } from '../lib/layouts'
-import { shiftRowIndices } from '../lib/layouts'
+import { keymaps, shiftRowIndices, getShiftRowForNormalRow } from '../lib/layouts'
 import { Key } from './Key'
 import { getActiveKeys, getFocusedKeys } from '../lib/lessons'
 import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
-  const {
-    layout,
-    lessonLevel,
-    setSelectedKey,
-    searchQuery,
-    prefixMode,
-    customMappings,
-    learnedKeys,
-    shiftLocked,
-  } = useBaseContext()
+  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings, learnedKeys } = useBaseContext()
   const [animatingKey, setAnimatingKey] = useState('')
-  const [shiftHeld, setShiftHeld] = useState(false)
-  const shiftMode = shiftLocked || shiftHeld
 
   const handleKeyboardSelect = useCallback(
     (key: string) => {
@@ -36,67 +24,84 @@ export const Keyboard = () => {
     [setSelectedKey],
   )
 
-  useKeyboardNav(handleKeyboardSelect, setShiftHeld)
+  useKeyboardNav(handleKeyboardSelect)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = getFocusedKeys(lessonLevel)
 
   const shiftIndices = shiftRowIndices[layout] ?? []
-  const visibleRows = keymaps[layout].filter((_, i) =>
-    shiftMode ? shiftIndices.includes(i) : !shiftIndices.includes(i),
-  )
+  const allRows = keymaps[layout]
+
+  // Always show normal rows with shift key stacked above each
+  const normalRowsWithIdx = allRows
+    .map((row, originalIdx) => ({ row, originalIdx }))
+    .filter(({ originalIdx }) => !shiftIndices.includes(originalIdx))
 
   return (
     <Box sx={{ px: 1 }}>
-      {/* Keyboard rows — only showing shift or normal layer */}
       <Grid container spacing={0.4} direction='column'>
-        {visibleRows.map((row, i) => {
+        {normalRowsWithIdx.map(({ row, originalIdx }, i) => {
           const extraSpacing = i === 0 ? { marginBottom: '4px' } : {}
+          const shiftRowStr = getShiftRowForNormalRow(layout, originalIdx)
+
           return (
-            <Grid item key={i} style={extraSpacing}>
+            <Grid item key={originalIdx} style={extraSpacing}>
               <Grid container spacing={0.3} justifyContent='center'>
                 {row.split('').map((k, j) => {
                   const keyInfo = allKeysWithInfo[k as AllKeyTypes]
                   if (!keyInfo) return null
-                  const help = keyInfo?.vimHelp ?? ''
                   const isActive = activeKeys.includes(k)
                   const hasFocus = focusedKeys.includes(k)
                   const isSearchMatch =
                     searchQuery.length > 0 &&
                     (k.toLowerCase() === searchQuery.toLowerCase() ||
-                      keyInfo.text
-                        .toLowerCase()
-                        .includes(searchQuery.toLowerCase()) ||
-                      (keyInfo.secondaryText
-                        ?.toLowerCase()
-                        .includes(searchQuery.toLowerCase()) ??
-                        false))
-                  const prefixKeyInfo =
-                    prefixMode !== 'none'
-                      ? prefixKeyMaps[prefixMode]?.[k]
-                      : undefined
-                  const hasCustomMapping = k in customMappings
-                  const isLearned = learnedKeys.includes(k)
+                      keyInfo.text.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                      (keyInfo.secondaryText?.toLowerCase().includes(searchQuery.toLowerCase()) ?? false))
+                  const prefixKeyInfo = prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[k] : undefined
+
+                  const shiftKey = shiftRowStr?.[j]
+                  const shiftKeyInfo = shiftKey ? allKeysWithInfo[shiftKey as AllKeyTypes] : undefined
 
                   return (
-                    <Grid item key={`${i}-${j}`}>
-                      <Key
-                        value={k}
-                        text={keyInfo.text}
-                        secondaryText={keyInfo.secondaryText}
-                        shortText={keyInfo.shortText}
-                        numberIndicator={keyInfo.numberIndicator}
-                        hasBorder={keyInfo.hasBorder}
-                        keyType={keyInfo.action}
-                        vimHelp={help}
-                        hasDot={keyInfo.hasDot}
-                        isActive={isActive}
-                        hasFocus={hasFocus}
-                        isSearchMatch={isSearchMatch}
-                        prefixOverride={prefixKeyInfo}
-                        hasCustomMapping={hasCustomMapping}
-                        isAnimating={k === animatingKey}
-                        isLearned={isLearned}
-                      />
+                    <Grid item key={`${originalIdx}-${j}`}>
+                      <Box sx={{ display: 'flex', flexDirection: 'column', gap: '1px' }}>
+                        {shiftKey && shiftKeyInfo && (
+                          <Key
+                            value={shiftKey}
+                            text={shiftKeyInfo.text}
+                            secondaryText={shiftKeyInfo.secondaryText}
+                            shortText={shiftKeyInfo.shortText}
+                            hasBorder={shiftKeyInfo.hasBorder}
+                            keyType={shiftKeyInfo.action}
+                            vimHelp={shiftKeyInfo.vimHelp}
+                            hasDot={shiftKeyInfo.hasDot}
+                            isActive={isActive}
+                            hasFocus={hasFocus}
+                            isSearchMatch={isSearchMatch}
+                            prefixOverride={prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[shiftKey] : undefined}
+                            hasCustomMapping={shiftKey in customMappings}
+                            isLearned={learnedKeys.includes(shiftKey)}
+                            isSecondary
+                          />
+                        )}
+                        <Key
+                          value={k}
+                          text={keyInfo.text}
+                          secondaryText={keyInfo.secondaryText}
+                          shortText={keyInfo.shortText}
+                          numberIndicator={keyInfo.numberIndicator}
+                          hasBorder={keyInfo.hasBorder}
+                          keyType={keyInfo.action}
+                          vimHelp={keyInfo.vimHelp}
+                          hasDot={keyInfo.hasDot}
+                          isActive={isActive}
+                          hasFocus={hasFocus}
+                          isSearchMatch={isSearchMatch}
+                          prefixOverride={prefixKeyInfo}
+                          hasCustomMapping={k in customMappings}
+                          isAnimating={k === animatingKey}
+                          isLearned={learnedKeys.includes(k)}
+                        />
+                      </Box>
                     </Grid>
                   )
                 })}

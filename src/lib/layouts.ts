@@ -59,3 +59,17 @@ export const shiftRowIndices: Record<string, number[]> = {
   'Colemak-DH': [0, 2, 4, 7],
   Workman: [0, 2, 4, 6],
 }
+
+// For each normal row index, return the closest shift row string for that layout
+export function getShiftRowForNormalRow(layout: string, normalIdx: number): string | undefined {
+  const rows = keymaps[layout as keyof typeof keymaps]
+  const shiftIdxs = shiftRowIndices[layout] ?? []
+  if (!rows || shiftIdxs.length === 0) return undefined
+  let closestIdx = shiftIdxs[0]
+  let minDist = Math.abs(normalIdx - shiftIdxs[0])
+  for (const si of shiftIdxs) {
+    const dist = Math.abs(normalIdx - si)
+    if (dist < minDist) { minDist = dist; closestIdx = si }
+  }
+  return rows[closestIdx]
+}

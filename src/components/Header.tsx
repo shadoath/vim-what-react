@@ -26,8 +26,6 @@ export const Header = () => {
     setSearchQuery,
     prefixMode,
     setPrefixMode,
-    shiftLocked,
-    setShiftLocked,
     keyOfDay,
     setSelectedKey,
     learnedKeys,
@@ -168,32 +166,6 @@ export const Header = () => {
             </ToggleButton>
           ))}
         </ToggleButtonGroup>
-        <Tooltip
-          title='Shift lock — show uppercase / symbol layer'
-          placement='bottom'
-          arrow
-        >
-          <ToggleButton
-            value='shift'
-            selected={shiftLocked}
-            onChange={() => setShiftLocked(!shiftLocked)}
-            size='small'
-            sx={{
-              height: 26,
-              fontSize: 11,
-              px: 0.75,
-              py: 0,
-              border: '1px solid rgba(0,0,0,0.12)',
-              '&.Mui-selected': {
-                backgroundColor: '#6366f1 !important',
-                color: '#fff !important',
-              },
-              '&.Mui-selected:hover': { backgroundColor: '#4f46e5 !important' },
-            }}
-          >
-            ⇧
-          </ToggleButton>
-        </Tooltip>
       </Box>
 
       {/* Right: Layout + Lesson selectors */}
