@@ -28,21 +28,21 @@ export const ProgressPanel = () => {
         variant='determinate'
         value={pct}
         sx={{
-          mb: 1.5,
-          height: 6,
-          borderRadius: 3,
+          mb: 2,
+          height: 10,
+          borderRadius: 5,
           backgroundColor: '#dcfce7',
-          '& .MuiLinearProgress-bar': { backgroundColor: '#16a34a' },
+          '& .MuiLinearProgress-bar': { backgroundColor: '#16a34a', borderRadius: 5 },
         }}
       />
       {categories.map(({ label, keys }) => {
         const learned = keys.filter((k) => learnedKeys.includes(k)).length
         const catPct = keys.length > 0 ? Math.round((learned / keys.length) * 100) : 0
         return (
-          <Box key={label} sx={{ mb: 1 }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.25 }}>
-              <Typography sx={{ fontSize: 11 }}>{label}</Typography>
-              <Typography sx={{ fontSize: 11, opacity: 0.6 }}>
+          <Box key={label} sx={{ mb: 1.5 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.4 }}>
+              <Typography sx={{ fontSize: 12 }}>{label}</Typography>
+              <Typography sx={{ fontSize: 12, opacity: 0.6 }}>
                 {learned}/{keys.length} ({catPct}%)
               </Typography>
             </Box>
@@ -50,10 +50,10 @@ export const ProgressPanel = () => {
               variant='determinate'
               value={catPct}
               sx={{
-                height: 4,
-                borderRadius: 2,
+                height: 8,
+                borderRadius: 4,
                 backgroundColor: '#dcfce7',
-                '& .MuiLinearProgress-bar': { backgroundColor: '#4ade80' },
+                '& .MuiLinearProgress-bar': { backgroundColor: '#4ade80', borderRadius: 4 },
               }}
             />
           </Box>

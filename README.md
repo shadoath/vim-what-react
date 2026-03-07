@@ -1,16 +1,21 @@
-# Vim What?
+# Vim What? v1.0.0
 
 ![Vim What logo](./src/vim-what.svg)
 
-A Chrome extension for learning Vim commands. See the visual keyboard, understand what each key does, and learn progressively through lesson levels.
+A Chrome extension for learning Vim commands interactively. Visual keyboard with color-coded keys, prefix mode overlays, progressive lesson levels, and progress tracking.
 
 ## Features
 
-- Visual keyboard with color-coded key types (motion, operator, command, extra)
-- Qwerty and Colemak layout support
-- 7 progressive lesson levels to learn Vim incrementally
-- Click any key to see its description and link to the official Vim docs
-- Dot indicators for repeatable commands
+- **Visual keyboard** — color-coded key types (motion, operator, command, extra) across 5 layouts: Qwerty, Colemak, Colemak-DH, Dvorak, Workman
+- **Prefix overlays** — toggle `g`, `z`, or `Ctrl` mode to see what each prefix does to every key
+- **Shift mode** — toggle or hold Shift to view the uppercase/symbol layer; shows only the relevant half of the keyboard
+- **7 progressive lesson levels** — learn Vim incrementally; keys outside the current lesson are dimmed
+- **Search** — filter keys by name or description
+- **Key of the Day** — a daily key to focus on
+- **Progress tracking** — mark keys as learned; a green dot appears on learned keys
+- **Text Objects reference** — quick reference panel for `i`/`a` text objects
+- **Custom mappings** — save personal notes or remaps per key, stored in localStorage
+- **Keyboard navigation** — press any key to select it; Escape to clear
 
 ## Key Color Guide
 
@@ -20,6 +25,8 @@ A Chrome extension for learning Vim commands. See the visual keyboard, understan
 | Orange | Operator | Acts on a motion (e.g. `d`, `y`, `c`) |
 | Yellow | Command | Direct action (e.g. `i`, `o`, `p`) |
 | Gray | Extra | Prefix or special commands |
+
+Red key labels enter Insert mode.
 
 ## Development
 

@@ -10,7 +10,7 @@ import {
   ListItemText,
 } from '@mui/material'
 import { Delete } from '@mui/icons-material'
-import { allKeysWithInfo, useBaseContext } from '../contexts/BaseContext'
+import { useBaseContext } from '../contexts/BaseContext'
 
 export const CustomMappings = () => {
   const { customMappings, setCustomMapping, deleteCustomMapping } = useBaseContext()
@@ -21,9 +21,7 @@ export const CustomMappings = () => {
   const handleAdd = () => {
     const key = keyInput.trim()
     const desc = descInput.trim()
-    if (!key) { setError('Enter a key character'); return }
-    if (key.length !== 1) { setError('Must be a single character'); return }
-    if (!(key in allKeysWithInfo)) { setError(`'${key}' is not a recognized vim key`); return }
+    if (!key) { setError('Enter a key or sequence'); return }
     if (!desc) { setError('Enter a description'); return }
     setCustomMapping(key, desc)
     setKeyInput('')
@@ -39,11 +37,11 @@ export const CustomMappings = () => {
       <Box sx={{ display: 'flex', gap: 0.5, alignItems: 'flex-start', mb: 1 }}>
         <TextField
           size='small'
-          label='Key'
+          label='Key / Sequence'
           value={keyInput}
           onChange={(e) => { setKeyInput(e.target.value); setError('') }}
-          inputProps={{ maxLength: 1, style: { width: 24, textAlign: 'center', fontWeight: 'bold' } }}
-          sx={{ width: 60 }}
+          inputProps={{ style: { fontWeight: 'bold', fontFamily: 'monospace' } }}
+          sx={{ width: 130 }}
         />
         <TextField
           size='small'
@@ -82,7 +80,7 @@ export const CustomMappings = () => {
               <ListItemText
                 primary={
                   <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    <Typography sx={{ fontSize: 13, fontWeight: 'bold', color: '#7c3aed', minWidth: 16 }}>{key}</Typography>
+                    <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: '#7c3aed', fontFamily: 'monospace', minWidth: 20 }}>{key}</Typography>
                     <Typography sx={{ fontSize: 12 }}>{desc}</Typography>
                   </Box>
                 }

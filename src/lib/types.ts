@@ -8,6 +8,7 @@ export type KeyInfoType = {
   vimHelp: string
   plugins?: string
   text: string
+  examples?: string[]
   secondaryText?: string
   shortText?: string
   numberIndicator?: string | string[]
