@@ -96,7 +96,6 @@ export const Key = ({
 
   const isActiveButNotFocused = isActive && !hasFocus
   const filterParts: string[] = []
-  if (isSecondary) filterParts.push('brightness(0.88)')
   if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.78) brightness(0.95)')
   if (!isActive) filterParts.push('grayscale(60%)')
   const filterStr = filterParts.join(' ') || 'none'
