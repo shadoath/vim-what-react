@@ -50,13 +50,12 @@ export const BaseContextProvider = ({
     return letterKeys[dayOfYear % letterKeys.length]
   }
 
-  const DEFAULT_LEARNED = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   const loadLearnedKeys = (): string[] => {
     try {
       const saved = localStorage.getItem('vim-what-learned')
-      return saved !== null ? JSON.parse(saved) : DEFAULT_LEARNED
+      return saved !== null ? JSON.parse(saved) : []
     } catch {
-      return DEFAULT_LEARNED
+      return []
     }
   }
 
