@@ -76,7 +76,7 @@ export const Keyboard = () => {
                             keyType={shiftKeyInfo.action}
                             vimHelp={shiftKeyInfo.vimHelp}
                             hasDot={shiftKeyInfo.hasDot}
-                            isActive={isActive}
+                            isActive={activeKeys.includes(shiftKey)}
                             hasFocus={focusedKeys.includes(shiftKey)}
                             isSearchMatch={isSearchMatch}
                             prefixOverride={prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[shiftKey] : undefined}
