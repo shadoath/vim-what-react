@@ -123,10 +123,7 @@ export const Header = () => {
         <ToggleButtonGroup
           value={prefixMode}
           exclusive
-          onChange={(_e, val) => {
-            console.log('prefixMode', val)
-            setPrefixMode(val ?? 'none')
-          }}
+          onChange={(_e, val) => setPrefixMode(val ?? 'none')}
           size='small'
           sx={{ height: 26 }}
         >
@@ -149,25 +146,26 @@ export const Header = () => {
               },
             ] as const
           ).map(({ val, label, tip }) => (
-            <Tooltip key={val} title={tip} placement='bottom' arrow>
-              <ToggleButton
-                value={val}
-                sx={{
-                  fontSize: 11,
-                  px: 0.75,
-                  py: 0,
-                  '&.Mui-selected': {
-                    backgroundColor: '#6366f1 !important',
-                    color: '#fff !important',
-                  },
-                  '&.Mui-selected:hover': {
-                    backgroundColor: '#4f46e5 !important',
-                  },
-                }}
-              >
-                {label}
-              </ToggleButton>
-            </Tooltip>
+            <ToggleButton
+              key={val}
+              value={val}
+              sx={{
+                fontSize: 11,
+                px: 0.75,
+                py: 0,
+                '&.Mui-selected': {
+                  backgroundColor: '#6366f1 !important',
+                  color: '#fff !important',
+                },
+                '&.Mui-selected:hover': {
+                  backgroundColor: '#4f46e5 !important',
+                },
+              }}
+            >
+              <Tooltip title={tip} placement='bottom' arrow>
+                <span>{label}</span>
+              </Tooltip>
+            </ToggleButton>
           ))}
         </ToggleButtonGroup>
         <Tooltip
