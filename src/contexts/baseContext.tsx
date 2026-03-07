@@ -3,7 +3,7 @@ import { numbers } from '../lib/numbers'
 import { symbols } from '../lib/symbols'
 import { letters } from '../lib/letters'
 import type { SelectChangeEvent } from '@mui/material'
-import { type PrefixMode } from '../lib/prefixKeys'
+import type { PrefixMode } from '../lib/prefixKeys'
 
 type BaseContextType = {
   selectedKey: string
@@ -43,7 +43,7 @@ export const BaseContextProvider = ({
   const getKeyOfDay = (): string => {
     const now = new Date()
     const dayOfYear = Math.floor(
-      (now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) / 86400000
+      (now.getTime() - new Date(now.getFullYear(), 0, 0).getTime()) / 86400000,
     )
     // Only cycle through letter keys for key of the day (more educational)
     const letterKeys = keysList.filter((k) => /^[a-zA-Z]$/.test(k))
@@ -70,14 +70,20 @@ export const BaseContextProvider = ({
 
   const allKeys = Object.keys(allKeysWithInfo)
 
-  const [layout, setLayout] = useState<LayoutTypes>(() => (localStorage.getItem('vim-what-layout') as LayoutTypes) ?? 'Qwerty')
+  const [layout, setLayout] = useState<LayoutTypes>(
+    () => (localStorage.getItem('vim-what-layout') as LayoutTypes) ?? 'Qwerty',
+  )
   const [selectedKey, setSelectedKey] = useState('')
   const [infoImage, setInfoImage] = useState('/about/all.png')
-  const [lessonLevel, setLessonLevel] = useState<number>(() => { const saved = localStorage.getItem('vim-what-lesson'); return saved !== null ? Number(saved) : 8 })
+  const [lessonLevel, setLessonLevel] = useState<number>(() => {
+    const saved = localStorage.getItem('vim-what-lesson')
+    return saved !== null ? Number(saved) : 8
+  })
   const [searchQuery, setSearchQuery] = useState('')
   const [prefixMode, setPrefixMode] = useState<PrefixMode>('none')
   const [shiftLocked, setShiftLocked] = useState(false)
-  const [customMappings, setCustomMappings] = useState<Record<string, string>>(loadCustomMappings)
+  const [customMappings, setCustomMappings] =
+    useState<Record<string, string>>(loadCustomMappings)
   const [learnedKeys, setLearnedKeys] = useState<string[]>(loadLearnedKeys)
   const keyOfDay = getKeyOfDay()
 
@@ -96,7 +102,7 @@ export const BaseContextProvider = ({
     if (level === 8) {
       setInfoImage('/about/all.png')
     } else {
-      setInfoImage('/about/lesson_' + level + '.png')
+      setInfoImage(`/about/lesson_${level}.png`)
     }
     setSelectedKey('')
   }
