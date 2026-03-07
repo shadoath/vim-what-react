@@ -27,6 +27,7 @@ export const Keyboard = () => {
   useKeyboardNav(handleKeyboardSelect)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = lessonLevel >= 10 ? [] : getFocusedKeys(lessonLevel)
+  const dimActive = focusedKeys.length > 0
 
   const shiftIndices = shiftRowIndices[layout] ?? []
   const allRows = keymaps[layout]
@@ -76,11 +77,12 @@ export const Keyboard = () => {
                             vimHelp={shiftKeyInfo.vimHelp}
                             hasDot={shiftKeyInfo.hasDot}
                             isActive={isActive}
-                            hasFocus={hasFocus}
+                            hasFocus={focusedKeys.includes(shiftKey)}
                             isSearchMatch={isSearchMatch}
                             prefixOverride={prefixMode !== 'none' ? prefixKeyMaps[prefixMode]?.[shiftKey] : undefined}
                             hasCustomMapping={shiftKey in customMappings}
                             isLearned={learnedKeys.includes(shiftKey)}
+                            dimActive={dimActive}
                             isSecondary
                           />
                         )}
@@ -101,6 +103,7 @@ export const Keyboard = () => {
                           hasCustomMapping={k in customMappings}
                           isAnimating={k === animatingKey}
                           isLearned={learnedKeys.includes(k)}
+                          dimActive={dimActive}
                         />
                       </Box>
                     </Grid>

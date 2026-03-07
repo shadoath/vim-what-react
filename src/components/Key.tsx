@@ -28,6 +28,7 @@ type KeyProps = {
   isAnimating?: boolean
   isLearned?: boolean
   isSecondary?: boolean
+  dimActive?: boolean
 }
 
 // Helper function to render arrow icons
@@ -78,6 +79,7 @@ export const Key = ({
   isAnimating = false,
   isLearned = false,
   isSecondary = false,
+  dimActive = true,
 }: KeyProps) => {
   const { setSelectedKey } = useBaseContext()
 
@@ -90,6 +92,13 @@ export const Key = ({
   const letterSize = isSecondary ? 11 : 13
   const labelSize = isSecondary ? 7 : 8
 
+  const isActiveButNotFocused = isActive && !hasFocus
+  const filterParts: string[] = []
+  if (isSecondary) filterParts.push('brightness(0.88)')
+  if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.25) brightness(0.8)')
+  if (!isActive) filterParts.push('grayscale(80%)')
+  const filterStr = filterParts.join(' ') || 'none'
+
   return (
     <Card
       onClick={() => setSelectedKey(value)}
@@ -97,10 +106,10 @@ export const Key = ({
         border: 1,
         borderColor: hasBorder ? 'text.primary' : 'transparent',
         ...(prefixOverride ? { backgroundColor: '#dbeafe !important' } : {}),
-        ...(isSecondary ? { filter: 'brightness(0.88)' } : {}),
-        opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 0.55 : 0.25,
+        filter: filterStr,
+        opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 1 : 0.2,
         outline: isSearchMatch ? '2px solid #3b82f6' : 'none',
-        boxShadow: !isSearchMatch && hasFocus ? '0 0 0 2px #f59e0b' : 'none',
+        boxShadow: !isSearchMatch && hasFocus ? '0 0 0 2px #f59e0b, 0 0 8px rgba(245,158,11,0.5)' : 'none',
         zIndex: isSearchMatch ? 1 : hasFocus ? 1 : 'auto',
         padding: '2px',
         margin: 0,
