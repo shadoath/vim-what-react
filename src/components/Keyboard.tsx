@@ -152,6 +152,20 @@ export const Keyboard = () => {
               width: 10,
               height: 10,
               borderRadius: 0.5,
+              backgroundColor: '#e5e7eb',
+              border: '1px solid rgba(0,0,0,0.15)',
+              boxShadow: '0 0 0 2px #f59e0b',
+              flexShrink: 0,
+            }}
+          />
+          <Typography sx={{ fontSize: 9, opacity: 0.6 }}>current level</Typography>
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.4 }}>
+          <Box
+            sx={{
+              width: 10,
+              height: 10,
+              borderRadius: 0.5,
               backgroundColor: '#fbbf24',
               border: '1px solid rgba(0,0,0,0.15)',
               display: 'flex',
