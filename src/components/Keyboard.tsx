@@ -12,7 +12,7 @@ import { useKeyboardNav } from '../hooks/useKeyboardNav'
 import { prefixKeyMaps } from '../lib/prefixKeys'
 
 export const Keyboard = () => {
-  const { layout, lessonLevel, setSelectedKey, searchQuery, prefixMode, customMappings, learnedKeys } = useBaseContext()
+  const { layout, lessonLevel, selectedKey, setSelectedKey, searchQuery, prefixMode, customMappings, learnedKeys } = useBaseContext()
   const [animatingKey, setAnimatingKey] = useState('')
 
   const handleKeyboardSelect = useCallback(
@@ -24,7 +24,7 @@ export const Keyboard = () => {
     [setSelectedKey],
   )
 
-  useKeyboardNav(handleKeyboardSelect)
+  useKeyboardNav(handleKeyboardSelect, selectedKey)
   const activeKeys = getActiveKeys(lessonLevel)
   const focusedKeys = lessonLevel >= 10 ? [] : getFocusedKeys(lessonLevel)
   const dimActive = focusedKeys.length > 0

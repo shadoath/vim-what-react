@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
 import { allKeysWithInfo } from '../contexts/BaseContext'
 
-export const useKeyboardNav = (setSelectedKey: (key: string) => void) => {
+export const useKeyboardNav = (
+  setSelectedKey: (key: string) => void,
+  selectedKey: string,
+) => {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (
@@ -16,11 +19,15 @@ export const useKeyboardNav = (setSelectedKey: (key: string) => void) => {
       }
       if (key === 'Escape') {
         e.preventDefault()
-        setSelectedKey('')
+        if (selectedKey) {
+          setSelectedKey('')
+        } else {
+          window.close()
+        }
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [setSelectedKey])
+  }, [setSelectedKey, selectedKey])
 }
