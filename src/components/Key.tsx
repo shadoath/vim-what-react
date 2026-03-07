@@ -95,7 +95,7 @@ export const Key = ({
   const isActiveButNotFocused = isActive && !hasFocus
   const filterParts: string[] = []
   if (isSecondary) filterParts.push('brightness(0.88)')
-  if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.25) brightness(0.8)')
+  if (!isSearchMatch && isActiveButNotFocused && dimActive) filterParts.push('saturate(0.4) brightness(0.88)')
   if (!isActive) filterParts.push('grayscale(80%)')
   const filterStr = filterParts.join(' ') || 'none'
 
@@ -109,7 +109,7 @@ export const Key = ({
         filter: filterStr,
         opacity: isSearchMatch ? 1 : hasFocus ? 1 : isActive ? 1 : 0.2,
         outline: isSearchMatch ? '2px solid #3b82f6' : 'none',
-        boxShadow: !isSearchMatch && hasFocus ? '0 0 0 2px #f59e0b, 0 0 8px rgba(245,158,11,0.5)' : 'none',
+        boxShadow: 'none',
         zIndex: isSearchMatch ? 1 : hasFocus ? 1 : 'auto',
         padding: '2px',
         margin: 0,
