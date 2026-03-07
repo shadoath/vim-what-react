@@ -1,6 +1,21 @@
+import type React from 'react'
 import { Box, Button, Chip, Link, Typography } from '@mui/material'
 import { allKeysWithInfo, useBaseContext } from '../contexts/BaseContext'
 import type { AllKeyTypes } from '../contexts/BaseContext'
+import { LessonAll } from './lessons/LessonAll'
+import { Lesson1 } from './lessons/Lesson1'
+import { Lesson2 } from './lessons/Lesson2'
+import { Lesson3 } from './lessons/Lesson3'
+import { Lesson4 } from './lessons/Lesson4'
+import { Lesson5 } from './lessons/Lesson5'
+import { Lesson6 } from './lessons/Lesson6'
+import { Lesson7 } from './lessons/Lesson7'
+
+const lessonComponents: Record<number, React.ComponentType> = {
+  8: LessonAll,
+  1: Lesson1, 2: Lesson2, 3: Lesson3, 4: Lesson4,
+  5: Lesson5, 6: Lesson6, 7: Lesson7,
+}
 
 const actionColors: Record<string, string> = {
   motion: '#7dd3c0',
@@ -16,22 +31,13 @@ const parsePlugins = (plugins: string) =>
   })
 
 export const InfoArea = () => {
-  const { selectedKey, infoImage, customMappings, learnedKeys, toggleLearned } =
+  const { selectedKey, lessonLevel, customMappings, learnedKeys, toggleLearned } =
     useBaseContext()
   const keyInfo = allKeysWithInfo[selectedKey as AllKeyTypes]
 
   if (!selectedKey || !keyInfo) {
-    return (
-      <Box sx={{ p: 1 }}>
-        {infoImage && (
-          <img
-            src={infoImage}
-            alt='lesson overview'
-            style={{ width: '100%', maxHeight: 220, objectFit: 'contain' }}
-          />
-        )}
-      </Box>
-    )
+    const LessonComponent = lessonComponents[lessonLevel] ?? LessonAll
+    return <LessonComponent />
   }
 
   const docsUrl = keyInfo.vimHelp
