@@ -100,7 +100,7 @@ export const Keyboard = () => {
                           text={keyInfo.text}
                           secondaryText={keyInfo.secondaryText}
                           shortText={keyInfo.shortText}
-                          numberIndicator={keyInfo.numberIndicator}
+                          numberIndicator={lessonLevel >= 10 ? keyInfo.numberIndicator : undefined}
                           hasBorder={keyInfo.hasBorder}
                           keyType={keyInfo.action}
                           vimHelp={keyInfo.vimHelp}
