@@ -46,8 +46,9 @@ export const symbols: Record<string, KeyInfoType> = {
     title: 'Percent',
     action: 'motion',
     vimHelp: 'motion.txt.html#%25',
-    text: 'Jump to the matching bracket, paren, or brace under/after the cursor. With a count (e.g. <code>50%</code>), jump to that percentage of the file.',
-    examples: ['% (jump to match)', 'd% (delete to match)', 'v% (select to match)', '50% (go to middle of file)', 'ci( then % to jump out)'],
+    plugins: 'andymass/vim-matchup | Extends % to match if/else/end, HTML/XML tags, and language-specific block pairs. Drop-in replacement for the built-in matchit.',
+    text: 'Jump to the matching bracket, paren, or brace under/after the cursor. With a count (e.g. <code>50%</code>), jump to that percentage of the file. Enable <code>matchit</code> (built-in, not loaded by default) with <code>:packadd matchit</code> for HTML/XML tag and if/end matching.',
+    examples: ['% (jump to match)', 'd% (delete to match)', 'v% (select to match)', '50% (go to middle of file)', ':packadd matchit (enable tag matching)'],
     secondaryText: 'goto match',
   },
   '^': {
@@ -70,8 +71,9 @@ export const symbols: Record<string, KeyInfoType> = {
     title: 'Asterisk',
     action: 'motion',
     vimHelp: 'pattern.txt.html#star',
+    plugins: 'haya14busa/vim-asterisk | Extends * so the cursor stays on the current match instead of jumping to the next one. Supports z* (no-jump) and visual star.',
     text: 'Search <b>forward</b> for the word under the cursor (whole word match). Use <code>g*</code> for a partial match. Sets the search register — use <code>n</code>/<code>N</code> to navigate.',
-    examples: ['* (search forward for word)', 'g* (partial word match)', 'ciw then n. (change word, repeat)'],
+    examples: ['* (search forward for word)', 'g* (partial word match)', 'ciw then n. (change word, repeat)', '# (search backward for word)'],
     secondaryText: 'next ident',
   },
   '(': {
@@ -119,8 +121,8 @@ export const symbols: Record<string, KeyInfoType> = {
     title: 'Equal',
     action: 'operator',
     vimHelp: 'change.txt.html#%3d',
-    text: 'Auto-indent operator — re-indents the text covered by the motion using Vim\'s built-in formatter (or <code>equalprg</code> if set). <code>==</code> formats the current line.',
-    examples: ['== (format line)', '=G (format to end of file)', '=ip (format paragraph)', 'gg=G (format whole file)', '=% (format to matching bracket)'],
+    text: 'Auto-indent operator — re-indents the text covered by the motion using Vim\'s built-in formatter (or <code>equalprg</code> if set). <code>==</code> formats the current line. Set <code>equalprg</code> to pipe through an external formatter: <code>set equalprg=prettier\\ --stdin-filepath\\ %</code>.',
+    examples: ['== (format line)', '=G (format to end of file)', '=ip (format paragraph)', 'gg=G (format whole file)', '=% (format to matching bracket)', ':set equalprg=black\\ - (use black for Python)'],
     secondaryText: 'auto indent',
   },
   '`': {

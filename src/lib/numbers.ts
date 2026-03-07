@@ -3,72 +3,82 @@ import type { KeyInfoType } from './types'
 export const numbers: Record<string, KeyInfoType> = {
   '0': {
     title: 'Number 0',
-
     action: 'motion',
     vimHelp: 'motion.txt.html#0',
-    text: "Go to beginning of line, Add 'nnoremap 0 ^' to return to first non-blank character",
+    text: 'Move to column 1 (absolute beginning of line), regardless of indentation. Unlike <code>^</code> which stops at the first non-blank character. Often remapped: <code>nnoremap 0 ^</code>.',
+    examples: ['0 (go to col 1)', '0dw (delete from start)', 'd0 (delete back to col 1)'],
+    secondaryText: 'col 1 / bol',
   },
   '1': {
     title: 'Number 1',
-
     action: 'extra',
-    vimHelp: 'pattern.txt.html#%2f%5c1',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type a number before any motion or operator to repeat it that many times. <code>1</code> is the default count (no-op as a prefix, but valid). Counts compose: <code>2d3w</code> = delete 6 words.',
+    examples: ['1j (same as j)', '12G (go to line 12)', '1>> (indent 1 line)'],
+    secondaryText: 'count prefix',
   },
   '2': {
     title: 'Number 2',
-
     action: 'extra',
-    vimHelp: 'pattern.txt.html#%2f%5c2',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times. <code>2w</code> moves 2 words, <code>2dd</code> deletes 2 lines, <code>2p</code> pastes twice.',
+    examples: ['2w', '2dd', '2j', '2>>'],
+    secondaryText: 'count prefix',
   },
   '3': {
     title: 'Number 3',
-
     action: 'extra',
-    vimHelp: 'pattern.txt.html#%2f%5c3',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times. <code>3w</code> moves 3 words forward, <code>3dd</code> deletes 3 lines.',
+    examples: ['3w', '3dd', '3j', '3f('],
+    secondaryText: 'count prefix',
   },
   '4': {
     title: 'Number 4',
-
     action: 'extra',
-    vimHelp: 'usr_42.txt.html#42',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times. <code>4j</code> moves 4 lines down, <code>4x</code> deletes 4 characters.',
+    examples: ['4j', '4x', '4>>'],
+    secondaryText: 'count prefix',
   },
   '5': {
     title: 'Number 5',
-
     action: 'extra',
-    vimHelp: 'usr_08.txt.html#08.5',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times. Also used in <code>50%</code> to jump to the middle of a file.',
+    examples: ['5j', '5dw', '5i-<Esc> (insert "-----")', '50% (mid file)'],
+    secondaryText: 'count prefix',
   },
   '6': {
     title: 'Number 6',
-
     action: 'extra',
-    vimHelp: 'usr_04.txt.html#04.6',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times.',
+    examples: ['6j', '6dd', '6>>'],
+    secondaryText: 'count prefix',
   },
   '7': {
     title: 'Number 7',
-
     action: 'extra',
-    vimHelp: 'term.txt.html#t_%407',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times.',
+    examples: ['7j', '7w', '7x'],
+    secondaryText: 'count prefix',
   },
   '8': {
     title: 'Number 8',
-
     action: 'extra',
-    vimHelp: 'cmdline.txt.html#%25%3a8',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times.',
+    examples: ['8j', '8w', '8>>'],
+    secondaryText: 'count prefix',
   },
   '9': {
     title: 'Number 9',
-
     action: 'extra',
-    vimHelp: 'pattern.txt.html#%2f%5c9',
-    text: '',
+    vimHelp: 'intro.txt.html#count',
+    text: 'Count prefix — type before any motion or operator to repeat it that many times. Multi-digit counts are typed naturally: <code>12j</code>, <code>100G</code>, <code>25dd</code>.',
+    examples: ['9j', '9w', '99G (near last line)', '25dd (delete 25 lines)'],
+    secondaryText: 'count prefix',
   },
 }
