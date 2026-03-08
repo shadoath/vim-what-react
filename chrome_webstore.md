@@ -117,7 +117,7 @@ Privacy policy URL: https://github.com/shadoath/vim-what-react/blob/main/PRIVACY
 
 ## Support / Homepage URL
 
-https://github.com/shadoath/vim-what-react
+https://vimwhat.com/
 
 ---
 
