@@ -1,15 +1,19 @@
-# Vim What? v1.0.0
+# Vim What?
 
 ![Vim What logo](./src/vim-what.svg)
 
 A Chrome extension for learning Vim commands interactively. Visual keyboard with color-coded keys, prefix mode overlays, progressive lesson levels, and progress tracking.
 
+**[Install on the Chrome Web Store](https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge)** · **[GitHub Pages](https://shadoath.github.io/vim-what-react/)**
+
+![Vim What? extension screenshot](./public/example.png)
+
 ## Features
 
 - **Visual keyboard** — color-coded key types (motion, operator, command, extra) across 5 layouts: Qwerty, Colemak, Colemak-DH, Dvorak, Workman
+- **Dual-layer keyboard** — shifted and unshifted commands are stacked together; no toggle needed
 - **Prefix overlays** — toggle `g`, `z`, or `Ctrl` mode to see what each prefix does to every key
-- **Shift mode** — toggle or hold Shift to view the uppercase/symbol layer; shows only the relevant half of the keyboard
-- **7 progressive lesson levels** — learn Vim incrementally; keys outside the current lesson are dimmed
+- **9 progressive lesson levels** — learn Vim incrementally; current-level keys are outlined, prior keys muted, inactive keys faded
 - **Search** — filter keys by name or description
 - **Key of the Day** — a daily key to focus on
 - **Progress tracking** — mark keys as learned; a green dot appears on learned keys
@@ -40,4 +44,4 @@ npm run build    # production build (Chrome extension compatible)
 
 ## Chrome Extension
 
-Load the `build/` folder as an unpacked Chrome extension. The build is configured with `INLINE_RUNTIME_CHUNK=false` for Manifest V3 compatibility.
+Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge), or load the `build/` folder as an unpacked extension for local development. The build is configured with `INLINE_RUNTIME_CHUNK=false` for Manifest V3 compatibility.
