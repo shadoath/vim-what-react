@@ -222,82 +222,10 @@ h1 em {
   margin-left: 8px;
 }
 
-.keyboard-preview {
-  padding: 20px 24px 16px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-}
-
-.kb-row {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 4px;
-  justify-content: center;
-}
-
-.key {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  min-width: 32px;
-  height: 46px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 0 4px 4px;
-  position: relative;
-  cursor: default;
-  transition: background 0.1s;
-}
-
-.key-top {
-  position: absolute;
-  top: 3px;
-  font-size: 0.6rem;
-  color: var(--text-dim);
-  opacity: 0.7;
-}
-
-.key-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--text-dim);
-}
-
-.key.motion { background: #1e2d3d; border-color: #2a4a6a; }
-.key.motion .key-label { color: #7dcfff; }
-.key.operator { background: #2d1e2d; border-color: #5a2a5a; }
-.key.operator .key-label { color: var(--purple); }
-.key.command { background: #2d2d1e; border-color: #5a5a2a; }
-.key.command .key-label { color: var(--yellow); }
-.key.insert { background: #2d1e1e; border-color: #5a2a2a; }
-.key.insert .key-label { color: var(--red); }
-.key.active { background: #1e3d1e; border-color: var(--green-dim); }
-.key.active .key-label { color: var(--green); }
-.key.wide { min-width: 52px; }
-.key.wider { min-width: 72px; }
-
-.preview-legend {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  padding: 10px 0 14px;
-  border-top: 1px solid var(--border);
-  flex-wrap: wrap;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.7rem;
-  color: var(--text-dim);
-}
-
-.legend-dot {
-  width: 8px; height: 8px;
-  border-radius: 2px;
+.preview-screenshot {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* ── Features ── */
@@ -555,8 +483,4 @@ footer {
   .features-grid { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; }
   .footer-inner { flex-direction: column; align-items: flex-start; }
-  .kb-row { gap: 2px; }
-  .key { min-width: 26px; height: 38px; }
-  .key.wide { min-width: 40px; }
-  .key.wider { min-width: 56px; }
 }

@@ -100,7 +100,7 @@
   </div>
 </section>
 
-<!-- ── Keyboard Preview ── -->
+<!-- ── Screenshot Preview ── -->
 <section class="preview">
   <div class="container">
     <div class="preview-window">
@@ -108,73 +108,13 @@
         <span class="dot dot-red"></span>
         <span class="dot dot-yellow"></span>
         <span class="dot dot-green"></span>
-        <span class="window-title">Vim What? — Normal Mode</span>
+        <span class="window-title">Vim What? — Marks &amp; macros</span>
       </div>
-      <div class="keyboard-preview">
-        <!-- Row 1: number row -->
-        <div class="kb-row">
-          <div class="key wider"><span class="key-label">Esc</span></div>
-          <div class="key"><span class="key-label">1</span></div>
-          <div class="key"><span class="key-label">2</span></div>
-          <div class="key"><span class="key-label">3</span></div>
-          <div class="key"><span class="key-label">4</span></div>
-          <div class="key"><span class="key-label">5</span></div>
-          <div class="key"><span class="key-label">6</span></div>
-          <div class="key"><span class="key-label">7</span></div>
-          <div class="key"><span class="key-label">8</span></div>
-          <div class="key"><span class="key-label">9</span></div>
-          <div class="key"><span class="key-label">0</span></div>
-        </div>
-        <!-- Row 2: QWERTY top -->
-        <div class="kb-row">
-          <div class="key wide"><span class="key-label">Tab</span></div>
-          <div class="key motion"><span class="key-top">^</span><span class="key-label">q</span></div>
-          <div class="key operator"><span class="key-top">W</span><span class="key-label">w</span></div>
-          <div class="key operator"><span class="key-top">E</span><span class="key-label">e</span></div>
-          <div class="key command"><span class="key-top">R</span><span class="key-label">r</span></div>
-          <div class="key command"><span class="key-top">T</span><span class="key-label">t</span></div>
-          <div class="key motion"><span class="key-top">Y</span><span class="key-label">y</span></div>
-          <div class="key command"><span class="key-top">U</span><span class="key-label">u</span></div>
-          <div class="key insert"><span class="key-top">I</span><span class="key-label">i</span></div>
-          <div class="key motion"><span class="key-top">O</span><span class="key-label">o</span></div>
-          <div class="key command"><span class="key-top">P</span><span class="key-label">p</span></div>
-        </div>
-        <!-- Row 3: home row -->
-        <div class="kb-row">
-          <div class="key wider"><span class="key-label">Ctrl</span></div>
-          <div class="key insert"><span class="key-top">A</span><span class="key-label">a</span></div>
-          <div class="key operator"><span class="key-top">S</span><span class="key-label">s</span></div>
-          <div class="key operator"><span class="key-top">D</span><span class="key-label">d</span></div>
-          <div class="key motion"><span class="key-top">F</span><span class="key-label">f</span></div>
-          <div class="key command"><span class="key-top">G</span><span class="key-label">g</span></div>
-          <div class="key motion"><span class="key-top">H</span><span class="key-label">h</span></div>
-          <div class="key motion"><span class="key-top">J</span><span class="key-label">j</span></div>
-          <div class="key motion"><span class="key-top">K</span><span class="key-label">k</span></div>
-          <div class="key motion"><span class="key-top">L</span><span class="key-label">l</span></div>
-          <div class="key active"><span class="key-label">✓</span></div>
-        </div>
-        <!-- Row 4: bottom row -->
-        <div class="kb-row">
-          <div class="key wider"><span class="key-label">Shift</span></div>
-          <div class="key command"><span class="key-top">Z</span><span class="key-label">z</span></div>
-          <div class="key command"><span class="key-top">X</span><span class="key-label">x</span></div>
-          <div class="key operator"><span class="key-top">C</span><span class="key-label">c</span></div>
-          <div class="key operator"><span class="key-top">V</span><span class="key-label">v</span></div>
-          <div class="key operator"><span class="key-top">B</span><span class="key-label">b</span></div>
-          <div class="key motion"><span class="key-top">N</span><span class="key-label">n</span></div>
-          <div class="key operator"><span class="key-top">M</span><span class="key-label">m</span></div>
-          <div class="key command"><span class="key-top">:</span><span class="key-label">.</span></div>
-          <div class="key motion"><span class="key-top">?</span><span class="key-label">/</span></div>
-          <div class="key wider"><span class="key-label">Shift</span></div>
-        </div>
-      </div>
-      <div class="preview-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#7dcfff"></div> Motion</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#9d7cd8"></div> Operator</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#e0af68"></div> Command</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#f7768e"></div> Insert</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#7ec86e"></div> Learned</div>
-      </div>
+      <img
+        src="images/example.png"
+        alt="Vim What? extension showing the full keyboard with lesson 9 (Marks &amp; macros) active and the Info panel open"
+        class="preview-screenshot"
+      />
     </div>
   </div>
 </section>
@@ -272,57 +212,64 @@
       <div class="lesson-row">
         <span class="lesson-level">L1</span>
         <div>
-          <h3>Move &amp; Survive</h3>
-          <p><code>hjkl</code> movement, insert mode, undo/redo, save &amp; quit</p>
+          <h3>Move &amp; survive</h3>
+          <p><code>hjkl</code> movement, insert mode (<code>i</code>, <code>a</code>), undo (<code>u</code>), delete char (<code>x</code>), save &amp; quit (<code>:</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L2</span>
         <div>
-          <h3>Word &amp; Line Navigation</h3>
-          <p>Word jumps, line start/end, paragraph movement</p>
+          <h3>Insert &amp; line basics</h3>
+          <p>Insert at end/start (<code>A</code>, <code>I</code>), new line (<code>o</code>, <code>O</code>), repeat (<code>.</code>), line start/end (<code>^</code>, <code>$</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L3</span>
         <div>
-          <h3>Operators &amp; Motions</h3>
-          <p>Delete, change, yank — combined with motions for powerful edits</p>
+          <h3>Words &amp; operators</h3>
+          <p>Word movement (<code>w</code>, <code>b</code>, <code>e</code>), delete (<code>d</code>, <code>D</code>), change (<code>c</code>, <code>C</code>), replace (<code>r</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L4</span>
         <div>
-          <h3>Search &amp; Replace</h3>
-          <p>Find, repeat search, substitution, <code>f</code>/<code>t</code> inline search</p>
+          <h3>Find on line</h3>
+          <p>Find char (<code>f</code>, <code>F</code>, <code>t</code>, <code>T</code>), repeat find (<code>;</code>, <code>,</code>), substitute (<code>s</code>, <code>S</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L5</span>
         <div>
-          <h3>Visual Mode</h3>
-          <p>Character, line, and block visual selection</p>
+          <h3>Yank &amp; paste</h3>
+          <p>Yank (<code>y</code>, <code>Y</code>), paste (<code>p</code>, <code>P</code>), registers (<code>"</code>), join lines (<code>J</code>), swap case (<code>~</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L6</span>
         <div>
-          <h3>Text Objects</h3>
-          <p><code>iw</code>, <code>i"</code>, <code>i(</code> and their <code>a</code> variants — the superpower of Vim</p>
+          <h3>Search</h3>
+          <p>Forward/backward search (<code>/</code>, <code>?</code>), next/prev result (<code>n</code>, <code>N</code>), word search (<code>*</code>, <code>#</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L7</span>
         <div>
-          <h3>Marks &amp; Jumps</h3>
-          <p>Setting marks, jumping between positions, the jump list</p>
+          <h3>Visual mode</h3>
+          <p>Character and line selection (<code>v</code>, <code>V</code>), indent (<code>&gt;</code>, <code>&lt;</code>), reformat (<code>=</code>), filter (<code>!</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
         <span class="lesson-level">L8</span>
         <div>
-          <h3>Registers &amp; Macros</h3>
-          <p>Named registers, recording and replaying macros, the expression register</p>
+          <h3>Navigate the file</h3>
+          <p>Jump to line (<code>G</code>, <code>H</code>, <code>M</code>, <code>L</code>), match bracket (<code>%</code>), jump with <code>(</code> <code>)</code> <code>{</code> <code>}</code> <code>[</code> <code>]</code></p>
+        </div>
+      </div>
+      <div class="lesson-row">
+        <span class="lesson-level">L9</span>
+        <div>
+          <h3>Marks &amp; macros</h3>
+          <p>Set marks (<code>m</code>), jump to mark (<code>`</code>), record macro (<code>q</code>), replay (<code>@</code>), replace mode (<code>R</code>), folds (<code>z</code>)</p>
         </div>
       </div>
       <div class="lesson-row">
@@ -378,16 +325,18 @@
   <div class="footer-inner">
     <div class="footer-left">
       <img src="images/vim-what-16.png" alt="" />
-      © 2025 Vim What? · A free tool for Vim learners
+      © <span id="footer-year"></span> Vim What? · A free tool for Vim learners
     </div>
     <ul class="footer-links">
       <li><a href="https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge" target="_blank" rel="noopener">Chrome Web Store</a></li>
       <li><a href="https://github.com/shadoath/vim-what-react" target="_blank" rel="noopener">GitHub</a></li>
-      <!-- TODO: add your main website link here -->
-      <!-- <li><a href="https://yourwebsite.com">More Extensions</a></li> -->
+      <li><a href="https://whiteboardworks.com" target="_blank" rel="noopener">Built by Whiteboard Works</a></li>
     </ul>
   </div>
 </footer>
 
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
