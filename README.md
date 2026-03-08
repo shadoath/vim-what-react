@@ -4,7 +4,7 @@
 
 A Chrome extension for learning Vim commands interactively. Visual keyboard with color-coded keys, prefix mode overlays, progressive lesson levels, and progress tracking.
 
-**[Install on the Chrome Web Store](https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge)** · **[GitHub Pages](https://shadoath.github.io/vim-what-react/)**
+**[Install on the Chrome Web Store](https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge)** · **[vimwhat.com](https://vimwhat.com/)**
 
 ![Vim What? extension screenshot](./public/example.png)
 
