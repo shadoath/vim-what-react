@@ -8,6 +8,14 @@
     font-family: 'Fira Code VF', monospace !important;
   }
 }
+html {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c2c2c2;
+}
+
 html,
 body {
   margin: 0;
@@ -32,6 +40,9 @@ body {
 .App {
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .App-logo {
