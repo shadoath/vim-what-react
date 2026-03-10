@@ -45,3 +45,7 @@ npm run build    # production build (Chrome extension compatible)
 ## Chrome Extension
 
 Install directly from the [Chrome Web Store](https://chromewebstore.google.com/detail/vim-what/ngbehgnlcdjkbnihgpkgdangbhemidge), or load the `build/` folder as an unpacked extension for local development. The build is configured with `INLINE_RUNTIME_CHUNK=false` for Manifest V3 compatibility.
+
+---
+
+A [Whiteboard Works](https://whiteboardworks.com) project.
