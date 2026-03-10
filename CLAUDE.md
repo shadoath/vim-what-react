@@ -4,18 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains two implementations of "Vim What?" - a Chrome extension for learning Vim commands:
+"Vim What?" is a React TypeScript Chrome extension for learning Vim commands. Published to the Chrome Web Store.
 
-1. **vim-what**: Original jQuery-based Chrome extension (manifest v3)
-2. **vim-what-react**: React TypeScript migration (in progress)
-
-The goal is to complete the migration from the jQuery version to the React version while maintaining all functionality.
+The `vim-what/` directory contains the original jQuery-based version (archived, no longer maintained).
 
 ## Development Commands
 
-### React Application (vim-what-react)
 ```bash
-cd vim-what-react
 npm install              # Install dependencies
 npm start                # Start development server on localhost:3000
 npm test                 # Run tests in watch mode
@@ -24,20 +19,9 @@ npm run build            # Build for production (Chrome extension compatible)
 
 Note: The build command includes `INLINE_RUNTIME_CHUNK=false` for Chrome extension compatibility.
 
-### Original Extension (vim-what)
-No build process required - uses static HTML/JS with jQuery. Load directly in Chrome as unpacked extension.
-
 ## Architecture
 
 ### Data Flow
-Both versions share similar data structures but implement them differently:
-
-**Original (vim-what)**:
-- JSON files loaded via jQuery AJAX: `key_info_*.json`, `layouts.json`, `lessons.json`
-- Chrome storage API for user preferences and custom mappings
-- Global state managed through variables
-
-**React (vim-what-react)**:
 - TypeScript modules: `letters.ts`, `numbers.ts`, `symbols.ts`, `layouts.ts`, `lessons.ts`, `prefixKeys.ts`
 - Context API (`BaseContext`) for state management
 - Persistence via `localStorage`: layout, lesson level, learned keys, custom mappings
@@ -62,26 +46,6 @@ App
 - `BaseContext` manages: layout, lesson level, selected key info, documentation links
 - All components access shared state via `useBaseContext()` hook
 
-### Feature Migration Status
-
-**Completed**:
-- Keyboard layouts (Qwerty, Colemak, Colemak-DH, Dvorak, Workman)
-- Lesson progression system (8 levels + All)
-- Key information display with plugin tips in `letters.ts`, `numbers.ts`, `symbols.ts`
-- Dual-layer keyboard: shift keys stacked above normal keys, no toggle needed
-- Search/query filtering
-- Prefix modes: g, z, Ctrl overlays via ToggleButtonGroup
-- Keyboard shortcut navigation (press a key to select it)
-- Key of the Day (KOTD) widget in header
-- Learned key tracking with green dot indicator
-- Custom mapping indicator (purple dot)
-- Legend explaining visual indicators
-- Insert mode keys highlighted in red
-
-**Missing / Remaining**:
-- Chrome extension store submission (screenshots, icons, promotional tile)
-- README update with store link once published
-
 ### Key Data Structures
 
 **Key Info Type** (React):
@@ -105,16 +69,14 @@ type KeyInfoType = {
 
 ### Chrome Extension Configuration
 
-Both versions target Manifest V3. The React build requires special configuration:
+Targets Manifest V3. Build requires:
 - `INLINE_RUNTIME_CHUNK=false` in build script
 - Static assets in `public/` directory
-- Icons and manifest.json ready for Chrome
 
 ### Important Implementation Details
 
-1. **Layout Storage**: Original uses Chrome sync storage; React version needs implementation
-2. **Key Mapping Format**: Custom maps stored as string values in Chrome storage
-3. **Help Links**: Point to `http://vimhelp.appspot.com/` with specific anchors
+1. **Key Mapping Format**: Custom maps stored as string values in localStorage
+2. **Help Links**: Point to `http://vimhelp.appspot.com/` with specific anchors
 4. **Image Assets**: Located in `/images/about/` for lesson visuals
 5. **Dual-layer keyboard**: `getShiftRowForNormalRow()` in `layouts.ts` pairs each normal row with its shift row by closest index. Two `<Key>` components stacked per position — shift key (`isSecondary`, height 26px) above normal key (height 30px).
 6. **No tooltips on keys**: Tooltips were removed — clicking a key opens the InfoArea panel instead.
